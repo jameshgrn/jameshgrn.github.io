@@ -5,7 +5,7 @@
 ### Sedimentology 
 
 [Project 1 Title](/sample_page)
-<img src="images/dummy_thumbnail.jpg?raw=true"/>
+<img src="images/UNADJUSTEDNONRAW_thumb_18c0.jpg?raw=true"/>
 
 ---
 [Project 2 Title](/pdf/sample_presentation.pdf)
@@ -29,6 +29,9 @@
 ### Petroleum Geology
 
 ### Geomorphology
+
+### Soils
+<img src="images/UNADJUSTEDNONRAW_thumb_5b9.jpg?raw=true"/>
 
 ### Miscellaneous Projects
 ---
