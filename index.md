@@ -3,15 +3,17 @@
 ---
 
 ### Sedimentology 
-
-<img src="images/UNADJUSTEDNONRAW_thumb_18c0.jpg?raw=true"/>
 [Lycium Turbidites | Split Mountain Gorge | Borrego Springs, CA, USA](/Borrego)
+<img src="images/UNADJUSTEDNONRAW_thumb_18c0.jpg?raw=true"/>
+
 ---
-<img src="images/UNADJUSTEDNONRAW_mini_1728.jpg?raw=true"/>
 [Project 2 Title](/pdf/sample_presentation.pdf)
+<img src="images/UNADJUSTEDNONRAW_mini_1728.jpg?raw=true"/>
+
 ---
-<img src="images/UNADJUSTEDNONRAW_thumb_4cb.jpg?raw=true"/>
 [Project 3 Title](http://example.com/)
+<img src="images/UNADJUSTEDNONRAW_thumb_4cb.jpg?raw=true"/>
+
 ---
 
 ### Data Analytics
@@ -27,8 +29,9 @@
 
 ### Soils
 
-<img src="images/UNADJUSTEDNONRAW_thumb_5b9.jpg?raw=true"/>
 [Desert Ecogeomorphology | Eldorado Valley | Boulder City, NV, USA](/Soils)
+<img src="images/UNADJUSTEDNONRAW_thumb_5b9.jpg?raw=true"/>
+
 
 ### Miscellaneous Projects
 ---
