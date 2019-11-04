@@ -4,7 +4,7 @@
 
 ### Sedimentology 
 
-[Project 1 Title](/sample_page)
+[Lycium Turbidites | Split Mountain Gorge | Borrego Springs, CA, USA](/Borrego)
 <img src="images/UNADJUSTEDNONRAW_thumb_18c0.jpg?raw=true"/>
 
 ---
@@ -31,6 +31,8 @@
 ### Geomorphology
 
 ### Soils
+
+[Desert Ecogeomorphology | Eldorado Valley | Boulder City, NV, USA](/Soils)
 <img src="images/UNADJUSTEDNONRAW_thumb_5b9.jpg?raw=true"/>
 
 ### Miscellaneous Projects
