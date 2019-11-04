@@ -9,11 +9,11 @@
 
 ---
 [Project 2 Title](/pdf/sample_presentation.pdf)
-<img src="images/dummy_thumbnail.jpg?raw=true"/>
+<img src="iUNADJUSTEDNONRAW_mini_1728.jpg?raw=true"/>
 
 ---
 [Project 3 Title](http://example.com/)
-<img src="images/dummy_thumbnail.jpg?raw=true"/>
+<img src="UNADJUSTEDNONRAW_thumb_4cb.jpg?raw=true"/>
 
 ---
 
