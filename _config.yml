@@ -1,9 +1,9 @@
 title: James (Jake) Gearon # your name (or website title) here
 logo: "images/Profile.jpeg" # your photo (or logo) here
 description: > # your text below (remove <br> elements if you don't need line breaks)
-  A Sedimentologist focused on constraining morphology, sedimentary dynamics, depositional architectures, and sediment-water interfaces in the modern and ancient using remote sensing, data analytics, and old fashioned field work
-  <br><br>
   Second-year Masters student at the University of Texas at Austin | Advised by Ron Steel & Cornel Olariu | Dynamic Stratigraphy Group
+  <br><br>
+  A Sedimentologist focused on constraining morphology, sedimentary dynamics, depositional architectures, and sediment-water interfaces in the modern and ancient using remote sensing, data analytics, and old fashioned field work
   <br><br>
 
 theme: jekyll-theme-minimal
