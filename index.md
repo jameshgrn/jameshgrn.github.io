@@ -4,7 +4,7 @@
 
 ### Sedimentology 
 [Facies Character and Morphology of an Eocene Terminal Splay Complex, Uinta Basin, Utah](/Uinta)
-<img src="images/uintachannel.jpeg"/>
+<img src="images/uintachannel.jpg"/>
 **Project description:** Lacustrine deltas call for careful interpretation as they are distinct from their marine
 counterparts. Lacustrine delta-fronts are dominated by shallow, low-relief sandy channels which drive sheet-sand
 deposition basin-ward. Furthermore, lake base level can change meters over short time scales (100s of years
@@ -16,6 +16,7 @@ the literature. Previous workers have classified the interval as a Fluvially-Dom
  Sunnyside Delta Interval most resembles a Terminal Splay Complex (after Fisher et al., 2008) based on facies
  character and morphology.
 ---
+<br><br>
 [Project 2 Title](/pdf/sample_presentation.pdf)
 <img src="images/UNADJUSTEDNONRAW_mini_1728.jpg?raw=true"/>
 
