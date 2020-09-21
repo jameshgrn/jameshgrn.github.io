@@ -4,7 +4,7 @@
 
 ### Sedimentology 
 [Facies Character and Morphology of an Eocene Terminal Splay Complex, Uinta Basin, Utah](/Uinta)
-<img src="images/uintachannel.jpg"/>
+<img src="images/uintachannel.jpeg"/>
 **Project description:** Lacustrine deltas call for careful interpretation as they are distinct from their marine
 counterparts. Lacustrine delta-fronts are dominated by shallow, low-relief sandy channels which drive sheet-sand
 deposition basin-ward. Furthermore, lake base level can change meters over short time scales (100s of years
