@@ -31,25 +31,23 @@ collating of data from disparate sources, or data-wrangling, is often the barrie
 <br><br> 
 _This work is based on funding provided by the ESIP Lab with support from the National Aeronautics and Space Administration (NASA), National Oceanic and Atmospheric Administration (NOAA) and the United States Geo logic Survey (USGS)._
 ---
-[Geomorphic Controls on Shrub Canopy Size and Spacing of Creosote Bush in 7Northern Mojave Desert, USA](http://example.com/)
-<img src="images/UNADJUSTEDNONRAW_thumb_4cb.jpg?raw=true"/>
-
----
-
-### Data Analytics
-- [Project 1 Title](http://example.com/)
-- [Project 2 Title](http://example.com/)
-- [Project 3 Title](http://example.com/)
-- [Project 4 Title](http://example.com/)
-- [Project 5 Title](http://example.com/)
-
-
-
-### Miscellaneous Projects
----
-
-
-
+[Geomorphic Controls on Shrub Canopy Size and Spacing of Creosote Bush in Northern Mojave Desert, USA](http://example.com/)
+<img src="images/BoulderCity.jpg"/>
+_This manuscript is currently in revision and will be available hopefully before 2021!_<br><br>
+**Context** - Studies on the role of geomorphology on vegetation structure at the basin scale are rarely available
+ and less likely in the future due to access, funding, and potential health risks. <br>
+**Objectives** - Our goal is to determine the primary abiotic controlling factor(s) on shrub canopy architecture. We
+ posit that landscape position and local-scale geomorphic features in a desert alluvial fan environment will
+  influence canopy volume and shrub spacing of creosote bush Larrea tridentata. <br>
+**Methods** - We use previously identified locations and selected characteristics (canopy volume, and spatial
+ distribution) of approximately 23 million individual shrubs located in Eldorado Valley, Nevada, USA. We relate these
+  characteristics to aspect, slope, and geomorphic surfaces at each shrub location. <br>
+**Results** - Aspect and surface age have demonstrable influences on both shrub canopy volume and shrub spacing for
+ all 5 geomorphic surfaces studied, with the highest median canopy volumes on east-facing surface (0.758m3) almost 5X
+  larger than the lowest median volumes (0.152m3) on the WNW-facing surfaces; variability in shrub volume was also
+   higher on east-facing than west-facing surfaces. Shrub spacing on alluvial flat and fan skirt surfaces (2.418 and
+    2.333m, respectively) were larger than older alluvial fan, fan piedmont and fan remnant surfaces (1.776, 1.837 and 1.892m, respectively). Results show a significant relationship between spacing and canopy volume by aspect and by geomorphic surface. <br>
+**Conclusions** – Results highlight the value of remote sensing for characterizing the biota, soils, and geological setting of remote desert valleys, especially when field work is not possible.
 
 ---
 <p style="font-size:11px">Page template forked from <a href="https://github.com/evanca/quick-portfolio">evanca</a></p>
