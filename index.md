@@ -1,5 +1,7 @@
-## Jake Gearon's Research Home
-###Current Projects
+Jake Gearon's Research Home
+===========================
+
+### Current Projects
 _This page is a work in progress and is updated continously, thanks for visiting!
 -JG_
 
@@ -36,7 +38,7 @@ _This work is based on funding provided by the ESIP Lab with support from the Na
 [Geomorphic Controls on Shrub Canopy Size and Spacing of Creosote Bush in Northern Mojave Desert, USA](/BCCE)
 <img src="images/BoulderCity.jpg"/>
 This manuscript is currently in revision (_Landscape Ecology_) and will be available hopefully before 2021!<br>
-**Project Abstract**<br>
+**Project Abstract**<br><br>
 **Context** - Studies on the role of geomorphology on vegetation structure at the basin scale are rarely available
  and less likely in the future due to access, funding, and potential health risks. <br>
 **Objectives** - Our goal is to determine the primary abiotic controlling factor(s) on shrub canopy architecture. We
