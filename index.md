@@ -1,4 +1,6 @@
-## Portfolio
+## Current Projects
+_This page is a work in progress and is updated continously, thanks for visiting!
+-JG_
 
 ---
 
@@ -16,7 +18,6 @@ the literature. Previous workers have classified the interval as a Fluvially-Dom
  Sunnyside Delta Interval most resembles a Terminal Splay Complex (after Fisher et al., 2008) based on facies
  character and morphology.
 <br><br>
----
 ### Remote Sensing
 [Earth Science Information Partners (ESIP) Winter 2020 Grant (PI): Creating a Public Database of Global Lake Water
  Levels ](/pdf/ESIP_Proposal_2020_Gearon_Fuka.pdf)
@@ -30,12 +31,13 @@ collating of data from disparate sources, or data-wrangling, is often the barrie
  lacustrine analysis tools for use by researchers across disciplines and institutions. Removing hurdles between researchers and available data is imperative in an increasingly data-rich world. Many researchers have immense subject-matter expertise regarding the biological, hydrological, and sedimentological nuances of lacustrine environments but little or no experience in automated querying, data cleaning/wrangling, or programming. 
 <br><br> 
 _This work is based on funding provided by the ESIP Lab with support from the National Aeronautics and Space Administration (NASA), National Oceanic and Atmospheric Administration (NOAA) and the United States Geo logic Survey (USGS)._
----
-[Geomorphic Controls on Shrub Canopy Size and Spacing of Creosote Bush in Northern Mojave Desert, USA](http://example.com/)
+<br><br>
+[Geomorphic Controls on Shrub Canopy Size and Spacing of Creosote Bush in Northern Mojave Desert, USA](/BCCE)
 <img src="images/BoulderCity.jpg"/>
-_This manuscript is currently in revision and will be available hopefully before 2021!_<br><br>
+This manuscript is currently in revision (_Landscape Ecology_) and will be available hopefully before 2021!<br>
 **Context** - Studies on the role of geomorphology on vegetation structure at the basin scale are rarely available
  and less likely in the future due to access, funding, and potential health risks. <br>
+ **Project Abstract**<br>
 **Objectives** - Our goal is to determine the primary abiotic controlling factor(s) on shrub canopy architecture. We
  posit that landscape position and local-scale geomorphic features in a desert alluvial fan environment will
   influence canopy volume and shrub spacing of creosote bush Larrea tridentata. <br>
