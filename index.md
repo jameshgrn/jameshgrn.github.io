@@ -26,7 +26,7 @@ Additionally, users will be able to modify or add functionalities to the “Lake
   original sedimentation analysis toolkit to assess the “net sedimentation state” of a lake over a user-defined time
    period. Removing hurdles between researchers and available data is imperative in an increasingly data-rich world
    . Many researchers have immense subject-matter expertise regarding the biological, hydrological, and sedimentological nuances of lacustrine environments but little or no experience in automated querying, data cleaning/wrangling, or programming. 
-   <br>/<br> 
+   <br><br> 
    _This work is based on funding provided by the ESIP Lab with support from the National Aeronautics and Space Administration (NASA), National Oceanic and Atmospheric Administration (NOAA) and the United States Geo- logic Survey (USGS)._
 ---
 [Project 3 Title](http://example.com/)
