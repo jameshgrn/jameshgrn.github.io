@@ -1,4 +1,6 @@
-## Current Projects
+#Jake Gearon's Research Home
+---
+##Current Projects
 _This page is a work in progress and is updated continously, thanks for visiting!
 -JG_
 
