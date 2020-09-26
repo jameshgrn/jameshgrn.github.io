@@ -36,9 +36,9 @@ _This work is based on funding provided by the ESIP Lab with support from the Na
 [Geomorphic Controls on Shrub Canopy Size and Spacing of Creosote Bush in Northern Mojave Desert, USA](/BCCE)
 <img src="images/BoulderCity.jpg"/>
 This manuscript is currently in revision (_Landscape Ecology_) and will be available hopefully before 2021!<br>
+**Project Abstract**<br>
 **Context** - Studies on the role of geomorphology on vegetation structure at the basin scale are rarely available
  and less likely in the future due to access, funding, and potential health risks. <br>
- **Project Abstract**<br>
 **Objectives** - Our goal is to determine the primary abiotic controlling factor(s) on shrub canopy architecture. We
  posit that landscape position and local-scale geomorphic features in a desert alluvial fan environment will
   influence canopy volume and shrub spacing of creosote bush Larrea tridentata. <br>
