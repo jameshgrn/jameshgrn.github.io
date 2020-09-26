@@ -4,13 +4,14 @@ _This page is a work in progress and is updated continously, thanks for visiting
 -JG_
 ---
 ## Current Projects
+
 ### Sedimentology 
 [Master's Project: Facies Character and Morphology of an Eocene Terminal Splay Complex, Uinta Basin, Utah](/Uinta)
 <img src="images/uintachannel.jpg"/>
-**Project description:** Lacustrine deltas call for careful interpretation as they are distinct from their marine
-counterparts. Lacustrine delta-fronts are dominated by shallow, low-relief sandy channels which drive sheet-sand
+<p>**Project description:** Lacustrine deltas call for careful interpretation as they are distinct from their marine
+ counterparts. Lacustrine delta-fronts are dominated by shallow, low-relief sandy channels which drive sheet-sand
 deposition basin-ward. Furthermore, lake base level can change meters over short time scales (100s of years
-) leading to high-frequency progradational and retrogradational sequences. The Sunnyside Delta Interval—200m
+) leading to high-frequency progradational and retrogradational sequences.<p></p> The Sunnyside Delta Interval—200m
 interval of 10 fluvio-lacustrine sequences (Keighley et al., 2002 & 2003)—of the Middle Green River Fm. has been
 thoroughly studied but the nature of the sediment delivery mechanism to Eocene Lake Uinta remains hotly debated in
 the literature. Previous workers have classified the interval as a Fluvially-Dominated Delta (Remy, 1991; Schomacker
@@ -22,11 +23,12 @@ the literature. Previous workers have classified the interval as a Fluvially-Dom
 [Earth Science Information Partners (ESIP) Winter 2020 Grant (PI): Creating a Public Database of Global Lake Water
  Levels ](/pdf/ESIP_Proposal_2020_Gearon_Fuka.pdf)
 <img src="images/ESIP_Lakes_Cover.jpg"/>
-**Project description:** There are many publicly available lake-level data sets in varying states of accessibility
+<p>**Project description:** There are many publicly available lake-level data sets in varying states of accessibility
 , upkeep, and accuracy (USGS, HydroWeb, Copernicus Global Land Service, NASA, NOAA, and various publications). The
 collating of data from disparate sources, or data-wrangling, is often the barrier to entry for many scienific
  projects. _Lake water level data particularly suffers from lack of ease of access as it is distributed haphazardly
- across federal, state, and academic databases._ ESIP, AWS, and I are collaborating to provide an open-source, well
+ across federal, state, and academic databases._<p></p> ESIP, AWS, and I are collaborating to provide an open-source
+ , well
  documented, scalable, modular, and regularly updated database of lake water levels and a python package of
  lacustrine analysis tools for use by researchers across disciplines and institutions. Removing hurdles between researchers and available data is imperative in an increasingly data-rich world. Many researchers have immense subject-matter expertise regarding the biological, hydrological, and sedimentological nuances of lacustrine environments but little or no experience in automated querying, data cleaning/wrangling, or programming. 
 <br><br> 
