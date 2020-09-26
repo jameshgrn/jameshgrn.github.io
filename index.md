@@ -17,7 +17,7 @@ the literature. Previous workers have classified the interval as a Fluvially-Dom
  et al., 2010), a Fluvial Fan (Wang, 2019), and a Terminal Splay (Pusca Doctoral Thesis, 2003). I believe that the
  Sunnyside Delta Interval most resembles a Terminal Splay Complex (after Fisher et al., 2008) based on facies
  character and morphology.
-<br><br>
+<br>
 ### Remote Sensing
 [Earth Science Information Partners (ESIP) Winter 2020 Grant (PI): Creating a Public Database of Global Lake Water
  Levels ](/pdf/ESIP_Proposal_2020_Gearon_Fuka.pdf)
