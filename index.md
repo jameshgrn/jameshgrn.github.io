@@ -1,9 +1,6 @@
-Jake Gearon's Research Home
-===========================
+## Current Projects
 _This page is a work in progress and is updated continously, thanks for visiting!
 -JG_
----
-## Current Projects
 ### Sedimentology 
 [Master's Project: Facies Character and Morphology of an Eocene Terminal Splay Complex, Uinta Basin, Utah](/Uinta)
 <img src="images/uintachannel.jpg"/>
