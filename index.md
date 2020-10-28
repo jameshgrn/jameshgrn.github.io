@@ -17,7 +17,7 @@ the literature. Previous workers have classified the interval as a Fluvially-Dom
 <br>
 ### Remote Sensing
 [Earth Science Information Partners (ESIP) Winter 2020 Grant (PI): Creating a Public Database of Global Lake Water
- Levels ](/pdf/ESIP_Proposal_2020_Gearon_Fuka.pdf)
+ Levels](/pdf/ESIP_Proposal_2020_Gearon_Fuka.pdf)
 <img src="images/ESIP_Lakes_Cover.jpg"/>
 **Project description:** There are many publicly available lake-level data sets in varying states of accessibility
 , upkeep, and accuracy (USGS, HydroWeb, Copernicus Global Land Service, NASA, NOAA, and various publications). The
@@ -31,7 +31,7 @@ _This work is based on funding provided by the ESIP Lab with support from the Na
 <br><br>
 [Geomorphic Controls on Shrub Canopy Size and Spacing of Creosote Bush in Northern Mojave Desert, USA](/BCCE)
 <img src="images/BoulderCity.jpg"/>
-This manuscript is currently in revision (_Landscape Ecology_) and will be available hopefully before 2021!<br>
+This manuscript has been accepted to (_Landscape Ecology_) and will be available in the coming weeks!<br>
 **Project Abstract**<br><br>
 **Context** - Studies on the role of geomorphology on vegetation structure at the basin scale are rarely available
  and less likely in the future due to access, funding, and potential health risks. <br>
