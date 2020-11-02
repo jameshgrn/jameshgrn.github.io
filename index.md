@@ -35,18 +35,14 @@ This manuscript has been accepted to (_Landscape Ecology_) and will be available
 **Project Abstract**<br><br>
 **Context** - Studies on the role of geomorphology on vegetation structure at the basin scale are rarely available
  and less likely in the future due to access, funding, and potential health risks. <br>
-**Objectives** - Our goal is to determine the primary abiotic controlling factor(s) on shrub canopy architecture. We
- posit that landscape position and local-scale geomorphic features in a desert alluvial fan environment will
-  influence canopy volume and shrub spacing of creosote bush Larrea tridentata. <br>
-**Methods** - We use previously identified locations and selected characteristics (canopy volume, and spatial
- distribution) of approximately 23 million individual shrubs located in Eldorado Valley, Nevada, USA. We relate these
-  characteristics to aspect, slope, and geomorphic surfaces at each shrub location. <br>
+**Objectives** - Our goal is to determine the primary abiotic controlling factor(s) on shrub canopy structure using a dataset of approximately 23 million individual shrubs, generated using remote sensing and ground-truthing by Young et al. (2017, doi:10.3390/rs9050458). We posit that landscape position and local-scale geomorphic features in a desert alluvial fan environment will influence canopy volume and shrub spacing of creosote bush Larrea tridentata.  <br>
+**Methods** - We relate selected characteristics (canopy volume and spatial distribution) of identified L. tridentata to aspect and surface geomorphology at each shrub location. Statistical analyses included K-S testing, distribution fitting, and several generalized linear models (GLMs). The study was located in Eldorado Valley, Nevada, USA. <br>
 **Results** - Aspect and surface age have demonstrable influences on both shrub canopy volume and shrub spacing for
  all 5 geomorphic surfaces studied, with the highest median canopy volumes on east-facing surface (0.758m3) almost 5X
   larger than the lowest median volumes (0.152m3) on the WNW-facing surfaces; variability in shrub volume was also
    higher on east-facing than west-facing surfaces. Shrub spacing on alluvial flat and fan skirt surfaces (2.418 and
     2.333m, respectively) were larger than older alluvial fan, fan piedmont and fan remnant surfaces (1.776, 1.837 and 1.892m, respectively). Results show a significant relationship between spacing and canopy volume by aspect and by geomorphic surface. <br>
-**Conclusions** – Results highlight the value of remote sensing for characterizing the biota, soils, and geological setting of remote desert valleys, especially when field work is not possible.
+**Conclusions** – Results show a significant relationship between shrub spacing and canopy volume by aspect and geomorphic surface, indicating a threshold at which biotic effects on canopy structure from intra-species competition transition to abiotic effects governed by geomorphic and climatological factors.  
 
 ---
 <p style="font-size:11px">Page template forked from <a href="https://github.com/evanca/quick-portfolio">evanca</a></p>
