@@ -27,11 +27,12 @@ collating of data from disparate sources, or data-wrangling, is often the barrie
  documented, scalable, modular, and regularly updated database of lake water levels and a python package of
  lacustrine analysis tools for use by researchers across disciplines and institutions. Removing hurdles between researchers and available data is imperative in an increasingly data-rich world. Many researchers have immense subject-matter expertise regarding the biological, hydrological, and sedimentological nuances of lacustrine environments but little or no experience in automated querying, data cleaning/wrangling, or programming. 
 <br><br> 
-_This work is based on funding provided by the ESIP Lab with support from the National Aeronautics and Space Administration (NASA), National Oceanic and Atmospheric Administration (NOAA) and the United States Geo logic Survey (USGS)._
+_This work is based on funding provided by the ESIP Lab with support from the National Aeronautics and Space Administration (NASA), National Oceanic and Atmospheric Administration (NOAA) and the United States Geologic Survey (USGS)._
 <br><br>
-[Geomorphic Controls on Shrub Canopy Size and Spacing of Creosote Bush in Northern Mojave Desert, USA](/BCCE)
+[Geomorphic Controls on Shrub Canopy Size and Spacing of Creosote Bush in Northern Mojave Desert, USA](https://doi.org/10.1007/s10980-020-01149-8)
 <img src="images/BoulderCity.jpg"/>
-This manuscript has been accepted to (_Landscape Ecology_) and will be available in the coming weeks!<br>
+This manuscript has been published in (_Landscape Ecology_) and is available [here](https://doi.org/10.1007/s10980
+-020-01149-8)<br>
 **Project Abstract**<br><br>
 **Context** - Studies on the role of geomorphology on vegetation structure at the basin scale are rarely available
  and less likely in the future due to access, funding, and potential health risks. <br>
