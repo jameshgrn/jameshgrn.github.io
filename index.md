@@ -32,7 +32,7 @@ _This work is based on funding provided by the ESIP Lab with support from the Na
 [Geomorphic Controls on Shrub Canopy Size and Spacing of Creosote Bush in Northern Mojave Desert, USA](https://doi.org/10.1007/s10980-020-01149-8)
 <img src="images/BoulderCity.jpg"/>
 This manuscript has been published in (_Landscape Ecology_) and is available [here](https://doi.org/10.1007/s10980
--020-01149-8)<br>
+-020-01149-8). For a 1-page summary, [click here](https://www.beg.utexas.edu/node/6269)<br>
 **Project Abstract**<br><br>
 **Context** - Studies on the role of geomorphology on vegetation structure at the basin scale are rarely available
  and less likely in the future due to access, funding, and potential health risks. <br>
