@@ -1,6 +1,11 @@
 ## Current Projects
 _This page is a work in progress and is updated continously, thanks for visiting!
 -JG_
+
+### Media Update
+The paper I recently published with Dr. Michael Young (Bureau of Economic Geology) was given a press release by the
+ Jackson School of Geosciences at UT Austin. [Check it out here!](https://www.jsg.utexas.edu/news/2020/12/big-data-enables-first-census-of-desert-shrub/)
+
 ### Sedimentology 
 [Master's Project: Facies Character and Morphology of an Eocene Terminal Splay Complex, Uinta Basin, Utah](/Uinta)
 <img src="images/uintachannel.jpg"/>
