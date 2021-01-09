@@ -22,17 +22,19 @@ the literature. Previous workers have classified the interval as a Fluvially-Dom
 <br>
 ### Remote Sensing
 [Earth Science Information Partners (ESIP) Winter 2020 Grant (PI): Creating a Public Database of Global Lake Water
- Levels](/pdf/ESIP_Proposal_2020_Gearon_Fuka.pdf)
-<img src="images/ESIP_Lakes_Cover.jpg"/>
+ Levels](https://medium.com/esip/introducing-lakepy-accessing-lake-water-level-data-through-a-python-api-9a62944a43d)
+<img src="images/esipfr.png"/>
 **Project description:** There are many publicly available lake-level data sets in varying states of accessibility
 , upkeep, and accuracy (USGS, HydroWeb, Copernicus Global Land Service, NASA, NOAA, and various publications). The
 collating of data from disparate sources, or data-wrangling, is often the barrier to entry for many scienific
  projects. _Lake water level data particularly suffers from lack of ease of access as it is distributed haphazardly
- across federal, state, and academic databases._ ESIP, AWS, and I are collaborating to provide an open-source, well
- documented, scalable, modular, and regularly updated database of lake water levels and a python package of
- lacustrine analysis tools for use by researchers across disciplines and institutions. Removing hurdles between researchers and available data is imperative in an increasingly data-rich world. Many researchers have immense subject-matter expertise regarding the biological, hydrological, and sedimentological nuances of lacustrine environments but little or no experience in automated querying, data cleaning/wrangling, or programming. 
+ across federal, state, and academic databases._ ESIP, AWS, and I have collaborated to provide an open-source, well
+ documented, scalable, modular, and regularly updated database of lake water levels and a python package [_LakePy_](http://lakepydocs.com.s3-website.us-east-2.amazonaws.com/) of
+ which acts as a pythonic wrapper for the Global Lake Level Database API. Removing hurdles between researchers and 
+available data is imperative in an increasingly data-rich world. Many researchers have immense subject-matter expertise regarding the biological, hydrological, and sedimentological nuances of lacustrine environments but little or no experience in automated querying, data cleaning/wrangling, or programming. 
 <br><br> 
 _This work is based on funding provided by the ESIP Lab with support from the National Aeronautics and Space Administration (NASA), National Oceanic and Atmospheric Administration (NOAA) and the United States Geologic Survey (USGS)._
+See the funded proposal [_here_](pdf/ESIP_Proposal_2020_Gearon_Fuka.pdf)
 <br><br>
 [Geomorphic Controls on Shrub Canopy Size and Spacing of Creosote Bush in Northern Mojave Desert, USA](https://doi.org/10.1007/s10980-020-01149-8)
 <img src="images/BoulderCity.jpg"/>
