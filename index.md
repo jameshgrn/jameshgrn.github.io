@@ -4,7 +4,8 @@ _This page is a work in progress and is updated continously, thanks for visiting
 
 
 ### Update
-I've started my Ph.D work at Indiana University with Professor Doug Edmonds.
+- I will be attending AGU 2021 in New Orleans!
+- I've started my Ph.D work at Indiana University with Professor Doug Edmonds.
 
 ### Sedimentology 
 [Master's Project | The Supply-Generated Sequence: A New Sequence-Stratigraphic Model for Fluvio-Lacustrine Deposits](/Uinta)
