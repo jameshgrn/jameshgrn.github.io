@@ -19,9 +19,3 @@ google_analytics: UA-178433431-1 # your Google Analytics tracking ID here
 kramdown:
   math_engine: mathjax
   syntax_highlighter: rouge
-
-navigation:
-  - title: "Home"
-    url: "/"
-  - title: "CV"
-    url: "/cv"
