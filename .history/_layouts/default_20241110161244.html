@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+  {% include head.html %}
+  <body>
+    <div class="wrapper">
+      <header>
+        <h1><a href="{{ "/" | absolute_url }}">{{ site.title }}</a></h1>
+        
+        {% if site.logo %}
+          <img src="{{site.logo | relative_url}}" alt="Logo" />
+        {% endif %}
+
+        <p>{{ site.description | markdownify }}</p>
+
+        <nav class="navigation">
+          {% for item in site.navigation %}
+            <a href="{{ item.url }}" class="nav-link">{{ item.title }}</a>
+          {% endfor %}
+        </nav>
+      </header>
+      
+      <section>
+        {{ content }}
+      </section>
+      
+      <footer>
+        {% if site.github.is_project_page %}
+        <p>Maintained by <a href="{{ site.github.owner_url }}">{{ site.github.owner_name }}</a></p>
+        {% endif %}
+      </footer>
+    </div>
+    
+    <script src="{{ "/assets/js/projects.js" | relative_url }}"></script>
+  </body>
+</html> 

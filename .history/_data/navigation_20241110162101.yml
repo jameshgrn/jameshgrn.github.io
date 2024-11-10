@@ -1,0 +1,9 @@
+main:
+  - title: "Research"
+    url: /#research-focus
+  - title: "Publications"
+    url: /publications/
+  - title: "Projects"
+    url: /#current-research
+  - title: "CV"
+    url: /pdf/Gearon_James_CV.pdf 

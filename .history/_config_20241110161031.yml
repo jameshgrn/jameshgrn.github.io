@@ -1,0 +1,27 @@
+title: James (Jake) Gearon
+logo: "images/Profile.jpeg"
+description: > 
+  Geomorphologist & Data Scientist | Nature Author
+  <br><br>
+  Investigating sedimentary landscapes through the lens of data science and remote sensing.
+  Specializing in river avulsions, lacustrine systems, and geospatial data engineering.
+  <br><br>
+  <a href="pdf/Gearon_James_CV.pdf">CV</a> |
+  <a href="https://github.com/jameshgrn">GitHub</a> |
+  <a href="https://twitter.com/JakeGearon">Twitter</a> |
+  <a href="https://www.linkedin.com/in/jake-gearon-742767148/">LinkedIn</a>
+  <br><br>
+  Contact: <a href="mailto:jhgearon@iu.edu">jhgearon@iu.edu</a>
+
+theme: jekyll-theme-minimal
+google_analytics: UA-178433431-1
+
+kramdown:
+  math_engine: mathjax
+  syntax_highlighter: rouge
+
+navigation:
+  - title: "Home"
+    url: "/"
+  - title: "CV"
+    url: "/cv"

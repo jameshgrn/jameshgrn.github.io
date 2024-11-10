@@ -1,0 +1,65 @@
+# Site Settings
+locale                   : "en-US"
+title                    : "James (Jake) Gearon"
+title_separator          : "-"
+name                     : &name "James (Jake) Gearon"
+description              : &description "Geomorphologist & Data Scientist"
+url                      : https://jameshgrn.github.io
+baseurl                  : "" 
+repository               : "jameshgrn/jameshgrn.github.io"
+teaser                   : # filename of teaser fallback teaser image placed in /images/, .e.g. "500x300.png"
+breadcrumbs              : false # true, false (default)
+words_per_minute         : 160
+future                   : true
+read_more               : "disabled" # if enabled, adds "Read more" links to excerpts
+talkmap_link            : false #change to true to add link to talkmap on talks page
+comments:
+  provider               : # false (default), "disqus", "discourse", "facebook", "google-plus", "staticman", "custom"
+  disqus:
+    shortname            :
+  discourse:
+    server               : # https://meta.discourse.org/t/embedding-discourse-comments-via-javascript/31963 , e.g.: meta.discourse.org
+  facebook:
+    appid                :
+    num_posts            : # 5 (default)
+    colorscheme          : # "light" (default), "dark"
+staticman:
+  allowedFields          : ['name', 'email', 'url', 'message']
+
+# Site Author
+author:
+  name             : "James (Jake) Gearon"
+  avatar           : "Profile.jpeg"
+  bio              : "Investigating sedimentary landscapes through data science and remote sensing"
+  location         : "Indiana University"
+  employer         : 
+  pubmed           : 
+  googlescholar    : 
+  email            : "jhgearon@iu.edu"
+  researchgate     :
+  uri              :
+  bitbucket        :
+  codepen          :
+  dribbble         :
+  flickr           :
+  facebook         :
+  foursquare       :
+  github           : "jameshgrn"
+  google_plus      :
+  keybase          :
+  instagram        :
+  impactstory      :
+  lastfm           :
+  linkedin         : "jake-gearon-742767148"
+  orcid            : 
+  pinterest        :
+  soundcloud       :
+  stackoverflow    : 
+  steam            :
+  tumblr          :
+  twitter          : "JakeGearon"
+  vine            :
+  weibo           :
+  xing            :
+  youtube         :
+  wikipedia       :

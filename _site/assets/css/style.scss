@@ -1,0 +1,45 @@
+@import "{{ site.theme }}";
+
+body {
+  background-color: #fff;
+  padding: 50px;
+  font: 14px/1.5 "Noto Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  color: #727272;
+  font-weight: 400;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  color: #222;
+  margin: 0 0 20px;
+}
+
+.wrapper {
+  width: 860px;
+  margin: 0 auto;
+}
+
+section {
+  width: 500px;
+  float: right;
+  padding-bottom: 50px;
+}
+
+header {
+  width: 270px;
+  float: left;
+  position: fixed;
+  -webkit-font-smoothing: subpixel-antialiased;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+.publication {
+  margin-bottom: 1.5rem;
+}
+
+.nav-link {
+  margin-right: 1rem;
+}
