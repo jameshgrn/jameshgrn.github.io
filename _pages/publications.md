@@ -3,72 +3,127 @@ layout: single
 title: "Publications & Academic Impact"
 permalink: /publications/
 author_profile: true
+sidebar:
+  - title: "Impact Metrics"
+    text: |
+      <div class="metrics-sidebar">
+        <div class="metric-box">
+          <h3>12</h3>
+          <p>Total Citations</p>
+        </div>
+        <div class="metric-box">
+          <h3>2</h3>
+          <p>h-index</p>
+        </div>
+        <div class="metric-box">
+          <h3>0</h3>
+          <p>i10-index</p>
+        </div>
+      </div>
 ---
-
-{% if site.data.scholar_metrics %}
-## Impact Metrics
-<div class="metrics-container">
-  <div class="metric-box">
-    <h3>{{ site.data.scholar_metrics.total_citations }}</h3>
-    <p>Total Citations</p>
-  </div>
-  <div class="metric-box">
-    <h3>{{ site.data.scholar_metrics.h_index }}</h3>
-    <p>h-index</p>
-  </div>
-  <div class="metric-box">
-    <h3>{{ site.data.scholar_metrics.i10_index }}</h3>
-    <p>i10-index</p>
-  </div>
-</div>
-{% endif %}
 
 ## Featured Publications
 
-{% for post in site.publications reversed %}
-  {% if post.venue contains 'Nature' or post.venue contains 'Science' or post.venue contains 'PNAS' %}
-    <div class="publication-item featured">
-      <div class="pub-image">
-        {% if post.header.teaser %}
-          <img src="{{ post.header.teaser }}" alt="{{ post.title }}">
-        {% endif %}
-      </div>
-      <div class="pub-content">
-        <h3><a href="{{ post.paperurl }}">{{ post.title }}</a></h3>
-        <p class="pub-authors">{{ post.citation | split: '.' | first }}.</p>
-        <p class="pub-venue"><i>{{ post.venue }}</i>, {{ post.date | date: "%Y" }}</p>
-        {% if post.excerpt %}<p class="pub-excerpt">{{ post.excerpt }}</p>{% endif %}
-        <div class="pub-links">
-          {% if post.paperurl %}<a href="{{ post.paperurl }}" class="btn btn--primary">PDF</a>{% endif %}
-          {% if post.code %}<a href="{{ post.code }}" class="btn btn--info">Code</a>{% endif %}
-          {% if post.dataset %}<a href="{{ post.dataset }}" class="btn btn--info">Data</a>{% endif %}
-        </div>
-      </div>
+<div class="publication-item featured">
+  <div class="pub-image">
+    <img src="/images/avulsion_fig1.png" alt="River avulsion patterns">
+  </div>
+  <div class="pub-content">
+    <h3><a href="/files/publications/2024_Nature_Gearon_avulsions.pdf">Rules of river avulsion change downstream</a></h3>
+    <p class="pub-authors">Gearon, J.H., Martin, H., DeLisle, C., Barefoot, E., Mohrig, D., Paola, C., and Edmonds, D.</p>
+    <p class="pub-venue"><i>Nature</i>, 2024</p>
+    <p class="pub-excerpt">This paper presents a novel theoretical framework for predicting river avulsions, with significant implications for flood prediction and infrastructure planning.</p>
+    <div class="pub-links">
+      <a href="/files/publications/2024_Nature_Gearon_avulsions.pdf" class="btn btn--primary">PDF</a>
+      <a href="https://doi.org/..." class="btn btn--info">DOI</a>
     </div>
-  {% endif %}
-{% endfor %}
+  </div>
+</div>
 
 ## All Publications
 
-{% assign grouped_publications = site.publications | group_by_exp: "pub", "pub.date | date: '%Y'" | sort: "name" | reverse %}
+### 2024
 
-{% for year in grouped_publications %}
-### {{ year.name }}
-  {% for post in year.items %}
-    <div class="publication-item">
-      <div class="pub-content">
-        <h4><a href="{{ post.paperurl }}">{{ post.title }}</a></h4>
-        <p class="pub-authors">{{ post.citation | split: '.' | first }}.</p>
-        <p class="pub-venue"><i>{{ post.venue }}</i></p>
-        <div class="pub-links">
-          {% if post.paperurl %}<a href="{{ post.paperurl }}" class="btn btn--primary">PDF</a>{% endif %}
-          {% if post.code %}<a href="{{ post.code }}" class="btn btn--info">Code</a>{% endif %}
-          {% if post.dataset %}<a href="{{ post.dataset }}" class="btn btn--info">Data</a>{% endif %}
-        </div>
-      </div>
+<div class="publication-item">
+  <div class="pub-image">
+    <img src="/images/roughness_fig1.png" alt="Topographic roughness analysis">
+  </div>
+  <div class="pub-content">
+    <h4><a href="/files/publications/2024_AGUAdv_Doane_roughness.pdf">Topographic roughness as an emergent property of geomorphic processes and events</a></h4>
+    <p class="pub-authors">Doane, T.H., Gearon, J.H., Martin, H.K., Yanites, B.J., and Edmonds, D.A.</p>
+    <p class="pub-venue"><i>AGU Advances</i> (Impact Factor: 7.2)</p>
+    <div class="pub-links">
+      <a href="/files/publications/2024_AGUAdv_Doane_roughness.pdf" class="btn btn--primary">PDF</a>
+      <a href="https://doi.org/10.1029/2023AV000921" class="btn btn--info">DOI</a>
     </div>
-  {% endfor %}
-{% endfor %}
+  </div>
+</div>
+
+<div class="publication-item">
+  <div class="pub-image">
+    <img src="/images/mars_fig1.png" alt="Martian chaos terrain fracture geometry">
+  </div>
+  <div class="pub-content">
+    <h4><a href="/files/publications/2024_Icarus_Levy_mars.pdf">Martian chaos terrain fracture geometry indicates drainage and compaction of laterally heterogeneous confined aquifers</a></h4>
+    <p class="pub-authors">Levy, J.S., Subak, T.F., Armstrong, I., [...], Gearon, J.H., et al.</p>
+    <p class="pub-venue"><i>Icarus</i></p>
+    <div class="pub-links">
+      <a href="/files/publications/2024_Icarus_Levy_mars.pdf" class="btn btn--primary">PDF</a>
+      <a href="https://doi.org/..." class="btn btn--info">DOI</a>
+    </div>
+  </div>
+</div>
+
+### 2023
+
+<div class="publication-item">
+  <div class="pub-image">
+    <img src="/images/deltas_fig1.png" alt="Increased sediment connectivity between deltas and deep-water fans">
+  </div>
+  <div class="pub-content">
+    <h4><a href="/files/publications/2023_SedGeol_Liu_deltas.pdf">Increased sediment connectivity between deltas and deep-water fans in closed lake basins</a></h4>
+    <p class="pub-authors">Liu, P., Gong, C., Gearon, J.H., et al.</p>
+    <p class="pub-venue"><i>Sedimentary Geology</i></p>
+    <div class="pub-links">
+      <a href="/files/publications/2023_SedGeol_Liu_deltas.pdf" class="btn btn--primary">PDF</a>
+      <a href="https://doi.org/..." class="btn btn--info">DOI</a>
+    </div>
+  </div>
+</div>
+
+### 2022
+
+<div class="publication-item">
+  <div class="pub-image">
+    <img src="/images/sequence_fig1.png" alt="The supply-generated sequence">
+  </div>
+  <div class="pub-content">
+    <h4><a href="/files/publications/2022_JSR_Gearon_sequence.pdf">The supply-generated sequence: A unified sequence-stratigraphic model</a></h4>
+    <p class="pub-authors">Gearon, J.H., Olariu, C., & Steel, R.J.</p>
+    <p class="pub-venue"><i>Journal of Sedimentary Research</i></p>
+    <div class="pub-links">
+      <a href="/files/publications/2022_JSR_Gearon_sequence.pdf" class="btn btn--primary">PDF</a>
+      <a href="https://doi.org/..." class="btn btn--info">DOI</a>
+    </div>
+  </div>
+</div>
+
+### 2020
+
+<div class="publication-item">
+  <div class="pub-image">
+    <img src="/images/creosote_fig1.png" alt="Geomorphic controls on shrub canopy volume and spacing">
+  </div>
+  <div class="pub-content">
+    <h4><a href="/files/publications/2020_LandEcol_Gearon_creosote.pdf">Geomorphic controls on shrub canopy volume and spacing</a></h4>
+    <p class="pub-authors">Gearon, J.H., & Young, M.H.</p>
+    <p class="pub-venue"><i>Landscape Ecology</i></p>
+    <div class="pub-links">
+      <a href="/files/publications/2020_LandEcol_Gearon_creosote.pdf" class="btn btn--primary">PDF</a>
+      <a href="https://doi.org/..." class="btn btn--info">DOI</a>
+    </div>
+  </div>
+</div>
 
 <div class="page__footer">
   <p><a href="{{ site.author.googlescholar }}">View all publications on Google Scholar</a></p>

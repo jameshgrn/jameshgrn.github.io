@@ -56,16 +56,5 @@ This work presents a novel theoretical framework for predicting river avulsions,
    - Journal: Icarus
    - Status: Under Review
 
-## Impact Metrics
-- Total Citations: 19+
-- h-index: 3
-- Publications in Nature: 1
-- Average Journal Impact Factor: 17.606
-
-## Research Coverage
-- Featured in Nature's "News & Views"
-- Highlighted in AGU Editor's Choice
-- Media coverage in Science Daily
-- Featured in IU Earth Sciences Newsletter
 
 [Back to Home](/) | [View CV](/pdf/Gearon_James_CV.pdf) 

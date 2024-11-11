@@ -13,32 +13,33 @@ def fetch_metrics():
         scholarly.use_proxy(pg)
         
         # Search for your profile using ID
-        author = scholarly.search_author_id('ppDq7_gAAAAJ')
+        search_query = scholarly.search_author_id('ppDq7_gAAAAJ')
+        author = next(search_query)
         
-        # Fill the author data
-        author_info = scholarly.fill(author)
+        # Fill in author data
+        author = scholarly.fill(author)
         
         metrics = {
-            'total_citations': getattr(author_info, 'citedby', 0),
-            'h_index': getattr(author_info, 'hindex', 0),
-            'i10_index': getattr(author_info, 'i10index', 0),
+            'total_citations': author['citedby'],
+            'h_index': author['hindex'],
+            'i10_index': author['i10index'],
             'papers': [],
             'updated': datetime.now().isoformat(),
         }
         
         # Get individual paper citations
-        for pub in getattr(author_info, 'publications', []):
-            pub_complete = scholarly.fill(pub)
+        for pub in author['publications']:
+            pub = scholarly.fill(pub)
             metrics['papers'].append({
-                'title': pub_complete.bib.get('title', ''),
-                'year': pub_complete.bib.get('year', 'N/A'),
-                'citations': getattr(pub_complete, 'citedby', 0),
-                'venue': pub_complete.bib.get('venue', 'N/A')
+                'title': pub['bib']['title'],
+                'year': pub['bib'].get('year', 'N/A'),
+                'citations': pub['num_citations'],
+                'venue': pub['bib'].get('venue', 'N/A')
             })
         
         # Save metrics to file
         os.makedirs('_data', exist_ok=True)
-        with open('_data/scholar_metrics.json', 'w') as f:
+        with open('_data/metrics.json', 'w') as f:
             json.dump(metrics, f, indent=2)
             
         return metrics

@@ -65,13 +65,28 @@
   padding: 1em;
   border-radius: 8px;
   transition: all 0.2s ease;
+  display: flex;
+  gap: 2em;
   
   &.featured {
     background: #f8f9fa;
     border-left: 4px solid #2a54a9;
   }
   
+  .pub-image {
+    flex: 0 0 200px;
+    
+    img {
+      width: 100%;
+      height: auto;
+      border-radius: 4px;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    }
+  }
+  
   .pub-content {
+    flex: 1;
+    
     h3, h4 {
       margin: 0 0 0.5em;
       
@@ -99,6 +114,7 @@
     .pub-excerpt {
       font-size: 0.9em;
       margin: 1em 0;
+      line-height: 1.6;
     }
     
     .pub-links {
@@ -107,7 +123,53 @@
       .btn {
         margin-right: 0.5em;
         font-size: 0.8em;
+        padding: 0.4em 1em;
+        border-radius: 4px;
+        
+        &--primary {
+          background: #2a54a9;
+          color: white;
+        }
+        
+        &--info {
+          background: #f8f9fa;
+          color: #2a54a9;
+          border: 1px solid #2a54a9;
+        }
       }
+    }
+  }
+}
+
+@media (max-width: 768px) {
+  .publication-item {
+    flex-direction: column;
+    
+    .pub-image {
+      flex: 0 0 auto;
+      margin-bottom: 1em;
+    }
+  }
+}
+
+.metrics-sidebar {
+  .metric-box {
+    text-align: center;
+    padding: 0.8em;
+    background: #f8f9fa;
+    border-radius: 8px;
+    margin-bottom: 1em;
+    
+    h3 {
+      margin: 0;
+      color: #2a54a9;
+      font-size: 1.5em;
+    }
+    
+    p {
+      margin: 0.3em 0 0;
+      font-size: 0.8em;
+      color: #666;
     }
   }
 } 
