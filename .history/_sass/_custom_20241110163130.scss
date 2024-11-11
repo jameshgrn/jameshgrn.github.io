@@ -1,0 +1,36 @@
+/* ==========================================================================
+   CUSTOM STYLES
+   ========================================================================== */
+
+.archive__item-title {
+  margin-top: 1em;
+  margin-bottom: 0.25em;
+  font-family: $sans-serif-narrow;
+  line-height: initial;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  
+  a {
+    color: inherit;
+    text-decoration: none;
+    
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+}
+
+.archive__item-excerpt {
+  margin-top: 0;
+  font-size: $type-size-6;
+  
+  & + p {
+    text-indent: 0;
+  }
+}
+
+.page__content {
+  p, li, dl {
+    font-size: 1em;
+  }
+} 

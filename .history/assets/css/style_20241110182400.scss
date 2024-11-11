@@ -1,0 +1,84 @@
+@import "{{ site.theme }}";
+
+/* Main layout */
+.wrapper {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+  position: relative;
+  clear: both;
+  overflow: hidden;  /* Clear floats */
+}
+
+/* Sidebar */
+.sidebar {
+  float: left;
+  width: 250px;
+  position: fixed;
+  padding-right: 20px;
+}
+
+/* Main content area */
+.main-content {
+  float: right;
+  width: calc(100% - 300px);  /* 250px sidebar + 50px gap */
+  margin-left: 300px;
+}
+
+/* Author profile */
+.author__avatar {
+  margin-bottom: 20px;
+  
+  img {
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    object-fit: cover;
+  }
+}
+
+.author__content {
+  margin-bottom: 20px;
+  
+  h3 {
+    margin: 0;
+    font-size: 1.5em;
+  }
+}
+
+/* Navigation */
+.masthead {
+  margin-bottom: 40px;
+  border-bottom: 1px solid #f2f3f3;
+  
+  nav {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 1em;
+  }
+}
+
+/* Responsive */
+@media screen and (max-width: 1000px) {
+  .wrapper {
+    padding: 10px;
+  }
+  
+  .sidebar {
+    position: relative;
+    float: none;
+    width: 100%;
+    margin-bottom: 40px;
+  }
+  
+  .main-content {
+    float: none;
+    width: 100%;
+    margin-left: 0;
+  }
+  
+  .author__avatar img {
+    width: 150px;
+    height: 150px;
+  }
+}

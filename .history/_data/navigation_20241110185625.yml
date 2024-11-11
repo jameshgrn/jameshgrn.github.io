@@ -1,0 +1,13 @@
+# Main navigation links
+main:
+  - title: "Research"
+    url: /#research-focus
+
+  - title: "Publications"
+    url: /publications/
+
+  - title: "Random Musings"
+    url: /random-musings/
+    
+  - title: "CV"
+    url: /pdf/Gearon_James_CV.pdf
