@@ -45,7 +45,7 @@ Key Research Areas:
 
 ### Publications
 
-1. **James H. Gearon**, Harrison Martin, Clarke DeLisle, Eric Barefoot, David Mohrig, Chris Paola, and Douglas Edmonds. *Rules of river avulsion change downstream* [Nature, 2024 (accepted)].
+1. **James H. Gearon**, Harrison Martin, Clarke DeLisle, Eric Barefoot, David Mohrig, Chris Paola, and Douglas Edmonds. *Rules of river avulsion change downstream*. [_Nature_, 2024](https://doi.org/10.1038/s41586-024-07964-2).
 
 2. **James H. Gearon**, Cornel Olariu, and Ronald J. Steel. *The supply-generated sequence: A unified sequence-stratigraphic model for closed lacustrine sedimentary basins with evidence from the Green River Formation, Uinta Basin, Utah, U.S.A.* [Journal of Sedimentary Research, 92(9):813–835, 2022](https://doi.org/10.2110/jsr.2022.043).
 
