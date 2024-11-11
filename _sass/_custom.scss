@@ -172,4 +172,19 @@
       color: #666;
     }
   }
+}
+
+.pub-title {
+  font-size: 1.8em !important;
+  margin-bottom: 0.5em !important;
+  line-height: 1.2;
+  
+  a {
+    color: #2a54a9;
+    text-decoration: none;
+    
+    &:hover {
+      text-decoration: underline;
+    }
+  }
 } 

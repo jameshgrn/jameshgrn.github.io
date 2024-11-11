@@ -1,9 +1,14 @@
 ---
-layout: home
+layout: splash
 author_profile: true
 header:
-  image: /images/uintachannel.jpg
-  caption: "Uinta Basin channel deposits"
+  overlay_image: /images/headerphoto.jpeg
+  overlay_filter: rgba(0, 0, 0, 0.3)  # Darker overlay
+  caption: "Growth Strata in the Peruvian Andean Wedge Top, 2019"
+  actions:
+    - label: "View Publications"
+      url: "/publications/"
+excerpt: "Investigating sedimentary landscapes through the lens of data science and remote sensing"
 ---
 
 ## James "Jake" Gearon — Research & Curriculum Vitae
@@ -13,8 +18,8 @@ _This page is a work in progress and is updated continuously, thanks for visitin
 ### Research Focus
 
 <figure class="align-right" style="width: 350px">
-  <img src="/images/avulsion.png" alt="River avulsion patterns">
-  <figcaption>River avulsion patterns from our Nature paper</figcaption>
+  <img src="/images/homepagephoto.jpeg" alt="A side channel on the Magdalena River, Colombia. Taken on a recent NSF trip.">
+  <figcaption>A side channel on the Magdalena River, Colombia. Taken on a recent NSF trip.</figcaption>
 </figure>
 
 My research harnesses the ongoing data revolution to investigate the statistical, morphodynamic, and scaling properties of sedimentary landscapes: particularly rivers, deltas, and lakes. The goal of this approach is to develop predictive models of complex natural phenomena, which is crucial in the context of natural hazards in a warming world.

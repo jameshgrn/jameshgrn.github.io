@@ -29,7 +29,7 @@ sidebar:
     <img src="/images/avulsion.png" alt="River avulsion patterns">
   </div>
   <div class="pub-content">
-    <h3><a href="/files/publications/2024_Nature_Gearon_avulsions.pdf">Rules of river avulsion change downstream</a></h3>
+    <h2 class="pub-title"><a href="/files/publications/2024_Nature_Gearon_avulsions.pdf">Rules of river avulsion change downstream</a></h2>
     <p class="pub-authors">Gearon, J.H., Martin, H., DeLisle, C., Barefoot, E., Mohrig, D., Paola, C., and Edmonds, D.</p>
     <p class="pub-venue"><i>Nature</i>, 2024</p>
     <p class="pub-excerpt">This paper presents a novel theoretical framework for predicting river avulsions.</p>
@@ -45,11 +45,8 @@ sidebar:
 ### 2024
 
 <div class="publication-item">
-  <div class="pub-image">
-    <img src="/images/BoulderCity.jpg" alt="Boulder City landscape">
-  </div>
   <div class="pub-content">
-    <h4><a href="/files/publications/2024_AGUAdv_Doane_roughness.pdf">Topographic roughness as an emergent property of geomorphic processes and events</a></h4>
+    <h2 class="pub-title"><a href="/files/publications/2024_AGUAdv_Doane_roughness.pdf">Topographic roughness as an emergent property of geomorphic processes and events</a></h2>
     <p class="pub-authors">Doane, T.H., Gearon, J.H., Martin, H.K., Yanites, B.J., and Edmonds, D.A.</p>
     <p class="pub-venue"><i>AGU Advances</i> (Impact Factor: 7.2)</p>
     <div class="pub-links">
@@ -80,10 +77,10 @@ sidebar:
 
 <div class="publication-item">
   <div class="pub-image">
-    <img src="/images/creosote_fig1.png" alt="Geomorphic controls on shrub canopy volume and spacing">
+    <img src="/images/BoulderCity.jpg" alt="Boulder City landscape">
   </div>
   <div class="pub-content">
-    <h4><a href="/files/publications/2020_LandEcol_Gearon_creosote.pdf">Geomorphic controls on shrub canopy volume and spacing</a></h4>
+    <h2 class="pub-title"><a href="/files/publications/2020_LandEcol_Gearon_creosote.pdf">Geomorphic controls on shrub canopy volume and spacing</a></h2>
     <p class="pub-authors">Gearon, J.H., & Young, M.H.</p>
     <p class="pub-venue"><i>Landscape Ecology</i></p>
     <div class="pub-links">
