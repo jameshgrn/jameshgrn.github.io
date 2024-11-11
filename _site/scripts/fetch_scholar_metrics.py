@@ -16,24 +16,24 @@ def fetch_metrics():
         author = scholarly.search_author_id('ppDq7_gAAAAJ')
         
         # Fill the author data
-        author = scholarly.fill(author)
+        author_info = scholarly.fill(author)
         
         metrics = {
-            'total_citations': author.get('citedby', 0),
-            'h_index': author.get('hindex', 0),
-            'i10_index': author.get('i10index', 0),
+            'total_citations': getattr(author_info, 'citedby', 0),
+            'h_index': getattr(author_info, 'hindex', 0),
+            'i10_index': getattr(author_info, 'i10index', 0),
             'papers': [],
             'updated': datetime.now().isoformat(),
         }
         
         # Get individual paper citations
-        for pub in author.get('publications', []):
-            filled_pub = scholarly.fill(pub)
+        for pub in getattr(author_info, 'publications', []):
+            pub_complete = scholarly.fill(pub)
             metrics['papers'].append({
-                'title': filled_pub.get('bib', {}).get('title', ''),
-                'year': filled_pub.get('bib', {}).get('pub_year', 'N/A'),
-                'citations': filled_pub.get('num_citations', 0),
-                'venue': filled_pub.get('bib', {}).get('venue', 'N/A')
+                'title': pub_complete.bib.get('title', ''),
+                'year': pub_complete.bib.get('year', 'N/A'),
+                'citations': getattr(pub_complete, 'citedby', 0),
+                'venue': pub_complete.bib.get('venue', 'N/A')
             })
         
         # Save metrics to file

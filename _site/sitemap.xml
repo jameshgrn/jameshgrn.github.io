@@ -1,18 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9 http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd" xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 <url>
-<loc>http://localhost:4000/projects/avulsion/</loc>
-</url>
-<url>
-<loc>http://localhost:4000/projects/lakepy/</loc>
-</url>
-<url>
-<loc>http://localhost:4000/projects/mojave/</loc>
-</url>
-<url>
-<loc>http://localhost:4000/projects/uinta/</loc>
-</url>
-<url>
 <loc>http://localhost:4000/publication/2020-landscape-ecology</loc>
 <lastmod>2020-01-01T00:00:00+00:00</lastmod>
 </url>
@@ -35,6 +23,9 @@
 <url>
 <loc>http://localhost:4000/publication/2024-nature-avulsions</loc>
 <lastmod>2024-01-01T00:00:00+00:00</lastmod>
+</url>
+<url>
+<loc>http://localhost:4000/random-musings/The%20Semantic%20Mirror%20Effect/</loc>
 </url>
 <url>
 <loc>http://localhost:4000/</loc>
@@ -86,23 +77,23 @@
 </url>
 <url>
 <loc>http://localhost:4000/files/publications/2020_LandEcol_Gearon_creosote.pdf</loc>
-<lastmod>2024-11-10T23:43:26+00:00</lastmod>
+<lastmod>2024-11-11T01:53:36+00:00</lastmod>
 </url>
 <url>
 <loc>http://localhost:4000/files/publications/2022_JSR_Gearon_sequence.pdf</loc>
-<lastmod>2024-11-10T23:43:48+00:00</lastmod>
+<lastmod>2024-11-11T01:53:36+00:00</lastmod>
 </url>
 <url>
 <loc>http://localhost:4000/files/publications/2023_SedGeol_Liu_deltas.pdf</loc>
-<lastmod>2024-11-10T23:49:33+00:00</lastmod>
+<lastmod>2024-11-11T01:53:36+00:00</lastmod>
 </url>
 <url>
 <loc>http://localhost:4000/files/publications/2024_AGUAdv_Doane_roughness.pdf</loc>
-<lastmod>2024-11-10T23:46:53+00:00</lastmod>
+<lastmod>2024-11-11T01:53:36+00:00</lastmod>
 </url>
 <url>
 <loc>http://localhost:4000/files/publications/2024_Nature_Gearon_avulsions.pdf</loc>
-<lastmod>2024-11-10T23:42:38+00:00</lastmod>
+<lastmod>2024-11-11T01:53:37+00:00</lastmod>
 </url>
 <url>
 <loc>http://localhost:4000/pdf/ESIP_Proposal_2020_Gearon_Fuka.pdf</loc>
@@ -110,7 +101,7 @@
 </url>
 <url>
 <loc>http://localhost:4000/pdf/Gearon_James_CV.pdf</loc>
-<lastmod>2024-11-11T01:36:18+00:00</lastmod>
+<lastmod>2024-11-11T01:53:37+00:00</lastmod>
 </url>
 <url>
 <loc>http://localhost:4000/pdf/sample_presentation.pdf</loc>

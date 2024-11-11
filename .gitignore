@@ -17,4 +17,4 @@ _site/
 
 # System files
 .DS_Store
-.env 
+.env _site/
