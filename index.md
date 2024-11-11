@@ -27,10 +27,9 @@ _This page is a work in progress and is updated continuously, thanks for visitin
   <figcaption>A side channel on the Magdalena River, Colombia. Taken on a recent NSF trip.</figcaption>
 </figure>
 
-My research harnesses the ongoing data revolution to investigate the statistical, morphodynamic, and scaling properties of sedimentary landscapes: particularly rivers, deltas, and lakes. The goal of this approach is to develop predictive models of complex natural phenomena, which is crucial in the context of natural hazards in a warming world.
+My research harnesses the ongoing data revolution to investigate the statistical, morphodynamic, and scaling properties of sedimentary landscapes: particularly rivers, deltas, and lakes. The goal of this approach is to develop predictive models of complex natural phenomena.
 
-The Earth sciences is currently transitioning from a data-poor field to a data-rich one. I use industry-grade geospatial data engineering and applied data science—largely through the lens of remote sensing—to investigate classic problems in geomorphology and sedimentology. My recent work on predicting river avulsions demonstrates how this approach can result in high-impact science with broad appeal.
-
+The Earth sciences is currently transitioning from a data-poor field to a data-rich one. I use geospatial data engineering and applied data science—largely through the lens of remote sensing—to investigate classic problems in geomorphology and sedimentology. 
 Key Research Areas:
 
 1. **Natural Hazards under Climate Change**: Investigating river avulsions and their impact on flooding and infrastructure. Recent avulsions in India alone have displaced millions and damaged agricultural and transportation infrastructure.
