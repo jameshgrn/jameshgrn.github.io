@@ -1,6 +1,6 @@
 ---
 layout: single
-title: "Publications & Academic Impact"
+title: "Publications"
 permalink: /publications/
 author_profile: true
 sidebar:
