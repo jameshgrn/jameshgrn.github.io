@@ -19,7 +19,7 @@
 
 
 
-<title>Publications &amp; Academic Impact - James (Jake) Gearon</title>
+<title>Derivation of Softmax Random Walk Algorithm - James (Jake) Gearon</title>
 
 
 
@@ -29,13 +29,15 @@
 
 <meta property="og:locale" content="en-US">
 <meta property="og:site_name" content="James (Jake) Gearon">
-<meta property="og:title" content="Publications &amp; Academic Impact">
+<meta property="og:title" content="Derivation of Softmax Random Walk Algorithm">
 
 
-  <link rel="canonical" href="https://jameshgrn.github.io/publications/">
-  <meta property="og:url" content="https://jameshgrn.github.io/publications/">
+  <link rel="canonical" href="https://jameshgrn.github.io/random-musings/derivation-of-softmax-random-walk-algorithm">
+  <meta property="og:url" content="https://jameshgrn.github.io/random-musings/derivation-of-softmax-random-walk-algorithm">
 
 
+
+  <meta property="og:description" name="description" content="Supplementary MethodObjective:To compute the probability of moving from a current position $(x, y)$ to a neighboring position $(i, j)$ by blending terrain slope and movement inertia, considering valid data and avoiding immediate return to the last position.">
 
 
 
@@ -216,40 +218,19 @@
 </div>
 
   
-    
-      
-      <h3>Impact Metrics</h3>
-      <div class="metrics-sidebar">
-  <div class="metric-box">
-    <h3>12</h3>
-    <p>Total Citations</p>
-  </div>
-  <div class="metric-box">
-    <h3>2</h3>
-    <p>h-index</p>
-  </div>
-  <div class="metric-box">
-    <h3>0</h3>
-    <p>i10-index</p>
-  </div>
-</div>
-
-    
-    
-  
   </div>
 
 
   <article class="page" itemscope itemtype="http://schema.org/CreativeWork">
-    <meta itemprop="headline" content="Publications &amp; Academic Impact">
-    
+    <meta itemprop="headline" content="Derivation of Softmax Random Walk Algorithm">
+    <meta itemprop="description" content="Supplementary MethodObjective:To compute the probability of moving from a current position $(x, y)$ to a neighboring position $(i, j)$ by blending terrain slope and movement inertia, considering valid data and avoiding immediate return to the last position.">
     
     
 
     <div class="page__inner-wrap">
       
         <header>
-          <h1 class="page__title" itemprop="headline">Publications &amp; Academic Impact
+          <h1 class="page__title" itemprop="headline">Derivation of Softmax Random Walk Algorithm
 </h1>
           
         
@@ -259,77 +240,76 @@
       
 
       <section class="page__content" itemprop="text">
-        <h2 id="featured-publications">Featured Publications</h2>
+        <h3 id="supplementary-method">Supplementary Method</h3>
+<h4 id="objective">Objective:</h4>
+<p>To compute the probability of moving from a current position $(x, y)$ to a neighboring position $(i, j)$ by blending terrain slope and movement inertia, considering valid data and avoiding immediate return to the last position.</p>
 
-<div class="publication-item featured">
-  <div class="pub-image">
-    <img src="/images/avulsion.png" alt="River avulsion patterns" />
-  </div>
-  <div class="pub-content">
-    <h2 class="pub-title"><a href="/files/publications/2024_Nature_Gearon_avulsions.pdf">Rules of river avulsion change downstream</a></h2>
-    <p class="pub-authors">Gearon, J.H., Martin, H., DeLisle, C., Barefoot, E., Mohrig, D., Paola, C., and Edmonds, D.</p>
-    <p class="pub-venue"><i>Nature</i>, 2024</p>
-    <p class="pub-excerpt">This paper presents a novel theoretical framework for predicting river avulsions.</p>
-    <div class="pub-links">
-      <a href="/files/publications/2024_Nature_Gearon_avulsions.pdf" class="btn btn--primary">PDF</a>
-      <a href="https://doi.org/..." class="btn btn--info">DOI</a>
-    </div>
-  </div>
-</div>
+<h4 id="preliminaries-and-definitions">Preliminaries and Definitions:</h4>
 
-<h2 id="all-publications">All Publications</h2>
+<h5 id="notations">Notations:</h5>
+<ul>
+  <li>$(x, y)$: Current Position</li>
+  <li>$(i, j)$: Neighboring Position</li>
+</ul>
 
-<h3 id="2024">2024</h3>
+<h5 id="parameters">Parameters:</h5>
+<ul>
+  <li>$\phi$: Weighting factor for slope.</li>
+  <li>$\psi$: Weighting factor for inertia.</li>
+  <li>$\omega$: Blending factor between inertia and slope.</li>
+</ul>
 
-<div class="publication-item">
-  <div class="pub-content">
-    <h2 class="pub-title"><a href="/files/publications/2024_AGUAdv_Doane_roughness.pdf">Topographic roughness as an emergent property of geomorphic processes and events</a></h2>
-    <p class="pub-authors">Doane, T.H., Gearon, J.H., Martin, H.K., Yanites, B.J., and Edmonds, D.A.</p>
-    <p class="pub-venue"><i>AGU Advances</i> (Impact Factor: 7.2)</p>
-    <div class="pub-links">
-      <a href="/files/publications/2024_AGUAdv_Doane_roughness.pdf" class="btn btn--primary">PDF</a>
-      <a href="https://doi.org/10.1029/2023AV000921" class="btn btn--info">DOI</a>
-    </div>
-  </div>
-</div>
+<h5 id="cosine-similarity">Cosine Similarity:</h5>
+<p>Given two vectors $A$ and $B$, the cosine similarity, $\text{cosine_similarity}(A, B)$, is: 
+\(\text{cosine\_similarity}(A, B) = \frac{A \cdot B}{\|A\|_2 \|B\|_2}\)</p>
 
-<h3 id="2022">2022</h3>
+<h5 id="softmax-transformation">Softmax Transformation:</h5>
+<p>For a vector $z$ with components $z_1, z_2, … z_k$, the softmax function, denoted as $\text{softmax}(z)$, is defined as:</p>
 
-<div class="publication-item">
-  <div class="pub-image">
-    <img src="/images/uintachannel.jpg" alt="Uinta Basin channel deposits" />
-  </div>
-  <div class="pub-content">
-    <h4><a href="/files/publications/2022_JSR_Gearon_sequence.pdf">The supply-generated sequence: A unified sequence-stratigraphic model</a></h4>
-    <p class="pub-authors">Gearon, J.H., Olariu, C., &amp; Steel, R.J.</p>
-    <p class="pub-venue"><i>Journal of Sedimentary Research</i></p>
-    <div class="pub-links">
-      <a href="/files/publications/2022_JSR_Gearon_sequence.pdf" class="btn btn--primary">PDF</a>
-      <a href="https://doi.org/10.2110/jsr.2022.043" class="btn btn--info">DOI</a>
-    </div>
-  </div>
-</div>
+\[\text{softmax}(z)_j = \frac{e^{z_j}}{\sum_{l=1}^{k} e^{z_l}}\]
 
-<h3 id="2020">2020</h3>
+<h4 id="elements-calculation">Elements Calculation:</h4>
 
-<div class="publication-item">
-  <div class="pub-image">
-    <img src="/images/BoulderCity.jpg" alt="Boulder City landscape" />
-  </div>
-  <div class="pub-content">
-    <h2 class="pub-title"><a href="/files/publications/2020_LandEcol_Gearon_creosote.pdf">Geomorphic controls on shrub canopy volume and spacing</a></h2>
-    <p class="pub-authors">Gearon, J.H., &amp; Young, M.H.</p>
-    <p class="pub-venue"><i>Landscape Ecology</i></p>
-    <div class="pub-links">
-      <a href="/files/publications/2020_LandEcol_Gearon_creosote.pdf" class="btn btn--primary">PDF</a>
-      <a href="https://doi.org/..." class="btn btn--info">DOI</a>
-    </div>
-  </div>
-</div>
+<h5 id="slope-s_ij">Slope, $S_{i,j}$:</h5>
+<p>Given:</p>
+<ul>
+  <li>$e_c$ and $e_n$ as elevations at current position and neighbor.</li>
+  <li>$dx$ and $dy$ as absolute differences in x and y coordinates.
+The slope $S_{i,j}$ between positions is calculated as follows, considering the handling of invalid data and the distance for diagonal vs. orthogonal moves:</li>
+</ul>
 
-<div class="page__footer">
-  <p><a href="https://scholar.google.com/citations?user=ppDq7_gAAAAJ">View all publications on Google Scholar</a></p>
-</div>
+\[S_{i,j} = 
+\begin{cases} 
+\text{np.NINF} &amp; \text{if } e_c \text{ or } e_n \text{ is invalid or } e_c = e_n = \text{no\_data\_value}\\
+\frac{e_c - e_n}{\sqrt{2}} &amp; \text{if } dx = dy \text{ (diagonal move)}\\
+\frac{e_c - e_n}{1} &amp; \text{if } dx \neq dy \text{ (orthogonal move)}
+\end{cases}\]
+
+<h5 id="inertia-i_ij">Inertia, $I_{i,j}$:</h5>
+<p>Using the last movement vector $V_{last} = [dx_{last}, dy_{last}]$ and the direction vector $V_{direction} = [i-x, j-y]$.</p>
+
+\[I_{i,j} = \left( \frac{1 + \text{cosine\_similarity}(V_{last}, V_{direction})}{2} \right)\]
+
+<h4 id="combining-slope-and-inertia">Combining Slope and Inertia:</h4>
+
+<h5 id="raw-combined-weight">Raw Combined Weight:</h5>
+<p>Blend slope and inertia using:
+\(W_{i,j}^{raw} = (1 - \omega) \psi I_{i,j} + \omega \phi  S_{i,j}\)</p>
+
+<h4 id="probabilistic-decision-model">Probabilistic Decision Model:</h4>
+
+<h5 id="softmax-transformation-1">Softmax Transformation:</h5>
+<p>Compute the transition probabilities by applying the softmax function to the combined weights directly:
+\(P((x, y) \to (i,j)) = \text{softmax}(W^{raw})_{i,j} \to \frac{e^{W^{raw}_{i,j}}}{\sum_{(k,l) \in \text{neighbors}} e^{W^{raw}_{k,l}}}\)
+Here, $(k, l)$ ranges over all positions neighboring $(x, y)$ that are potential candidates for movement, excluding the current position itself and any positions that would constitute an immediate return to the last position.</p>
+<h5 id="computation">Computation:</h5>
+<ol>
+  <li>For $(x, y)$, calculate $S_{i,j}$ and $I_{i,j}$ for all valid neighbors, excluding the immediate last position to prevent back-and-forth movement.</li>
+  <li>Compute the raw combined weight, $W_{i,j}^{raw}$, for each neighbor by blending inertia and slope.</li>
+  <li>Apply the softmax function to the combined weights to get probabilities for each neighbor.</li>
+  <li>Select a neighbor $(i,j)$ based on these probabilities.</li>
+  <li>Update $(x,y)$ to $(i,j)$ and continue, ensuring to handle masked or invalid elevation data appropriately.</li>
+</ol>
 
 
         
@@ -353,15 +333,26 @@
     <h4 class="page__share-title">Share on</h4>
   
 
-  <a href="https://twitter.com/intent/tweet?text=https://jameshgrn.github.io/publications/" class="btn btn--twitter" title="Share on Twitter"><i class="fab fa-twitter" aria-hidden="true"></i><span> Twitter</span></a>
+  <a href="https://twitter.com/intent/tweet?text=https://jameshgrn.github.io/random-musings/derivation-of-softmax-random-walk-algorithm" class="btn btn--twitter" title="Share on Twitter"><i class="fab fa-twitter" aria-hidden="true"></i><span> Twitter</span></a>
 
-  <a href="https://www.facebook.com/sharer/sharer.php?u=https://jameshgrn.github.io/publications/" class="btn btn--facebook" title="Share on Facebook"><i class="fab fa-facebook" aria-hidden="true"></i><span> Facebook</span></a>
+  <a href="https://www.facebook.com/sharer/sharer.php?u=https://jameshgrn.github.io/random-musings/derivation-of-softmax-random-walk-algorithm" class="btn btn--facebook" title="Share on Facebook"><i class="fab fa-facebook" aria-hidden="true"></i><span> Facebook</span></a>
 
-  <a href="https://www.linkedin.com/shareArticle?mini=true&url=https://jameshgrn.github.io/publications/" class="btn btn--linkedin" title="Share on LinkedIn"><i class="fab fa-linkedin" aria-hidden="true"></i><span> LinkedIn</span></a>
+  <a href="https://www.linkedin.com/shareArticle?mini=true&url=https://jameshgrn.github.io/random-musings/derivation-of-softmax-random-walk-algorithm" class="btn btn--linkedin" title="Share on LinkedIn"><i class="fab fa-linkedin" aria-hidden="true"></i><span> LinkedIn</span></a>
 </section>
 
       
 
+
+  <nav class="pagination">
+    
+      <a href="https://jameshgrn.github.io/random-musings/a-dimensionless-analysis-of-the-shear-stress-ratio-on-an-alluvial-ridge" class="pagination--pager" title="A dimensionless analysis of the shear stress ratio on an alluvial ridge
+">Previous</a>
+    
+    
+      <a href="https://jameshgrn.github.io/random-musings/new-resistance" class="pagination--pager" title="New Resistance
+">Next</a>
+    
+  </nav>
 
     </div>
 
