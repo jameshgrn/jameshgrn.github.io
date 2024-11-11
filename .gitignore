@@ -1,0 +1,20 @@
+# Large files
+files/talks/*.pptx
+files/talks/*.pdf
+_site/files/talks/
+*.pptx
+*.pack
+
+# Jekyll site
+_site/
+.sass-cache/
+.jekyll-cache/
+.jekyll-metadata
+
+# History files
+.history/
+.whisper/
+
+# System files
+.DS_Store
+.env 
