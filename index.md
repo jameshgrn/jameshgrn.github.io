@@ -1,15 +1,19 @@
 ---
-layout: splash
-author_profile: true
+title: "James (Jake) Gearon"
+layout: home
+classes:
+  - landing
+  - dark-theme
 header:
-  overlay_image: /images/headerphoto.jpeg
-  overlay_filter: "0.2"  # Less dark overlay
+  overlay_color: "#000"
+  overlay_filter: "0.5"
+  overlay_image: images/headerphoto.jpeg
   caption: "Growth Strata in the Peruvian Andean Wedge Top, 2019"
   actions:
     - label: "View Publications"
       url: "/publications/"
-title: "James (Jake) Gearon"
 excerpt: "Investigating sedimentary landscapes through the lens of data science and remote sensing"
+author_profile: true
 ---
 
 ## James "Jake" Gearon — Research & Curriculum Vitae
@@ -19,7 +23,7 @@ _This page is a work in progress and is updated continuously, thanks for visitin
 ### Research Focus
 
 <figure class="align-right" style="width: 350px">
-  <img src="/images/homepagephoto.jpeg" alt="A side channel on the Magdalena River, Colombia. Taken on a recent NSF trip.">
+  <img src="images/homepagephoto.jpeg" alt="A side channel on the Magdalena River, Colombia. Taken on a recent NSF trip.">
   <figcaption>A side channel on the Magdalena River, Colombia. Taken on a recent NSF trip.</figcaption>
 </figure>
 
