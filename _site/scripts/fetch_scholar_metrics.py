@@ -15,25 +15,25 @@ def fetch_metrics():
         # Search for your profile using ID
         author = scholarly.search_author_id('ppDq7_gAAAAJ')
         
-        # Get complete author info
-        author_info = author.fill()
+        # Fill the author data
+        author = scholarly.fill(author)
         
         metrics = {
-            'total_citations': author_info.citedby,
-            'h_index': author_info.hindex,
-            'i10_index': author_info.i10index,
+            'total_citations': author.get('citedby', 0),
+            'h_index': author.get('hindex', 0),
+            'i10_index': author.get('i10index', 0),
             'papers': [],
             'updated': datetime.now().isoformat(),
         }
         
         # Get individual paper citations
-        for pub in author_info.publications:
-            pub_complete = pub.fill()
+        for pub in author.get('publications', []):
+            filled_pub = scholarly.fill(pub)
             metrics['papers'].append({
-                'title': pub_complete.bib.get('title'),
-                'year': pub_complete.bib.get('year', 'N/A'),
-                'citations': pub_complete.citedby,
-                'venue': pub_complete.bib.get('venue', 'N/A')
+                'title': filled_pub.get('bib', {}).get('title', ''),
+                'year': filled_pub.get('bib', {}).get('pub_year', 'N/A'),
+                'citations': filled_pub.get('num_citations', 0),
+                'venue': filled_pub.get('bib', {}).get('venue', 'N/A')
             })
         
         # Save metrics to file
@@ -44,12 +44,14 @@ def fetch_metrics():
         return metrics
         
     except Exception as e:
-        print(f"Error fetching metrics: {e}")
+        print(f"Error fetching metrics: {str(e)}")
         return None
 
 if __name__ == "__main__":
+    print("Fetching Google Scholar metrics...")
     metrics = fetch_metrics()
     if metrics:
         print(f"Total citations: {metrics['total_citations']}")
         print(f"h-index: {metrics['h_index']}")
         print(f"i10-index: {metrics['i10_index']}")
+    print("Done!")

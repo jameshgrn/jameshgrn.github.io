@@ -13,27 +13,25 @@ def fetch_metrics():
         scholarly.use_proxy(pg)
         
         # Search for your profile using ID
-        author = scholarly.search_author_id('ppDq7_gAAAAJ')
+        search_query = scholarly.search_author_id('ppDq7_gAAAAJ')
         
-        # Fill the author data
-        author = scholarly.fill(author)
-        
+        # Get complete author info
         metrics = {
-            'total_citations': author.get('citedby', 0),
-            'h_index': author.get('hindex', 0),
-            'i10_index': author.get('i10index', 0),
+            'total_citations': search_query['citedby'],
+            'h_index': search_query['hindex'],
+            'i10_index': search_query.get('i10index', 0),
             'papers': [],
             'updated': datetime.now().isoformat(),
         }
         
         # Get individual paper citations
-        for pub in author.get('publications', []):
-            filled_pub = scholarly.fill(pub)
+        for pub in search_query.get('publications', []):
+            pub_data = scholarly.fill(pub)
             metrics['papers'].append({
-                'title': filled_pub.get('bib', {}).get('title', ''),
-                'year': filled_pub.get('bib', {}).get('pub_year', 'N/A'),
-                'citations': filled_pub.get('num_citations', 0),
-                'venue': filled_pub.get('bib', {}).get('venue', 'N/A')
+                'title': pub_data['bib'].get('title'),
+                'year': pub_data['bib'].get('year', 'N/A'),
+                'citations': pub_data.get('num_citations', 0),
+                'venue': pub_data['bib'].get('venue', 'N/A')
             })
         
         # Save metrics to file
@@ -44,7 +42,7 @@ def fetch_metrics():
         return metrics
         
     except Exception as e:
-        print(f"Error fetching metrics: {str(e)}")
+        print(f"Error fetching metrics: {e}")
         return None
 
 if __name__ == "__main__":
