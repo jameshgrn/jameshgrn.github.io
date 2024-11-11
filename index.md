@@ -3,11 +3,12 @@ layout: splash
 author_profile: true
 header:
   overlay_image: /images/headerphoto.jpeg
-  overlay_filter: rgba(0, 0, 0, 0.3)  # Darker overlay
+  overlay_filter: "0.2"  # Less dark overlay
   caption: "Growth Strata in the Peruvian Andean Wedge Top, 2019"
   actions:
     - label: "View Publications"
       url: "/publications/"
+title: "James (Jake) Gearon"
 excerpt: "Investigating sedimentary landscapes through the lens of data science and remote sensing"
 ---
 
