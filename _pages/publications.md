@@ -3,26 +3,6 @@ layout: single
 title: "Publications"
 permalink: /publications/
 author_profile: true
-sidebar:
-  - title: "Impact Metrics"
-    text: >
-      <div class="metrics-sidebar">
-        <div class="metric-box">
-          <div class="metric-number">12</div>
-          <div class="metric-label">Total Citations</div>
-        </div>
-        <div class="metric-box">
-          <div class="metric-number">2</div>
-          <div class="metric-label">h-index</div>
-        </div>
-        <div class="metric-box">
-          <div class="metric-number">0</div>
-          <div class="metric-label">i10-index</div>
-        </div>
-        <div class="update-time">
-          Updated: 2024-02-11
-        </div>
-      </div>
 ---
 
 ## Featured Publications
@@ -51,7 +31,7 @@ sidebar:
   <div class="pub-content">
     <h2 class="pub-title"><a href="/files/publications/2024_AGUAdv_Doane_roughness.pdf">Topographic roughness as an emergent property of geomorphic processes and events</a></h2>
     <p class="pub-authors">Doane, T.H., Gearon, J.H., Martin, H.K., Yanites, B.J., and Edmonds, D.A.</p>
-    <p class="pub-venue"><i>AGU Advances</i> (Impact Factor: 7.2)</p>
+    <p class="pub-venue"><i>AGU Advances</i></p>
     <div class="pub-links">
       <a href="/files/publications/2024_AGUAdv_Doane_roughness.pdf" class="btn btn--primary">PDF</a>
       <a href="https://doi.org/10.1029/2023AV000921" class="btn btn--info">DOI</a>
