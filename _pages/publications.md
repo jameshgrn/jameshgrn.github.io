@@ -26,13 +26,13 @@ sidebar:
 
 <div class="publication-item featured">
   <div class="pub-image">
-    <img src="/images/avulsion_fig1.png" alt="River avulsion patterns">
+    <img src="/images/avulsion.png" alt="River avulsion patterns">
   </div>
   <div class="pub-content">
     <h3><a href="/files/publications/2024_Nature_Gearon_avulsions.pdf">Rules of river avulsion change downstream</a></h3>
     <p class="pub-authors">Gearon, J.H., Martin, H., DeLisle, C., Barefoot, E., Mohrig, D., Paola, C., and Edmonds, D.</p>
     <p class="pub-venue"><i>Nature</i>, 2024</p>
-    <p class="pub-excerpt">This paper presents a novel theoretical framework for predicting river avulsions, with significant implications for flood prediction and infrastructure planning.</p>
+    <p class="pub-excerpt">This paper presents a novel theoretical framework for predicting river avulsions.</p>
     <div class="pub-links">
       <a href="/files/publications/2024_Nature_Gearon_avulsions.pdf" class="btn btn--primary">PDF</a>
       <a href="https://doi.org/..." class="btn btn--info">DOI</a>
@@ -46,7 +46,7 @@ sidebar:
 
 <div class="publication-item">
   <div class="pub-image">
-    <img src="/images/roughness_fig1.png" alt="Topographic roughness analysis">
+    <img src="/images/BoulderCity.jpg" alt="Boulder City landscape">
   </div>
   <div class="pub-content">
     <h4><a href="/files/publications/2024_AGUAdv_Doane_roughness.pdf">Topographic roughness as an emergent property of geomorphic processes and events</a></h4>
@@ -59,43 +59,11 @@ sidebar:
   </div>
 </div>
 
-<div class="publication-item">
-  <div class="pub-image">
-    <img src="/images/mars_fig1.png" alt="Martian chaos terrain fracture geometry">
-  </div>
-  <div class="pub-content">
-    <h4><a href="/files/publications/2024_Icarus_Levy_mars.pdf">Martian chaos terrain fracture geometry indicates drainage and compaction of laterally heterogeneous confined aquifers</a></h4>
-    <p class="pub-authors">Levy, J.S., Subak, T.F., Armstrong, I., [...], Gearon, J.H., et al.</p>
-    <p class="pub-venue"><i>Icarus</i></p>
-    <div class="pub-links">
-      <a href="/files/publications/2024_Icarus_Levy_mars.pdf" class="btn btn--primary">PDF</a>
-      <a href="https://doi.org/..." class="btn btn--info">DOI</a>
-    </div>
-  </div>
-</div>
-
-### 2023
-
-<div class="publication-item">
-  <div class="pub-image">
-    <img src="/images/deltas_fig1.png" alt="Increased sediment connectivity between deltas and deep-water fans">
-  </div>
-  <div class="pub-content">
-    <h4><a href="/files/publications/2023_SedGeol_Liu_deltas.pdf">Increased sediment connectivity between deltas and deep-water fans in closed lake basins</a></h4>
-    <p class="pub-authors">Liu, P., Gong, C., Gearon, J.H., et al.</p>
-    <p class="pub-venue"><i>Sedimentary Geology</i></p>
-    <div class="pub-links">
-      <a href="/files/publications/2023_SedGeol_Liu_deltas.pdf" class="btn btn--primary">PDF</a>
-      <a href="https://doi.org/..." class="btn btn--info">DOI</a>
-    </div>
-  </div>
-</div>
-
 ### 2022
 
 <div class="publication-item">
   <div class="pub-image">
-    <img src="/images/sequence_fig1.png" alt="The supply-generated sequence">
+    <img src="/images/uintachannel.jpg" alt="Uinta Basin channel deposits">
   </div>
   <div class="pub-content">
     <h4><a href="/files/publications/2022_JSR_Gearon_sequence.pdf">The supply-generated sequence: A unified sequence-stratigraphic model</a></h4>
@@ -103,7 +71,7 @@ sidebar:
     <p class="pub-venue"><i>Journal of Sedimentary Research</i></p>
     <div class="pub-links">
       <a href="/files/publications/2022_JSR_Gearon_sequence.pdf" class="btn btn--primary">PDF</a>
-      <a href="https://doi.org/..." class="btn btn--info">DOI</a>
+      <a href="https://doi.org/10.2110/jsr.2022.043" class="btn btn--info">DOI</a>
     </div>
   </div>
 </div>

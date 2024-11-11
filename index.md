@@ -1,6 +1,9 @@
 ---
 layout: home
 author_profile: true
+header:
+  image: /images/uintachannel.jpg
+  caption: "Uinta Basin channel deposits"
 ---
 
 ## James "Jake" Gearon — Research & Curriculum Vitae
@@ -8,6 +11,11 @@ author_profile: true
 _This page is a work in progress and is updated continuously, thanks for visiting!_
 
 ### Research Focus
+
+<figure class="align-right" style="width: 350px">
+  <img src="/images/avulsion.png" alt="River avulsion patterns">
+  <figcaption>River avulsion patterns from our Nature paper</figcaption>
+</figure>
 
 My research harnesses the ongoing data revolution to investigate the statistical, morphodynamic, and scaling properties of sedimentary landscapes: particularly rivers, deltas, and lakes. The goal of this approach is to develop predictive models of complex natural phenomena, which is crucial in the context of natural hazards in a warming world.
 
