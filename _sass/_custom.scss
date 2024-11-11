@@ -154,24 +154,39 @@
 
 .metrics-sidebar {
   .metric-box {
-    text-align: center;
-    padding: 0.8em;
     background: #f8f9fa;
     border-radius: 8px;
+    padding: 1em;
     margin-bottom: 1em;
+    text-align: center;
     
-    h3 {
-      margin: 0;
+    .metric-number {
+      font-size: 2em;
+      font-weight: bold;
       color: #2a54a9;
-      font-size: 1.5em;
+      line-height: 1;
     }
     
-    p {
-      margin: 0.3em 0 0;
-      font-size: 0.8em;
+    .metric-label {
+      font-size: 0.9em;
       color: #666;
+      margin-top: 0.3em;
     }
   }
+  
+  .update-time {
+    font-size: 0.8em;
+    color: #999;
+    text-align: center;
+    margin-top: 1em;
+  }
+}
+
+.sidebar.sticky {
+  position: sticky;
+  top: 2em;
+  max-height: calc(100vh - 4em);
+  overflow-y: auto;
 }
 
 .pub-title {
