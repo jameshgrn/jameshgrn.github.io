@@ -18,3 +18,7 @@ _site/
 # System files
 .DS_Store
 .env _site/
+_site/feed.xml
+_site/page-archive/
+_site/publications/
+_site/sitemap/

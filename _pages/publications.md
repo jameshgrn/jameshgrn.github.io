@@ -23,35 +23,53 @@ author_profile: true
 </div>
 {% endif %}
 
-## Featured Publication
+## Featured Publications
 
-### Rules of River Avulsion Change Downstream
+{% for post in site.publications reversed %}
+  {% if post.venue contains 'Nature' or post.venue contains 'Science' or post.venue contains 'PNAS' %}
+    <div class="publication-item featured">
+      <div class="pub-image">
+        {% if post.header.teaser %}
+          <img src="{{ post.header.teaser }}" alt="{{ post.title }}">
+        {% endif %}
+      </div>
+      <div class="pub-content">
+        <h3><a href="{{ post.paperurl }}">{{ post.title }}</a></h3>
+        <p class="pub-authors">{{ post.citation | split: '.' | first }}.</p>
+        <p class="pub-venue"><i>{{ post.venue }}</i>, {{ post.date | date: "%Y" }}</p>
+        {% if post.excerpt %}<p class="pub-excerpt">{{ post.excerpt }}</p>{% endif %}
+        <div class="pub-links">
+          {% if post.paperurl %}<a href="{{ post.paperurl }}" class="btn btn--primary">PDF</a>{% endif %}
+          {% if post.code %}<a href="{{ post.code }}" class="btn btn--info">Code</a>{% endif %}
+          {% if post.dataset %}<a href="{{ post.dataset }}" class="btn btn--info">Data</a>{% endif %}
+        </div>
+      </div>
+    </div>
+  {% endif %}
+{% endfor %}
 
-**James H. Gearon**, Harrison Martin, Clarke DeLisle, Eric Barefoot, David Mohrig, Chris Paola, and Douglas Edmonds *Nature, 2024*
+## All Publications
 
-This work presents a novel theoretical framework for predicting river avulsions, with significant implications for flood prediction and infrastructure planning.
+{% assign grouped_publications = site.publications | group_by_exp: "pub", "pub.date | date: '%Y'" | sort: "name" | reverse %}
 
-## Peer-Reviewed Publications
+{% for year in grouped_publications %}
+### {{ year.name }}
+  {% for post in year.items %}
+    <div class="publication-item">
+      <div class="pub-content">
+        <h4><a href="{{ post.paperurl }}">{{ post.title }}</a></h4>
+        <p class="pub-authors">{{ post.citation | split: '.' | first }}.</p>
+        <p class="pub-venue"><i>{{ post.venue }}</i></p>
+        <div class="pub-links">
+          {% if post.paperurl %}<a href="{{ post.paperurl }}" class="btn btn--primary">PDF</a>{% endif %}
+          {% if post.code %}<a href="{{ post.code }}" class="btn btn--info">Code</a>{% endif %}
+          {% if post.dataset %}<a href="{{ post.dataset }}" class="btn btn--info">Data</a>{% endif %}
+        </div>
+      </div>
+    </div>
+  {% endfor %}
+{% endfor %}
 
-### 2024
-
-1. **Rules of river avulsion change downstream**
-   - Authors: **James H. Gearon**, et al.
-   - Journal: Nature (Impact Factor: 69.504)
-   - Status: Accepted
-   - Keywords: river dynamics, avulsion prediction, natural hazards
-
-2. **Topographic roughness as an emergent property of geomorphic processes and events**
-   - Authors: T. H. Doane, **J. H. Gearon**, et al.
-   - Journal: AGU Advances (Impact Factor: 7.2)
-   - DOI: [10.1029/2023AV000921](https://doi.org/10.1029/2023AV000921)
-   - Citations: TBD
-
-### 2023
-
-1. **Increased sediment connectivity between deltas and deep-water fans in closed lake basins**
-   - Authors: Puyu Liu, Chenglin Gong, **James H. Gearon**, et al.
-   - Journal: Sedimentary Geology
-   - DOI: [10.1016/j.sedgeo.2023.106561](https://doi.org/10.1016/j.sedgeo.2023.106561)
-
-[View all publications on Google Scholar]({{ site.author.googlescholar }})
+<div class="page__footer">
+  <p><a href="{{ site.author.googlescholar }}">View all publications on Google Scholar</a></p>
+</div>

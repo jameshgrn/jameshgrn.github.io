@@ -33,4 +33,81 @@
   p, li, dl {
     font-size: 1em;
   }
+}
+
+.metrics-container {
+  display: flex;
+  justify-content: space-around;
+  margin: 2em 0;
+  
+  .metric-box {
+    text-align: center;
+    padding: 1em;
+    background: #f8f9fa;
+    border-radius: 8px;
+    min-width: 120px;
+    
+    h3 {
+      margin: 0;
+      color: #2a54a9;
+      font-size: 1.8em;
+    }
+    
+    p {
+      margin: 0.5em 0 0;
+      font-size: 0.9em;
+    }
+  }
+}
+
+.publication-item {
+  margin: 2em 0;
+  padding: 1em;
+  border-radius: 8px;
+  transition: all 0.2s ease;
+  
+  &.featured {
+    background: #f8f9fa;
+    border-left: 4px solid #2a54a9;
+  }
+  
+  .pub-content {
+    h3, h4 {
+      margin: 0 0 0.5em;
+      
+      a {
+        color: #2a54a9;
+        text-decoration: none;
+        
+        &:hover {
+          text-decoration: underline;
+        }
+      }
+    }
+    
+    .pub-authors {
+      font-size: 0.9em;
+      margin: 0.5em 0;
+    }
+    
+    .pub-venue {
+      color: #666;
+      font-size: 0.9em;
+      margin: 0.5em 0;
+    }
+    
+    .pub-excerpt {
+      font-size: 0.9em;
+      margin: 1em 0;
+    }
+    
+    .pub-links {
+      margin-top: 1em;
+      
+      .btn {
+        margin-right: 0.5em;
+        font-size: 0.8em;
+      }
+    }
+  }
 } 
