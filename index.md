@@ -55,4 +55,4 @@ The Earth sciences is currently transitioning from a data-poor field to a data-r
 
 5. Puyu Liu, Chenglin Gong, **James H. Gearon**, et al. *Increased sediment connectivity between deltas and deep-water fans in closed lake basins: A case study from Bozhong Sag, Bohai Bay Basin, China*. [Sedimentary Geology, 2023](https://doi.org/10.1016/j.sedgeo.2023.106561).
 
-6. Joseph S. Levy, Thomas F. Subak, Ian Armstrong, [...], **James H. Gearon**, et al. *Martian chaos terrain fracture geometry indicates drainage and compaction of laterally heterogeneous confined aquifers* [In Review at Icarus].
+6. Joseph S. Levy, Thomas F. Subak, Ian Armstrong, [...], **James H. Gearon**, et al. *Martian chaos terrain fracture geometry indicates drainage and compaction of laterally heterogeneous confined aquifers* [Accepted at Icarus].
