@@ -24,3 +24,4 @@ _site/publications/
 _site/sitemap/
 tempCodeRunnerFile.*
 _site/
+.DS_Store
