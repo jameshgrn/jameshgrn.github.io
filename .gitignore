@@ -25,7 +25,6 @@ node_modules/
 *.swp
 *.swo
 .history/
-.whisper/
 
 # System files
 .DS_Store
@@ -37,3 +36,6 @@ Thumbs.db
 tempCodeRunnerFile.*
 *.temp
 *.tmp
+
+# Keep PDFs in files/random-musings
+!files/random-musings/*.pdf
