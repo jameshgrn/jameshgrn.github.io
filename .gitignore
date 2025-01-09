@@ -37,15 +37,3 @@ Thumbs.db
 tempCodeRunnerFile.*
 *.temp
 *.tmp
-
-# Large files
-*.pptx
-*.pack
-files/talks/
-
-# Specific directories to ignore
-_site/
-_site/feed.xml
-_site/page-archive/
-_site/publications/
-_site/sitemap/
