@@ -200,6 +200,15 @@ body:hover .visually-hidden button {
     color: #000;
   }
 
+  .ai {
+    color: #000;
+  }
+
+  .ai-google-scholar,
+  .ai-google-scholar-square {
+    color: $googlescholar-color;
+  }
+
   .fa-bluesky,
   .fa-bluesky-square {
     color: $bluesky-color;
