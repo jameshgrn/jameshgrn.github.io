@@ -25,6 +25,7 @@ node_modules/
 *.swp
 *.swo
 .history/
+.whisper/
 
 # System files
 .DS_Store
