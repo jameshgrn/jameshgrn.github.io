@@ -10,22 +10,42 @@ _site/
 .sass-cache/
 .jekyll-cache/
 .jekyll-metadata
+.bundle/
+vendor/
+Gemfile.lock
 
-# History files
+# Environment
+.env
+.venv/
+node_modules/
+
+# IDE/Editor
+.vscode/
+.idea/
+*.swp
+*.swo
 .history/
 .whisper/
-.venv/
 
 # System files
 .DS_Store
-.env _site/
+Thumbs.db
+*~
+*.log
+
+# Temp files
+tempCodeRunnerFile.*
+*.temp
+*.tmp
+
+# Large files
+*.pptx
+*.pack
+files/talks/
+
+# Specific directories to ignore
+_site/
 _site/feed.xml
 _site/page-archive/
 _site/publications/
 _site/sitemap/
-tempCodeRunnerFile.*
-_site/
-.DS_Store
-
-#code runner
-tempCodeRunnerFile.*
