@@ -26,3 +26,6 @@ _site/sitemap/
 tempCodeRunnerFile.*
 _site/
 .DS_Store
+
+#code runner
+tempCodeRunnerFile.*
