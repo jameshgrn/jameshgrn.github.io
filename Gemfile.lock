@@ -306,11 +306,13 @@ PLATFORMS
 
 DEPENDENCIES
   github-pages
-  jekyll
   jekyll-feed
+  jekyll-gist
+  jekyll-include-cache
+  jekyll-paginate
+  jekyll-seo-tag
   jekyll-sitemap
-  jemoji
-  webrick (~> 1.8)
+  webrick (~> 1.7)
 
 BUNDLED WITH
    2.5.23

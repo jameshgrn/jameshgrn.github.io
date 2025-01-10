@@ -14,7 +14,7 @@ A collection of working papers, extended notes, and in-progress ideas about sedi
 ## Current Notes
 
 ### Mathematical & Physical Models
-- [Dimensionless Analysis of Shear Stress Ratio on Alluvial Ridges](/files/random-musings/shear-stress-analysis.pdf)
+- [Dimensionless Analysis of Shear Stress Ratio on Alluvial Ridges](/files/random-musings/A%20dimensionless%20analysis%20of%20the%20shear%20stress%20ratio%20on%20an%20alluvial%20ridge.pdf)
 - [Derivation of Softmax Random Walk Algorithm](/files/random-musings/softmax-derivation.pdf)
 
 ---
