@@ -16,7 +16,7 @@ excerpt: "Investigating sedimentary landscapes through the lens of data science 
 author_profile: true
 ---
 
-## James "Jake" Gearon — Research & Publications
+## James "Jake" Gearon — Research
 
 _This page is a work in progress and is updated continuously, thanks for visiting!_
 
