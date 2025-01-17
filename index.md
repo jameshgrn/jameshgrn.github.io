@@ -17,7 +17,7 @@ author_profile: true
 ---
 
 # Sedimentary Dynamics & Analytics
-### James "Jake" Gearon
+## James "Jake" Gearon
 
 _This page is a work in progress and is updated continuously, thanks for visiting!_
 
