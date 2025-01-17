@@ -16,7 +16,8 @@ excerpt: "Investigating sedimentary landscapes through the lens of data science 
 author_profile: true
 ---
 
-## James "Jake" Gearon — Research
+# Sedimentary Dynamics & Analytics
+### James "Jake" Gearon
 
 _This page is a work in progress and is updated continuously, thanks for visiting!_
 
@@ -27,7 +28,7 @@ _This page is a work in progress and is updated continuously, thanks for visitin
   <figcaption>A side channel on the Magdalena River, Colombia. Taken on a recent NSF trip.</figcaption>
 </figure>
 
-I study how sedimentary landscapes organize and reorganize across scales, focusing on the patterns, thresholds, and transitions that emerge from fundamental physical processes. By quantifying spatial and temporal relationships - from vegetation patterns to river dynamics - I investigate how landscapes maintain, destabilize, and reestablish their structure. Through data-driven approaches, I uncover mechanistic controls on landscape organization, advancing both theoretical understanding and hazard prediction.
+ I study sedimentary landscape organization and response to perturbations across scales, focusing on the patterns, thresholds, and transitions that emerge from fundamental physical processes. By quantifying spatial and temporal relationships in alluvial systems, I investigate how landscapes maintain, destabilize, and reestablish their structure. My data-driven approach seeks to uncover mechanistic controls on sedimentary and alluvial landscape processes, advancing both theoretical understanding and hazard prediction.
 
 The Earth sciences is currently transitioning from a data-poor field to a data-rich one. I use geospatial data engineering and applied data science—largely through the lens of remote sensing—to investigate classic problems in geomorphology and sedimentology. 
 
