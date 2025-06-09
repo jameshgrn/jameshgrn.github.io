@@ -55,4 +55,6 @@ The Earth sciences is currently transitioning from a data-poor field to a data-r
 
 6. Joseph S. Levy, Thomas F. Subak, Ian Armstrong, Izzy King, Lingfeng Kuang, Lily Kuentz, **James H. Gearon**, Sophie Naylor, MC Rapoza, Haobo Wang. *Martian chaos terrain fracture geometry indicates drainage and compaction of laterally heterogeneous confined aquifers*. [Icarus, 426:116377, 2025](https://doi.org/10.1016/j.icarus.2024.116377).
 
-7. **James H. Gearon** and Douglas A. Edmonds. *River Avulsion Precursors Encoded in Alluvial Ridge Geometry* [In review at Geophysical Research Letters].
+7. **James H. Gearon** and Douglas A. Edmonds. *River Avulsion Precursors Encoded in Alluvial Ridge Geometry*. [Geophysical Research Letters, 52:e2024GL114047, 2025](https://doi.org/10.1029/2024GL114047).
+
+8. Aman Agarwal, **James Gearon**, Raksha Rank, and Etienne Chenevert. *Fighting Fires from Space: Leveraging Vision Transformers for Enhanced Wildfire Detection and Characterization*. [arXiv preprint arXiv:2504.13776, 2025](https://arxiv.org/abs/2504.13776).
