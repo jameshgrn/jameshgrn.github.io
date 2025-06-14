@@ -1,6 +1,30 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9 http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd" xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 <url>
+<loc>http://localhost:4000/paper-summaries/fighting-fires-space/</loc>
+</url>
+<url>
+<loc>http://localhost:4000/paper-summaries/geomorphic-controls-shrub-canopy/</loc>
+</url>
+<url>
+<loc>http://localhost:4000/paper-summaries/martian-chaos-terrain/</loc>
+</url>
+<url>
+<loc>http://localhost:4000/paper-summaries/river-avulsion-precursors/</loc>
+</url>
+<url>
+<loc>http://localhost:4000/paper-summaries/rules-of-river-avulsion/</loc>
+</url>
+<url>
+<loc>http://localhost:4000/paper-summaries/sediment-connectivity/</loc>
+</url>
+<url>
+<loc>http://localhost:4000/paper-summaries/supply-generated-sequence/</loc>
+</url>
+<url>
+<loc>http://localhost:4000/paper-summaries/topographic-roughness-emergent/</loc>
+</url>
+<url>
 <loc>http://localhost:4000/publication/2020-landscape-ecology</loc>
 <lastmod>2020-01-01T00:00:00+00:00</lastmod>
 </url>
