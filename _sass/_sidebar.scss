@@ -240,7 +240,9 @@
   }
 
   li {
-    white-space: nowrap;
+    white-space: normal;      // allow wrapping for long organization names
+    overflow-wrap: anywhere;  // wrap long words if needed
+    word-break: break-word;
   }
 
   a {

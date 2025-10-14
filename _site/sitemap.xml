@@ -49,9 +49,6 @@
 <loc>http://localhost:4000/publications/</loc>
 </url>
 <url>
-<loc>http://localhost:4000/random-musings/</loc>
-</url>
-<url>
 <loc>http://localhost:4000/sitemap/</loc>
 </url>
 <url>
@@ -81,6 +78,10 @@
 <lastmod>2024-11-11T01:53:37+00:00</lastmod>
 </url>
 <url>
+<loc>http://localhost:4000/files/publications/2025_GRL_GearonEdmondsRiverAvulsionPrecursors.pdf</loc>
+<lastmod>2025-10-14T14:42:09+00:00</lastmod>
+</url>
+<url>
 <loc>http://localhost:4000/files/random-musings/A%20dimensionless%20analysis%20of%20the%20shear%20stress%20ratio%20on%20an%20alluvial%20ridge.pdf</loc>
 <lastmod>2025-01-10T00:00:03+00:00</lastmod>
 </url>
@@ -94,7 +95,7 @@
 </url>
 <url>
 <loc>http://localhost:4000/pdf/Gearon_James_CV.pdf</loc>
-<lastmod>2024-12-16T16:59:25+00:00</lastmod>
+<lastmod>2025-10-14T14:40:24+00:00</lastmod>
 </url>
 <url>
 <loc>http://localhost:4000/pdf/sample_presentation.pdf</loc>

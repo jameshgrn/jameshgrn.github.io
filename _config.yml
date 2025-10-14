@@ -23,10 +23,10 @@ author:
   # Biographic information
   avatar           : "/images/Profile.jpeg"  # Full path from root
   name             : "James (Jake) Gearon"
-  bio              : "A sedimentology/geoinformatics PhD candidate @ Indiana University. Looking at sand from space. I also like LLMs. opinions are my own. email: jhgearon@iu.edu"
-  location         : "Indiana University"
-  employer         : "Department of Earth and Atmospheric Sciences"
-  email            : "jhgearon@iu.edu"
+  bio              : "Sedimentologist and geoinformaticist in the Global Hydrology Lab @ UNC Chapel Hill. Looking at sand from space. Currently working on SWOT data to investigate coastal backwater dynamics and river hazards. PhD from Indiana University (July 2025). opinions are my own."
+  location         : "University of North Carolina at Chapel Hill"
+  employer         : "Global Hydrology Lab, Dept. of Earth, Marine and Environmental Sciences"
+  email            : "james.gearon@unc.edu"
 
   # Academic websites
   googlescholar    : "https://scholar.google.com/citations?user=ppDq7_gAAAAJ"
@@ -180,9 +180,6 @@ collections:
     output: true
     permalink: /:collection/:path/
   talks:
-    output: true
-    permalink: /:collection/:path/
-  random-musings:
     output: true
     permalink: /:collection/:path/
 

@@ -9,6 +9,21 @@ author_profile: true
 
 <div class="publication-item featured">
   <div class="pub-image">
+    <img src="/images/Figure1.png" alt="River avulsion precursors figure">
+  </div>
+  <div class="pub-content">
+    <h2 class="pub-title"><a href="/files/publications/2025_GRL_GearonEdmondsRiverAvulsionPrecursors.pdf">River Avulsion Precursors Encoded in Alluvial Ridge Geometry</a></h2>
+    <p class="pub-authors">Gearon, J.H. and Edmonds, D.A.</p>
+    <p class="pub-venue"><i>Geophysical Research Letters</i>, 2025</p>
+    <div class="pub-links">
+      <a href="/files/publications/2025_GRL_GearonEdmondsRiverAvulsionPrecursors.pdf" class="btn btn--primary">PDF</a>
+      <a href="https://doi.org/10.1029/2024GL114047" class="btn btn--info">DOI</a>
+    </div>
+  </div>
+</div>
+
+<div class="publication-item featured">
+  <div class="pub-image">
     <img src="/images/avulsion.png" alt="River avulsion patterns">
   </div>
   <div class="pub-content">
