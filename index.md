@@ -17,7 +17,24 @@ I study sedimentary landscape organization through remote sensing and geospatial
 
 ---
 
-[publications](#publications) / [cv](/pdf/Gearon_James_CV.pdf)
+[questions](#questions) / [publications](#publications) / [cv](/pdf/Gearon_James_CV.pdf)
+
+## Questions
+
+What I'm trying to understand:
+
+- **Where will rivers go?** Can we predict the path of an avulsing river before it moves? What geometric signatures in floodplain topography encode avulsion risk?
+
+- **How do coasts feel the ocean?** How far upstream does tidal and backwater influence extend, and how does this change with discharge, sea level, and sediment supply?
+
+- **What controls landscape memory?** How do sedimentary systems record, preserve, and erase signals of environmental change across timescales?
+
+- **Can we see process from pattern?** What can remotely-sensed surface morphology tell us about subsurface stratigraphy and active transport processes?
+
+<figure style="margin: 2.5rem 0;">
+<img src="/images/uintachannel.jpg" alt="Channel deposits in the Uinta Basin" style="width: 100%; height: auto;">
+<figcaption style="font-size: 0.75rem; color: var(--text-muted); margin-top: 0.5rem; font-style: italic;">Fluvial channel deposits, Uinta Basin, Utah</figcaption>
+</figure>
 
 ## Publications
 
@@ -72,3 +89,8 @@ I study sedimentary landscape organization through remote sensing and geospatial
 </li>
 
 </ol>
+
+<figure style="margin: 2.5rem 0 0 0;">
+<img src="/images/BoulderCity.jpg" alt="Desert landscape near Boulder City, Nevada" style="width: 100%; height: auto;">
+<figcaption style="font-size: 0.75rem; color: var(--text-muted); margin-top: 0.5rem; font-style: italic;">Mojave Desert near Boulder City, Nevada</figcaption>
+</figure>
