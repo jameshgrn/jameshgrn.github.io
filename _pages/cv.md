@@ -1,22 +1,36 @@
 ---
-layout: single
-title: "Curriculum Vitae"
+layout: editorial
+title: "CV"
 permalink: /cv/
-author_profile: true
 redirect_from:
   - /resume
 ---
 
-{% include base_path %}
+[home](/) / [publications](/#publications) / [projects](/projects/)
+
+---
 
 ## James H. Gearon
-Postdoctoral Research Associate  
-[Global Hydrology Lab](https://uncglobalhydrology.org/)  
-Department of Earth, Marine and Environmental Sciences  
+
+Postdoctoral Research Associate
+[Global Hydrology Lab](https://uncglobalhydrology.org/)
+Department of Earth, Marine and Environmental Sciences
 University of North Carolina at Chapel Hill
 
-You can download my full CV as a PDF [here](/pdf/Gearon_James_CV.pdf).
+---
 
-**Ph.D. in Geological Sciences**, Indiana University (July 2025)
+Download full CV: [PDF](/pdf/Gearon_James_CV.pdf)
 
-My research focuses on how sedimentary landscapes organize and reorganize across scales, investigating patterns, thresholds, and transitions that emerge from fundamental physical processes. I specialize in geospatial data engineering and applied data science approaches to geomorphology and sedimentology.
+---
+
+### Education
+
+**Ph.D. in Geological Sciences**, Indiana University, 2025
+
+### Research Focus
+
+Sedimentary landscape organization and reorganization across scales. Patterns, thresholds, and transitions emerging from fundamental physical processes. Specializing in geospatial data engineering and applied data science approaches to geomorphology and sedimentology.
+
+---
+
+[google scholar](https://scholar.google.com/citations?user=ppDq7_gAAAAJ) / [orcid](https://orcid.org/0000-0002-0115-7937) / [github](https://github.com/jameshgrn)

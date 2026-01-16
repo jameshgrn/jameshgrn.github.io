@@ -1,0 +1,116 @@
+/* ==========================================================================
+   Publications - Clean List Display
+   ========================================================================== */
+
+.publications-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.publication-item {
+  padding: $space-4 0;
+  border-bottom: 1px solid var(--border);
+
+  &:first-child {
+    padding-top: 0;
+  }
+
+  &:last-child {
+    border-bottom: none;
+    padding-bottom: 0;
+  }
+}
+
+.publication__title {
+  font-size: $type-size-4;
+  font-weight: 500;
+  margin: 0 0 $space-2;
+  line-height: 1.4;
+
+  a {
+    text-decoration-color: transparent;
+
+    &:hover {
+      text-decoration-color: var(--text);
+    }
+  }
+}
+
+.publication__authors {
+  font-size: $type-size-5;
+  color: var(--text-muted);
+  margin: 0 0 $space-1;
+  line-height: 1.5;
+
+  // Highlight self
+  .author-self {
+    font-weight: 600;
+    color: var(--text);
+  }
+}
+
+.publication__venue {
+  font-size: $type-size-5;
+  font-style: italic;
+  color: var(--text-muted);
+  margin: 0;
+}
+
+.publication__year {
+  font-size: $type-size-6;
+  color: var(--text-muted);
+  font-variant-numeric: tabular-nums;
+}
+
+.publication__links {
+  margin-top: $space-2;
+  font-size: $type-size-6;
+
+  a {
+    margin-right: $space-4;
+    text-transform: lowercase;
+    color: var(--text-muted);
+
+    &:hover {
+      color: var(--text);
+    }
+
+    &:last-child {
+      margin-right: 0;
+    }
+  }
+}
+
+// Compact publication list variant
+.publications-compact {
+  .publication-item {
+    padding: $space-3 0;
+  }
+
+  .publication__title {
+    font-size: $type-size-5;
+  }
+
+  .publication__authors,
+  .publication__venue {
+    font-size: $type-size-6;
+  }
+}
+
+// Year grouped publications
+.publications-by-year {
+  .year-heading {
+    font-size: $type-size-2;
+    font-weight: 500;
+    margin-top: $space-6;
+    margin-bottom: $space-3;
+    padding-bottom: $space-2;
+    border-bottom: 1px solid var(--border);
+    font-variant-numeric: tabular-nums;
+
+    &:first-child {
+      margin-top: 0;
+    }
+  }
+}

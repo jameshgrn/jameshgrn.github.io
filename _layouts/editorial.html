@@ -1,0 +1,31 @@
+---
+layout: compress
+---
+
+{% include base_path %}
+
+<!doctype html>
+<html lang="{{ site.locale | slice: 0,2 }}" class="no-js">
+  <head>
+    {% include head.html %}
+    {% include head/custom.html %}
+  </head>
+
+  <body class="editorial">
+    <main class="editorial__main" role="main">
+      <header class="editorial__header">
+        <a href="{{ '/' | relative_url }}" class="site-title">{{ site.author.name }}</a>
+      </header>
+
+      <article class="editorial__content">
+        {{ content }}
+      </article>
+
+      <footer class="editorial__footer">
+        <span>&copy; {{ site.time | date: '%Y' }} {{ site.author.name }}</span>
+      </footer>
+    </main>
+
+    {% include scripts.html %}
+  </body>
+</html>

@@ -1,0 +1,155 @@
+/* ==========================================================================
+   Editorial Layout - Single Column, No Sidebar
+   ========================================================================== */
+
+.editorial {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.editorial__main {
+  max-width: $content-max-width;
+  width: 100%;
+  margin: 0 auto;
+  padding: $space-6 $space-4;
+  flex: 1;
+
+  @media (max-width: $medium) {
+    padding: $space-5 $space-3;
+  }
+
+  @media (max-width: $small) {
+    padding: $space-4 $space-3;
+  }
+}
+
+.editorial__header {
+  margin-bottom: $space-7;
+  padding-bottom: $space-4;
+  border-bottom: 1px solid var(--border);
+
+  .site-title {
+    font-family: $header-font-family;
+    font-size: $type-size-5;
+    font-weight: 500;
+    letter-spacing: 0.02em;
+    text-decoration: none;
+    color: var(--text);
+
+    &:hover {
+      text-decoration: underline;
+      text-underline-offset: 4px;
+    }
+  }
+}
+
+.editorial__content {
+  // Generous vertical rhythm
+  > * + * {
+    margin-top: $space-4;
+  }
+
+  > h2 {
+    margin-top: $space-7;
+  }
+
+  > h2 + * {
+    margin-top: $space-3;
+  }
+
+  > h3 + * {
+    margin-top: $space-2;
+  }
+
+  // First element after header
+  > *:first-child {
+    margin-top: 0;
+  }
+}
+
+.editorial__footer {
+  margin-top: $space-8;
+  padding-top: $space-4;
+  border-top: 1px solid var(--border);
+  font-size: $type-size-6;
+  color: var(--text-muted);
+
+  a {
+    color: var(--text-muted);
+
+    &:hover {
+      color: var(--text);
+    }
+  }
+}
+
+// Inline navigation - contextual links within content
+.inline-nav {
+  display: flex;
+  flex-wrap: wrap;
+  gap: $space-4;
+  margin: $space-5 0;
+  padding: $space-4 0;
+  border-top: 1px solid var(--border);
+  border-bottom: 1px solid var(--border);
+  font-size: $type-size-5;
+
+  a {
+    text-decoration: none;
+    color: var(--text-muted);
+    transition: color 0.15s ease;
+
+    &:hover {
+      color: var(--text);
+    }
+
+    &::before {
+      content: "\2192\00a0"; // arrow + non-breaking space
+      opacity: 0.5;
+    }
+  }
+}
+
+// Simple nav separator
+.nav-sep {
+  display: inline-block;
+  margin: $space-5 0;
+  color: var(--text-muted);
+  font-size: $type-size-5;
+
+  a {
+    color: var(--text-muted);
+    text-decoration: none;
+
+    &:hover {
+      color: var(--text);
+      text-decoration: underline;
+    }
+  }
+}
+
+// Figure styling
+figure {
+  margin: $space-5 0;
+
+  img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+  }
+
+  figcaption {
+    margin-top: $space-2;
+    font-size: $type-size-6;
+    color: var(--text-muted);
+    font-style: italic;
+  }
+}
+
+// Hide sidebar elements when using editorial layout
+.editorial .sidebar,
+.editorial .author__avatar,
+.editorial .author-profile {
+  display: none;
+}

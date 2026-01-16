@@ -1,0 +1,25 @@
+<li class="publication-item">
+  <h3 class="publication__title">
+    {% if include.pub.paperurl %}
+      <a href="{{ include.pub.paperurl }}">{{ include.pub.title }}</a>
+    {% else %}
+      {{ include.pub.title }}
+    {% endif %}
+  </h3>
+  {% if include.pub.authors %}
+  <p class="publication__authors">
+    {{ include.pub.authors | replace: "James H. Gearon", "<span class='author-self'>James H. Gearon</span>" | replace: "James Gearon", "<span class='author-self'>James Gearon</span>" | replace: "**James H. Gearon**", "<span class='author-self'>James H. Gearon</span>" | replace: "**James Gearon**", "<span class='author-self'>James Gearon</span>" }}
+  </p>
+  {% endif %}
+  {% if include.pub.venue %}
+  <p class="publication__venue">
+    {{ include.pub.venue }}{% if include.pub.date %}, {{ include.pub.date | date: "%Y" }}{% endif %}
+  </p>
+  {% endif %}
+  {% if include.pub.paperurl or include.pub.doi %}
+  <div class="publication__links">
+    {% if include.pub.paperurl %}<a href="{{ include.pub.paperurl }}">pdf</a>{% endif %}
+    {% if include.pub.doi %}<a href="{{ include.pub.doi }}">doi</a>{% endif %}
+  </div>
+  {% endif %}
+</li>

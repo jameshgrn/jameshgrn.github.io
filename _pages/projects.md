@@ -1,14 +1,18 @@
 ---
-layout: archive
-title: "Research Projects"
+layout: editorial
+title: "Projects"
 permalink: /projects/
-author_profile: true
 ---
 
-{% include base_path %}
+[home](/) / [publications](/#publications) / [cv](/pdf/Gearon_James_CV.pdf)
 
-## Current Research
+---
 
-{% for post in site.projects %}
-  {% include archive-single.html %}
-{% endfor %} 
+{% for project in site.projects %}
+## {{ project.title }}
+
+{{ project.content }}
+
+---
+
+{% endfor %}
