@@ -12,11 +12,10 @@ layout: compress
   </head>
 
   <body class="editorial">
-    <main class="editorial__main" role="main">
-      <header class="editorial__header">
-        <a href="{{ '/' | relative_url }}" class="site-title">{{ site.author.name }}</a>
-      </header>
+    {% include browser-upgrade.html %}
+    {% include masthead.html %}
 
+    <main class="editorial__main" role="main">
       <article class="editorial__content">
         {{ content }}
       </article>

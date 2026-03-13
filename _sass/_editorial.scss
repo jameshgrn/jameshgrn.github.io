@@ -147,6 +147,55 @@ figure {
   }
 }
 
+// Post cards - for listing blog posts
+.post-card {
+  padding: $space-4 0;
+  border-bottom: 1px solid var(--border);
+
+  &:first-of-type {
+    padding-top: 0;
+  }
+
+  &:last-of-type {
+    border-bottom: none;
+  }
+
+  &__date {
+    display: block;
+    font-size: $type-size-6;
+    color: var(--text-muted);
+    letter-spacing: 0.03em;
+    text-transform: uppercase;
+    margin-bottom: $space-1;
+  }
+
+  &__title {
+    font-size: $type-size-3;
+    font-weight: 500;
+    margin: 0 0 $space-2 0;
+    padding: 0;
+    border: none;
+    line-height: 1.3;
+
+    a {
+      text-decoration: none;
+      color: var(--text);
+
+      &:hover {
+        text-decoration: underline;
+        text-underline-offset: 4px;
+      }
+    }
+  }
+
+  &__excerpt {
+    font-size: $type-size-5;
+    color: var(--text-muted);
+    margin: 0;
+    line-height: 1.6;
+  }
+}
+
 // Hide sidebar elements when using editorial layout
 .editorial .sidebar,
 .editorial .author__avatar,

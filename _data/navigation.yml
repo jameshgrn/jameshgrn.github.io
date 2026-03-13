@@ -3,6 +3,9 @@ main:
   - title: "Research"
     url: /#research-focus
 
+  - title: "LLM Collaborations"
+    url: /llm-collaborations/
+
   - title: "Publications"
     url: /publications/
     
