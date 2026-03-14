@@ -3,11 +3,11 @@ main:
   - title: "Research"
     url: /#research-focus
 
-  - title: "LLM Collaborations"
-    url: /llm-collaborations/
-
   - title: "Publications"
     url: /publications/
-    
+
   - title: "CV"
     url: /pdf/Gearon_James_CV.pdf
+
+  - title: "LLM Collaborations"
+    url: /llm-collaborations/
