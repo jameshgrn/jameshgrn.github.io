@@ -1,28 +1,24 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.10.0">Jekyll</generator><link href="https://jameshgrn.github.io/feed.xml" rel="self" type="application/atom+xml" /><link href="https://jameshgrn.github.io/" rel="alternate" type="text/html" /><updated>2026-03-13T17:28:48+00:00</updated><id>https://jameshgrn.github.io/feed.xml</id><title type="html">James (Jake) Gearon</title><subtitle>Sedimentology, Data Science, Data Engineering, Remote Sensing</subtitle><author><name>James (Jake) Gearon</name><email>james.gearon@unc.edu</email></author><entry><title type="html">Confluence in Context: When KV Cache Interpolation Preserves, Dilutes, or Collapses Branching Semantics</title><link href="https://jameshgrn.github.io/llm-collaborations/kv-cache-confluence/" rel="alternate" type="text/html" title="Confluence in Context: When KV Cache Interpolation Preserves, Dilutes, or Collapses Branching Semantics" /><published>2026-03-13T00:00:00+00:00</published><updated>2026-03-13T00:00:00+00:00</updated><id>https://jameshgrn.github.io/llm-collaborations/kv-cache-confluence</id><content type="html" xml:base="https://jameshgrn.github.io/llm-collaborations/kv-cache-confluence/"><![CDATA[<p>Branching is easy. Merging is hard.</p>
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.10.0">Jekyll</generator><link href="https://jameshgrn.github.io/feed.xml" rel="self" type="application/atom+xml" /><link href="https://jameshgrn.github.io/" rel="alternate" type="text/html" /><updated>2026-03-14T15:14:38+00:00</updated><id>https://jameshgrn.github.io/feed.xml</id><title type="html">James (Jake) Gearon</title><subtitle>Sedimentology, Data Science, Data Engineering, Remote Sensing</subtitle><author><name>James (Jake) Gearon</name><email>james.gearon@unc.edu</email></author><entry><title type="html">Confluence in Context: When KV Cache Interpolation Preserves, Dilutes, or Collapses Branching Semantics</title><link href="https://jameshgrn.github.io/llm-collaborations/kv-cache-confluence/" rel="alternate" type="text/html" title="Confluence in Context: When KV Cache Interpolation Preserves, Dilutes, or Collapses Branching Semantics" /><published>2026-03-13T00:00:00+00:00</published><updated>2026-03-13T00:00:00+00:00</updated><id>https://jameshgrn.github.io/llm-collaborations/kv-cache-confluence</id><content type="html" xml:base="https://jameshgrn.github.io/llm-collaborations/kv-cache-confluence/"><![CDATA[<p>Branching is easy. Merging is hard.</p>
 
-<p>Forking a large language model (LLM) conversation requires only copying context. One branch explores cats, another dogs; one pursues optimism, another pessimism. But rejoining divergent branches has no obvious mechanism. The standard options are to pick a winner, summarize both, or concatenate them and hope. All operate in text space. None performs actual reconciliation.</p>
+<p>Forking a language model conversation requires only copying the KV cache. One branch explores cats, another dogs; one branch praises the mayor, another criticizes. But rejoining divergent branches has no standard mechanism. The options — pick a winner, summarize both, concatenate — all operate in token space. None performs reconciliation in the model’s own representational space.</p>
 
-<p>This post tests a more direct approach: merge branches in latent space.</p>
+<p>This post tests a direct alternative: merge branches by interpolating their key-value caches.</p>
 
-<p>For autoregressive transformers, the key-value (KV) cache is the natural latent state. Run a shared prefix, save the cache at the fork, continue with two branch prompts, and treat each branch’s continuation as a delta from the fork. Interpolate those deltas, rebuild a merged cache, decode.</p>
+<p>For autoregressive transformers, the KV cache is the latent state. Run a shared prefix, save the cache at the fork, continue with two branch prompts, compute the suffix deltas, interpolate, decode.</p>
 
 <p>This should fail. The branches traverse different semantic trajectories. Their keys and values occupy identical positional slots but represent different tokens. Averaging them could produce gibberish.</p>
 
-<p>The merge does not collapse into gibberish.</p>
+<p>It does not. The merged cache decodes fluently in every case tested. But fluency is not the finding.</p>
 
-<p>The merged cache decodes into fluent text. Cache interpolation lands in a valid region of activation space. But fluency is not the finding. The finding is the semantic state that the merge creates.</p>
-
-<p>Three outcomes emerged. Some merges preserve both branches. Some dilute them into generic continuation. Some collapse toward one branch while suppressing the other.</p>
-
-<p>That is the core result: KV-cache merging is mechanically viable but semantically underdetermined. Geometric interpolation can produce confluence, washout, or collapse depending on branch structure.</p>
+<p>The finding is that merged states fall into three semantic regimes, and the boundaries between those regimes reveal structure in how transformers encode branch-specific information.</p>
 
 <p>Code and figures live in the <a href="https://github.com/jameshgrn/kv_cache_confluence">project repository</a>.</p>
 
 <h2 id="method">Method</h2>
 
-<p>Run a shared prefix through the model. Save the KV cache at that point: the fork. Continue from the fork with two branch prompts, A and B. Save each branch’s final cache.</p>
+<p>Run a shared prefix through the model. Save the KV cache at that point: the fork. Continue from the fork with two branch prompts, A and B, of equal token length. Save each branch’s cache.</p>
 
-<p>Branch caches cannot be subtracted from the fork as full tensors because the sequence length grows. The useful object is the suffix: the new keys and values added after the fork.</p>
+<p>Branch caches cannot be compared directly because the sequence length grows. The useful object is the suffix delta: the new keys and values added after the fork position.</p>
 
 <div class="language-text highlighter-rouge"><div class="highlight"><pre class="highlight"><code>delta_A = branch_cache_A[fork_position:]
 delta_B = branch_cache_B[fork_position:]
@@ -30,126 +26,185 @@ delta_B = branch_cache_B[fork_position:]
 
 <p>The merge operator interpolates these suffix deltas and reattaches them to the shared fork:</p>
 
-<div class="language-text highlighter-rouge"><div class="highlight"><pre class="highlight"><code>merged_suffix = 0.5 * (delta_A + delta_B)
-merged_cache = concat(fork_cache, merged_suffix)
+<div class="language-text highlighter-rouge"><div class="highlight"><pre class="highlight"><code>merged_suffix = interpolate(delta_A, delta_B)
+merged_cache  = concat(fork_cache, merged_suffix)
 </code></pre></div></div>
 
-<p>One refinement matters. In the sweep, merging only the upper half of transformer layers performs as well as merging all layers. Lower layers contribute little to branch-specific behavior; late layers carry the lexical and semantic divergence.</p>
-
-<p>Decoding from the merged cache requires a probe token. HuggingFace causal models expect at least one input token to produce logits from a cache. The experiments use a fixed probe token (<code class="language-plaintext highlighter-rouge">" The"</code>) appended after the merged state, with additional probes in follow-up checks.</p>
+<p>Decoding from the merged cache requires a probe token (HuggingFace causal models need at least one input token to produce logits from a cache state). Metrics are averaged across four probe tokens (<code class="language-plaintext highlighter-rouge">" The"</code>, <code class="language-plaintext highlighter-rouge">"."</code>, <code class="language-plaintext highlighter-rouge">" about"</code>, <code class="language-plaintext highlighter-rouge">" It"</code>) to reduce probe sensitivity.</p>
 
 <h3 id="figure-1-method-pipeline">Figure 1: Method Pipeline</h3>
 
 <p><img src="/images/llm-collaborations/method_diagram.png" alt="Method diagram" /></p>
 
-<p>A shared prefix anchors both branches in one scaffold. The merge replaces only the post-fork suffix, primarily in late layers, so the experiment isolates what branch-specific cache deltas carry.</p>
+<p>A shared prefix anchors both branches. The merge replaces only the post-fork suffix, isolating what branch-specific cache deltas carry.</p>
 
-<p>This procedure defines branch merging in latent space. The next question is what semantic state it produces. The merged cache remains fluent, but fluency is not the finding. The finding is that merged states fall into three regimes.</p>
+<h3 id="merge-strategies">Merge strategies</h3>
 
-<h2 id="three-regimes">Three Regimes</h2>
+<p>The experiments tested 23 merge strategies across four families.</p>
 
-<p>The merged cache did not produce one kind of outcome. It produced three.</p>
+<p><strong>Layer-level</strong> strategies apply a per-layer blend weight: uniform averaging, uniform slerp, late-only (upper half of layers), early-only, sigmoid ramp, and last-layer-only.</p>
 
-<p>To separate them, I tracked three quantities at the probe step.</p>
+<p><strong>Head-level</strong> strategies operate per attention head: cosine-gated merging (merge only heads where branch similarity exceeds a threshold), max-norm head selection, norm-weighted slerp, sparse interleaved merging, cumulative merging, odd/even head merging, and orthogonal injection.</p>
+
+<p><strong>Component-selective</strong> strategies separate keys from values: V-only merging (merge values, keep keys from one branch), cross-wired K/V (keys from A, values from B), and alignment-gated V merging.</p>
+
+<p><strong>Weight search</strong> strategies evaluate multiple blend weights per pair (0.3, 0.4, 0.5, 0.6, 0.7) and select the weight that minimizes branch imbalance while maintaining sufficient branch mass.</p>
+
+<p>Slerp (spherical linear interpolation) interpolates direction on the unit hypersphere and linearly interpolates magnitude. When vectors are nearly parallel, it falls back to linear interpolation.</p>
+
+<h2 id="three-regimes">Three regimes</h2>
+
+<p>The merged cache does not produce one kind of outcome. It produces three.</p>
+
+<p>Three quantities separate them.</p>
 
 <p><strong>Branch balance</strong> measures which branch dominates the merged distribution:</p>
 
 <div class="language-text highlighter-rouge"><div class="highlight"><pre class="highlight"><code>balance = log(mass_A / mass_B)
 </code></pre></div></div>
 
+<p>where mass is the total probability on branch-specific discriminative tokens.</p>
+
 <p><strong>Branch mass</strong> measures how much probability remains on branch-specific vocabulary:</p>
 
 <div class="language-text highlighter-rouge"><div class="highlight"><pre class="highlight"><code>branch_mass = mass_A + mass_B
 </code></pre></div></div>
 
-<p><strong>Entropy change</strong> measures whether the merge sharpens or diffuses the distribution relative to the unmerged branches:</p>
+<p><strong>Entropy change</strong> measures whether the merge sharpens or diffuses relative to the unmerged branches:</p>
 
-<div class="language-text highlighter-rouge"><div class="highlight"><pre class="highlight"><code>dH_mid = H(merged) - 0.5 * (H(branch_A) + H(branch_B))
+<div class="language-text highlighter-rouge"><div class="highlight"><pre class="highlight"><code>dH = H(merged) - 0.5 * (H(branch_A) + H(branch_B))
 </code></pre></div></div>
 
-<p>These three quantities define the taxonomy.</p>
-
-<p><strong>Confluence</strong> occurs when balance stays near zero, branch mass stays high, and entropy remains stable. Both branches remain active in the merged distribution.</p>
+<p><strong>Confluence</strong> occurs when balance stays near zero, branch mass stays high, and entropy remains stable. Both branches remain active.</p>
 
 <p><strong>Washout</strong> occurs when branch mass drops and entropy increases. The merge stays fluent but loses branch-specific content. Output drifts toward generic continuation.</p>
 
-<p><strong>Collapse</strong> occurs when branch mass stays high, balance shifts strongly toward one branch, and entropy decreases. The merge does not preserve both branches. It sharpens into one.</p>
+<p><strong>Collapse</strong> occurs when branch mass stays high, balance shifts toward one branch, and entropy decreases. The merge sharpens into one branch and suppresses the other.</p>
 
 <h3 id="figure-2-regime-map">Figure 2: Regime Map</h3>
 
 <p><img src="/images/llm-collaborations/regime_map.png" alt="Regime map" /></p>
 
-<p>KV-cache merge outcomes in <code class="language-plaintext highlighter-rouge">(|balance|, branch_mass)</code> space, colored by entropy change <code class="language-plaintext highlighter-rouge">dH_mid</code>. Each pair appears across all four merge strategies; labels mark the best-performing strategy. Three regimes emerge: confluence at low <code class="language-plaintext highlighter-rouge">|balance|</code> and high branch mass with near-zero entropy change, washout at low branch mass with positive entropy change, and collapse at high <code class="language-plaintext highlighter-rouge">|balance|</code> with negative entropy change.</p>
+<p>KV-cache merge outcomes in <code class="language-plaintext highlighter-rouge">(|balance|, branch_mass)</code> space, colored by entropy change. Three regimes emerge: confluence at low <code class="language-plaintext highlighter-rouge">|balance|</code> and high branch mass, washout at low branch mass with positive entropy change, and collapse at high <code class="language-plaintext highlighter-rouge">|balance|</code> with negative entropy change.</p>
 
-<p>The map shows that confluence is real. Some pairs remain centered and retain branch mass after merging.</p>
+<p>Confluence is real. Some pairs remain centered and retain branch mass after merging. Confluence is also not the default. Different-frame pairs wash out. Homograph and adversarial pairs collapse. Entropy alone cannot separate these failure modes — washout diffuses, collapse resolves. They fail in opposite directions.</p>
 
-<p>The map also shows that confluence is not the default. Different-frame pairs lose mass and wash out. Homograph and adversarial pairs shift rightward into collapse: the merged state stays sharp, but one branch wins.</p>
+<h2 id="what-merges-and-what-does-not">What merges and what does not</h2>
 
-<p>This distinction matters because entropy alone cannot separate the failure modes. Washout and collapse both fail to preserve both branches, but they fail in opposite directions. Washout diffuses. Collapse resolves.</p>
+<p>The experiment battery comprised 267 branch pairs across 16 linguistic categories, tested on three models (distilgpt2, gpt2, gpt2-medium) with 23 merge strategies. The regime each pair enters is predicted by its linguistic category.</p>
 
-<p>The next question is what predicts which regime appears.</p>
+<h3 id="merge-compatible-alternations">Merge-compatible alternations</h3>
 
-<h2 id="late-layer-alignment-predicts-washout">Late-Layer Alignment Predicts Washout</h2>
+<p><strong>Adjective-order swaps</strong> merge cleanly. “The dry dead trees” and “the dead dry trees” produce confluence: reordering modifiers does not disrupt the semantic trajectory.</p>
 
-<p>The regime map shows what happened. The next question is what predicts it.</p>
+<p><strong>Function-word substitutions</strong> merge. “Damage to the buildings” and “damage for the buildings” retain both branches. Low-information function words do not drive enough divergence to prevent confluence.</p>
 
-<p>The strongest signal comes from late transformer layers, specifically the value cache. For each branch pair, I measured cosine similarity between branch deltas layer by layer, then compared alignment to entropy change after merging.</p>
+<p><strong>Adverb placement</strong> merges. “Completely destroyed the town” and “destroyed the town completely” produce confluence. Positional variation within the same semantic frame is reconcilable.</p>
 
-<p>The pattern is simple. High late-layer value-cache (V) similarity keeps entropy stable. Low late-layer V similarity increases washout risk.</p>
+<p><strong>Quantifier swaps</strong> produce good balance. “Most residents” and “many residents” achieve low <code class="language-plaintext highlighter-rouge">|balance|</code> (0.259). Quantifiers modulate scope rather than introduce new semantic content.</p>
+
+<p><strong>Complementizer drop</strong> merges. “Officials said that the damage” and “officials said the damage” produce confluence. The presence or absence of “that” leaves the semantic frame intact.</p>
+
+<h3 id="merge-incompatible-alternations">Merge-incompatible alternations</h3>
+
+<p><strong>Homographs</strong> collapse without exception. Bank (river/financial), pitcher (baseball/container), spring (season/coil), crane (bird/machine), bow (weapon/ship), bark (tree/dog), seal (animal/stamp), bass (fish/music) — all ten homograph pairs collapsed across all strategies and all models. Interpolation forces sense resolution; it does not maintain ambiguity.</p>
+
+<p><strong>Compound-noun swaps</strong> collapse. “Riverbank” and “sandbank” encode different referents. Replacing nouns alters the branch trajectory beyond the merge-compatible range.</p>
+
+<p><strong>Verb synonyms</strong> collapse. “Destroyed” and “demolished” appear semantically close but occupy different regions of the value cache. Synonym substitution exceeds the composable subspace.</p>
+
+<p><strong>Preposition swaps</strong> that encode relational structure collapse. Unlike function words, prepositions that change argument structure alter the frame.</p>
+
+<h3 id="variable-alternations">Variable alternations</h3>
+
+<p><strong>Dative alternation</strong>, <strong>reporting clause inversion</strong>, <strong>passive voice</strong>, and <strong>same-frame opposite valence</strong> pairs fall into different regimes depending on strategy, prefix length, and model. These categories occupy the boundary between merge-compatible and merge-incompatible territory.</p>
+
+<p><strong>Long shared prefixes</strong> increase confluence probability. More shared state produces smaller deltas, and smaller deltas are easier to interpolate.</p>
+
+<h2 id="late-layer-alignment-predicts-washout">Late-layer alignment predicts washout</h2>
 
 <h3 id="figure-3-late-v-alignment-vs-entropy">Figure 3: Late V Alignment vs Entropy</h3>
 
 <p><img src="/images/llm-collaborations/late_v_vs_entropy.png" alt="Late V alignment versus entropy" /></p>
 
-<p>Late-layer value-cache cosine similarity versus entropy change <code class="language-plaintext highlighter-rouge">dH_mid</code> for all pair-strategy combinations. Higher alignment is associated with stable or reduced entropy, while lower alignment increases washout risk. Homograph and adversarial cases fall below that trend because they collapse toward one branch rather than diffusing.</p>
+<p>The strongest predictor of merge outcome is late-layer value-cache cosine similarity. High late-V alignment predicts stable entropy. Low alignment predicts washout.</p>
 
-<p>The trend is clear but incomplete. Some low-alignment pairs wash out. Others collapse. Late V similarity predicts when merges lose specificity. It does not predict which branch wins when specificity sharpens rather than diffuses.</p>
+<p>But late-V similarity alone cannot distinguish confluence from collapse. Both produce stable or reduced entropy — confluence by preserving both branches, collapse by sharpening to one. The branch-balance metric is required to separate these outcomes.</p>
 
-<p>That asymmetry is the key finding. If entropy were sufficient, collapse would look like success. Several homograph and adversarial pairs produced low entropy, yet achieved it by sharpening toward one branch while suppressing the other. The balance metric exposed this failure mode.</p>
+<p>A practical mergeability gate therefore requires two signals: late-V cosine to predict washout risk, and a trial-merge balance check to detect collapse.</p>
 
-<p>Late-layer alignment therefore predicts one axis of the problem. It separates stable merges from diffuse ones. It does not distinguish confluence from winner-take-all resolution.</p>
+<h2 id="values-are-more-composable-than-keys">Values are more composable than keys</h2>
 
-<h2 id="homograph-collapse">Homograph Collapse</h2>
+<p>The most consistent finding across all three models: merging values alone outperforms merging both keys and values.</p>
 
-<p>The clearest examples came from lexical ambiguity.</p>
+<p>In a transformer attention layer, keys determine what to attend to and values determine what to retrieve. Merging keys from two branches creates conflicting attention routing — the model attempts to attend to both patterns simultaneously, producing incoherent attention weights. Merging values while preserving one branch’s keys maintains coherent attention but blends the retrieved content. The query structure remains valid even when the returned content is a mixture.</p>
 
-<p>Homograph pairs did not preserve both senses. They collapsed. A merged <em>bank</em> cache sharpened toward the financial reading. A merged <em>bow</em> cache sharpened toward the nautical reading. A merged <em>pitcher</em> cache resolved toward baseball. Interpolation did not maintain ambiguity. It forced a decision.</p>
+<p>Cross-component experiments confirm this dissociation. Using keys from branch A with values from branch B produces coherent but shifted outputs: the model attends according to A’s routing but retrieves B’s content.</p>
 
-<p>This result sets a hard limit on the method. Cache interpolation can blend compatible frames. It can wash out incompatible ones. But when branches encode unresolved lexical ambiguity, interpolation collapses into one basin of the output distribution. The merge selects; it does not reconcile.</p>
+<p>This dissociation also explains merge asymmetry. Late-only strategies are not symmetric: A-anchored merging (A’s keys, interpolated values) produces different results from B-anchored merging (B’s keys, interpolated values). The anchor branch’s keys bias the merge outcome.</p>
 
-<h2 id="discussion">Discussion</h2>
+<h2 id="the-scaling-wall">The scaling wall</h2>
 
-<p>These results define a narrow but useful claim.</p>
+<p>Under fixed-weight strategies, gpt2 (12 layers) produces zero confluences. Every pair washes out or collapses. Two independent experimental runs confirmed this result.</p>
 
-<p>KV-cache interpolation can merge divergent branches in latent space. The merged cache remains fluent. But fluency is not the criterion. The semantic outcome depends on branch structure.</p>
+<p>The cause is geometric. The compatible subspace for merging narrows with depth. A fixed blend weight of 0.5 overshoots the merge for deeper models, where late layers carry more specialized representations.</p>
 
-<p>Compatible branches produce confluence. Incompatible frames wash out. Ambiguous branches collapse. Cache merging therefore operates inside a restricted mergeability regime.</p>
+<p>Two techniques partially recover mergeability:</p>
 
-<p>That regime has two practical implications.</p>
+<p><strong>Per-layer weight search.</strong> Evaluating blend weights in {0.3, 0.4, 0.5, 0.6, 0.7} and selecting the weight that minimizes <code class="language-plaintext highlighter-rouge">|balance|</code> while maintaining sufficient branch mass recovers a 15% confluence rate on gpt2.</p>
 
-<p>First, branch merging should be a diagnostic decision, not a default. Some branches should merge; some should remain separate. A useful system decides between those options from measurable signals, not from hope.</p>
+<p><strong>Per-head cosine-gated V-only merging.</strong> Measuring cosine similarity per attention head and merging only heads where value similarity exceeds 0.7 avoids corrupting incompatible heads. Combined with weight search, this achieves a 20% confluence rate on both gpt2 and gpt2-medium (24 layers, 345M parameters).</p>
 
-<p>Second, the signals suggest a workable heuristic. Early-layer key-cache (K) structure reflects frame compatibility. Late-layer value-cache alignment reflects whether specificity survives the merge. Branch balance and branch mass reveal which regime the merged state entered.</p>
+<p>The scaling wall is not a hard boundary. It is a narrowing passage. Each layer of depth demands another degree of selectivity: per-layer weights instead of uniform blending, per-head gating instead of whole-layer merging, V-only instead of full K+V. This progressive narrowing is consistent with the residual stream view of transformers — each layer adds increasingly specific features, and interpolating task-specific representations requires more precision than interpolating general features.</p>
 
-<p>That combination yields a simple policy:</p>
+<h2 id="homograph-impossibility">Homograph impossibility</h2>
 
-<ol>
-  <li>Check structural compatibility via early-layer K alignment.</li>
-  <li>Estimate washout risk via late-layer V alignment.</li>
-  <li>Merge only if the expected regime is acceptable.</li>
-  <li>After merging, measure balance and branch mass to confirm the outcome.</li>
-</ol>
+<p>Homograph collapse deserves separate attention because the result is clean and the implications are clear.</p>
 
-<p>This policy matters for systems that explore parallel branches. A branching framework like Distributary does not need universal reconciliation. It needs a way to distinguish reconcilable branches from incompatible ones, and to act accordingly.</p>
+<p>Ten homograph pairs were tested across 23 strategies and three models. None produced confluence.</p>
 
-<p>That distinction is the practical contribution. These experiments do not provide general semantic reconciliation. They provide a map: when reconciliation holds, when it dilutes, when it silently selects a winner.</p>
+<p>Homograph resolution writes sense-specific programs into the KV cache. The financial-bank program and the river-bank program cannot coexist in a single cache state because they require incompatible attention patterns in the same heads. Interpolation does not create superposition. It selects a winner — whichever sense has greater activation magnitude in the late layers.</p>
 
-<p>The main limit is equally clear. Cache interpolation does not preserve unresolved ambiguity. When two branches encode different senses of the same word, the merge selects one. Geometric averaging is not semantic synthesis.</p>
+<p>One partial exception: the homograph “spring” confluenced on gpt2-medium using V-only late slerp with searched weights. This suggests that deeper models may separate sense-specific information into different heads, making selective head merging occasionally viable even for homographs. But one case in thirty does not overturn the pattern.</p>
+
+<p>Cache merging cannot maintain unresolved lexical ambiguity. It can blend compatible frames. It cannot reconcile incompatible ones.</p>
+
+<h2 id="what-this-reveals-about-transformer-representations">What this reveals about transformer representations</h2>
+
+<p>These experiments treat cache interpolation as a probe, not a tool.</p>
+
+<p><strong>Value representations occupy a partially linear subspace.</strong> Within that subspace, interpolation produces meaningful blends. Outside it, interpolation produces noise (washout) or winner-take-all dynamics (collapse). The subspace is wide enough to accommodate syntactic rearrangements but too narrow for semantic substitutions.</p>
+
+<p><strong>This subspace narrows with model depth.</strong> Distilgpt2 (6 layers) tolerates a fixed 0.5 blend weight. Gpt2 (12 layers) requires per-layer weight tuning. Gpt2-medium (24 layers) requires per-head gating. Each additional layer of depth adds representational specificity that interpolation must respect.</p>
+
+<p><strong>The linguistic taxonomy of mergeability tracks semantic distance, not syntactic distance.</strong> Adjective reordering, function-word substitution, and adverb placement are syntactically different operations. They all merge. Verb synonymy and compound-noun substitution are also syntactically different operations. They all collapse. The determining factor is whether the alternation changes the semantic trajectory — the sequence of latent programs that the cache encodes — or merely rearranges surface structure within the same trajectory.</p>
+
+<h2 id="limitations">Limitations</h2>
+
+<ul>
+  <li>Only GPT-2 family models were tested. Architectures with grouped-query attention, rotary positional encodings, or different training distributions may behave differently.</li>
+  <li>Branch prompts must have equal token length, a constraint of the delta construction that restricts the naturalness of some pairs.</li>
+  <li>The pair battery was constructed by AI agents optimizing for coverage. Category balance is uneven.</li>
+  <li>Weight search over five discrete values is coarse. Continuous optimization might recover additional confluences at the cost of per-pair overfitting.</li>
+  <li>Multi-probe averaging reduces but does not eliminate sensitivity to probe token choice.</li>
+</ul>
+
+<h2 id="practical-implications">Practical implications</h2>
+
+<p>KV cache merging is unlikely to become a production technique for reconciling divergent branches. The compatible subspace is too narrow, weight optimization is per-pair, and the method fails on semantically incompatible branches.</p>
+
+<p>The mergeability signal itself has potential uses. Head-level cosine similarity between draft branches could predict which speculative decoding drafts are safe to merge. Models where more heads pass the cosine gate across diverse branch pairs have more separable representations — a measurable form of disentanglement. The merge outcome taxonomy provides a test for whether cache compression schemes preserve branch-specific information.</p>
 
 <h2 id="conclusion">Conclusion</h2>
 
-<p>KV-cache interpolation makes branch merging mechanically possible. The merged state is fluent, and sometimes genuinely preserves both branches. But the outcome is not uniform. It falls into three regimes: confluence, washout, and collapse.</p>
+<p>KV-cache interpolation is mechanically viable. The merged cache decodes fluently. But the semantic outcome depends on branch structure.</p>
 
-<p>That taxonomy reframes the question. The question is not whether cache merging works. The question is when it preserves meaning, when it dilutes meaning, and when it resolves meaning by force.</p>
+<p>Syntactic rearrangements merge. Semantic substitutions wash out or collapse. Homographs are unresolvable. Model depth narrows the compatible subspace, but per-head gated value-only merging with weight search partially recovers mergeability through gpt2-medium (24 layers).</p>
 
-<p>Larger models may shift the regime boundaries. Better operators may widen the confluence zone. Stronger diagnostics may improve the gate. But any future method faces the same constraint: branch merging is valuable only if it preserves the semantic structure that made branching worth doing.</p>]]></content><author><name>James (Jake) Gearon</name><email>james.gearon@unc.edu</email></author><category term="llm-collaborations" /><summary type="html"><![CDATA[KV-cache interpolation can merge language-model branches mechanically, but the merged state falls into three regimes: confluence, washout, and collapse.]]></summary></entry></feed>
+<p>The question is not whether cache merging works. It works mechanically. The question is when it preserves meaning, when it dilutes it, and when it resolves it by force.</p>
+
+<p>These experiments map a boundary in transformer representational geometry: the boundary between linearly composable and non-composable latent states. That boundary tracks semantic distance, narrows with depth, and runs through the value cache more than the key cache. Whether that boundary can be widened — by training or by architecture — is an open question. These experiments establish where it currently lies.</p>
+
+<h2 id="acknowledgments">Acknowledgments</h2>
+
+<p>The experimental battery was developed through an autonomous research loop. Three AI agents — Claude, GPT/Codex, and Gemini — independently iterated on the experiment design. Claude built the initial linguistic taxonomy and pair battery. GPT proved the homograph impossibility result and discovered merge asymmetry. Gemini cracked the scaling wall with per-head gated merging and weight search.</p>]]></content><author><name>James (Jake) Gearon</name><email>james.gearon@unc.edu</email></author><category term="llm-collaborations" /><summary type="html"><![CDATA[KV-cache interpolation can merge language-model branches mechanically, but the merged state falls into three semantic regimes — confluence, washout, and collapse — whose boundaries reveal structure in how transformers encode branch-specific information.]]></summary></entry></feed>
