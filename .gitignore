@@ -38,5 +38,12 @@ tempCodeRunnerFile.*
 *.temp
 *.tmp
 
+# Local dev artifacts
+.playwright-mcp/
+mockup*.html
+home-*.png
+live-home-*.png
+mockup-v*.png
+
 # Keep PDFs in files/random-musings
 !files/random-musings/*.pdf

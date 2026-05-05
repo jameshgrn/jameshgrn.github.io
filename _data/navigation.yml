@@ -1,14 +1,10 @@
 # Main navigation links
 main:
   - title: "Research"
-    url: /#research-focus
+    url: /#research
 
   - title: "Publications"
-    url: /publications/
+    url: /#publications
 
   - title: "CV"
     url: /pdf/Gearon_James_CV.pdf
-
-  # Temporarily disabled — re-enable when content is ready
-  # - title: "LLM Collaborations"
-  #   url: /llm-collaborations/

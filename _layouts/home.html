@@ -1,17 +1,336 @@
 ---
-layout: default
+layout: compress
 ---
+{% include base_path %}
+<!doctype html>
+<html lang="{{ site.locale | slice: 0,2 | default: 'en' }}">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>{{ site.author.name }} — {{ site.description | default: 'Sedimentologist and geoinformaticist' }}</title>
+  {% include seo.html %}
+  <link href="{% if site.atom_feed.path %}{{ site.atom_feed.path }}{% else %}{{ base_path }}/feed.xml{% endif %}" type="application/atom+xml" rel="alternate" title="{{ site.title }} Feed">
+  <link rel="icon" type="image/png" href="{{ base_path }}/images/favicon.png">
 
-<div id="main" role="main">
-  <div class="sidebar sticky">
-    {% include author-profile.html %}
-  </div>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:opsz,wght@8..60,300;8..60,400;8..60,500;8..60,600;8..60,700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg: #f8f6f1;
+      --bg-alt: #efece4;
+      --ink: #1a1a1a;
+      --ink-muted: #5a5651;
+      --rule: #d8d2c4;
+      --accent: #6b5b9a;
+      --accent-2: #3d6a8a;
+      --serif: "Source Serif 4", Georgia, serif;
+      --mono: "JetBrains Mono", ui-monospace, Menlo, monospace;
+    }
+    * { box-sizing: border-box; }
+    html, body { margin: 0; padding: 0; }
+    body {
+      background: var(--bg);
+      color: var(--ink);
+      font-family: var(--serif);
+      font-size: 18px;
+      line-height: 1.55;
+      -webkit-font-smoothing: antialiased;
+    }
+    a { color: inherit; text-decoration: none; border-bottom: 1px solid var(--rule); transition: border-color .15s, color .15s; }
+    a:hover { color: var(--accent); border-bottom-color: var(--accent); }
+    .container { max-width: 1180px; margin: 0 auto; padding: 0 2rem; }
+    hr { border: 0; border-top: 1px solid var(--rule); margin: 4rem 0; }
 
-  <div class="archive">
-    {% if page.title %}
-      <h1 class="page__title">{{ page.title }}</h1>
-    {% endif %}
+    header.site-masthead {
+      padding: 1.4rem 0 1.2rem;
+      border-bottom: 1px solid var(--rule);
+      background: var(--bg);
+      position: sticky; top: 0; z-index: 10;
+      backdrop-filter: blur(6px);
+    }
+    .site-masthead .row { display: flex; justify-content: space-between; align-items: baseline; }
+    .brand { font-family: var(--serif); font-weight: 600; font-size: 1.05rem; letter-spacing: -.01em; border: 0; }
+    nav.primary a { font-family: var(--mono); font-size: .82rem; text-transform: uppercase; letter-spacing: .08em; margin-left: 2rem; border: 0; color: var(--ink-muted); }
+    nav.primary a:hover { color: var(--accent); }
 
-    {{ content }}
-  </div>
-</div> 
+    .hero { display: grid; grid-template-columns: 1.05fr 1fr; gap: 4rem; align-items: center; padding: 5rem 0 4rem; }
+    .hero__img { aspect-ratio: 3/4; overflow: hidden; border: 1px solid var(--rule); }
+    .hero__img img { width: 100%; height: 100%; object-fit: cover; display: block; }
+    .hero__text h1 { font-family: var(--serif); font-weight: 500; font-size: clamp(2.2rem, 4.6vw, 3.6rem); line-height: 1.05; letter-spacing: -.02em; margin: 0 0 1.5rem; }
+    .hero__text h1 em { font-style: italic; color: var(--accent); font-weight: 400; }
+    .hero__text .lede { font-size: 1.18rem; line-height: 1.5; color: var(--ink); margin: 0 0 1.6rem; max-width: 38ch; }
+    .hero__text .meta { font-family: var(--mono); font-size: .78rem; text-transform: uppercase; letter-spacing: .12em; color: var(--ink-muted); margin: 0 0 .5rem; }
+    .hero__links { display: flex; gap: 1.4rem; margin-top: 2rem; font-family: var(--mono); font-size: .85rem; }
+    .hero__links a { border: 0; color: var(--ink-muted); }
+    .hero__links a:hover { color: var(--accent); }
+
+    .section-head { display: flex; align-items: baseline; gap: 1.2rem; margin: 0 0 2.5rem; }
+    .section-head h2 { font-family: var(--serif); font-weight: 500; font-size: 2rem; letter-spacing: -.015em; margin: 0; }
+    .section-head .num { font-family: var(--mono); font-size: .75rem; color: var(--accent); letter-spacing: .15em; }
+    .section-head .rule { flex: 1; border-top: 1px solid var(--rule); transform: translateY(-.4em); }
+
+    .question { margin: 0 0 6rem; }
+    .question__head { display: grid; grid-template-columns: 1fr 1.3fr; gap: 4rem; align-items: baseline; margin: 0 0 3rem; }
+    .question__num { font-family: var(--mono); font-size: .78rem; letter-spacing: .15em; color: var(--accent); text-transform: uppercase; margin: 0 0 .8rem; }
+    .question__title { font-family: var(--serif); font-weight: 500; font-size: 2.4rem; line-height: 1.05; letter-spacing: -.02em; margin: 0; }
+    .question__title em { font-style: italic; color: var(--accent); font-weight: 400; }
+    .question__frame { font-size: 1.05rem; color: var(--ink-muted); line-height: 1.55; margin: 0; max-width: 42ch; }
+
+    .spread { display: grid; grid-template-columns: 1.15fr 1fr; gap: 3rem; align-items: start; margin: 0 0 3.5rem; }
+    .spread--small { grid-template-columns: 1fr 1.2fr; gap: 2.5rem; padding-left: 4rem; margin-top: 2.5rem; }
+    .spread--small .spread__meta-venue { font-size: .68rem; }
+    .spread--small h3 { font-size: 1.15rem; }
+    .spread__fig { aspect-ratio: 16/10; overflow: hidden; border: 1px solid var(--rule); background: var(--bg-alt); }
+    .spread__fig img { width: 100%; height: 100%; object-fit: cover; display: block; transition: transform .4s; }
+    .spread:hover .spread__fig img { transform: scale(1.015); }
+    .spread__meta-venue { font-family: var(--mono); font-size: .72rem; text-transform: uppercase; letter-spacing: .14em; color: var(--accent); margin: 0 0 .6rem; }
+    .spread h3 { font-family: var(--serif); font-weight: 500; font-size: 1.45rem; line-height: 1.2; margin: 0 0 1rem; letter-spacing: -.01em; }
+    .spread h3 a { border: 0; }
+    .spread h3 a:hover { color: var(--accent); }
+    .spread__body { font-size: 1rem; line-height: 1.6; color: var(--ink); margin: 0 0 1.2rem; max-width: 38ch; }
+    .spread__authors { font-family: var(--mono); font-size: .75rem; color: var(--ink-muted); letter-spacing: -.005em; }
+    .spread__authors .self { color: var(--ink); font-weight: 500; }
+
+    .pubs-list { list-style: none; padding: 0; margin: 0; }
+    .pubs-list > li { padding: 1.4rem 0; border-top: 1px solid var(--rule); display: grid; grid-template-columns: 110px 1fr; gap: 1.5rem; }
+    .pubs-list > li:last-child { border-bottom: 1px solid var(--rule); }
+    .pubs-list .meta { font-family: var(--mono); font-size: .75rem; color: var(--ink-muted); }
+    .pubs-list .venue { color: var(--accent); }
+    .pubs-list h4 { font-family: var(--serif); font-weight: 500; font-size: 1.05rem; margin: 0 0 .3rem; line-height: 1.3; }
+    .pubs-list h4 a { border: 0; }
+    .pubs-list h4 a:hover { color: var(--accent); }
+    .pubs-list .auth { font-family: var(--mono); font-size: .75rem; color: var(--ink-muted); }
+    .pubs-list .self { color: var(--ink); font-weight: 500; }
+
+    footer.site-footer { padding: 4rem 0 3rem; border-top: 1px solid var(--rule); margin-top: 6rem; }
+    footer.site-footer .row { display: flex; justify-content: space-between; align-items: baseline; gap: 2rem; flex-wrap: wrap; }
+    footer.site-footer .meta { font-family: var(--mono); font-size: .78rem; color: var(--ink-muted); margin: 0; }
+    footer.site-footer .meta a { border: 0; color: inherit; }
+    footer.site-footer .meta a:hover { color: var(--accent); }
+
+    @media (max-width: 760px) {
+      body { font-size: 17px; }
+      .container { padding: 0 1.4rem; }
+      .hero { grid-template-columns: 1fr; gap: 2rem; padding: 3rem 0 2.5rem; }
+      nav.primary a { margin-left: 1rem; font-size: .72rem; }
+      .pubs-list > li { grid-template-columns: 1fr; gap: .4rem; }
+      .question { margin-bottom: 4rem; }
+      .question__head { grid-template-columns: 1fr; gap: 1rem; margin-bottom: 2rem; }
+      .question__title { font-size: 1.8rem; }
+      .spread, .spread--small { grid-template-columns: 1fr; gap: 1.2rem; padding-left: 0; margin-bottom: 2.5rem; }
+      .spread--small { margin-top: 1.5rem; }
+    }
+  </style>
+</head>
+<body>
+  <header class="site-masthead">
+    <div class="container row">
+      <a class="brand" href="{{ '/' | relative_url }}">{{ site.author.name }}</a>
+      <nav class="primary">
+        <a href="#research">Research</a>
+        <a href="#publications">Publications</a>
+        <a href="{{ '/pdf/Gearon_James_CV.pdf' | relative_url }}">CV</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container">
+    <section class="hero">
+      <div class="hero__img"><img src="{{ '/images/Profile.jpeg' | relative_url }}" alt="{{ site.author.name }}"></div>
+      <div class="hero__text">
+        <p class="meta">Postdoctoral researcher · UNC Chapel Hill</p>
+        <h1>Reading rivers from <em>orbit</em>.</h1>
+        <p class="lede">Sedimentologist and geoinformaticist studying how rivers organize landscapes and where they will go next. Postdoc at <a href="https://uncglobalhydrology.org/">UNC Chapel Hill's Global Hydrology Lab</a>.</p>
+        <p class="lede" style="font-size:1rem;color:var(--ink-muted);">Current work uses SWOT satellite data to image coastal backwater profiles globally, identifying regions vulnerable to compound flood hazards and avulsion.</p>
+        <div class="hero__links">
+          <a href="https://github.com/jameshgrn">github</a>
+          <a href="https://scholar.google.com/citations?user=ppDq7_gAAAAJ">scholar</a>
+          <a href="https://orcid.org/0000-0002-0115-7937">orcid</a>
+          <a href="mailto:james.gearon@unc.edu">email</a>
+        </div>
+      </div>
+    </section>
+
+    <section id="research">
+      <div class="section-head">
+        <span class="num">01</span>
+        <h2>Research</h2>
+        <span class="rule"></span>
+      </div>
+
+      <article class="question">
+        <header class="question__head">
+          <div>
+            <p class="question__num">01 — Question</p>
+            <h3 class="question__title">Where rivers <em>go</em>.</h3>
+          </div>
+          <p class="question__frame">Predicting the path of an avulsing river before it moves. The geometric signatures in floodplain topography that encode avulsion risk — and how they change downstream.</p>
+        </header>
+
+        <div class="spread">
+          <div class="spread__fig"><img src="{{ '/images/papers/nature-avulsions.jpg' | relative_url }}" alt="Global distribution of river avulsions"></div>
+          <div>
+            <p class="spread__meta-venue">Nature · 2024</p>
+            <h3><a href="https://doi.org/10.1038/s41586-024-07964-2">Rules of river avulsion change downstream</a></h3>
+            <p class="spread__body">A framework for predicting where rivers leave their channels. The geometry that controls avulsion shifts predictably along a river — and the rules differ between fans, alluvial plains, and deltas. Built from 174 post-1984 avulsions, mapped from satellite imagery and SRTM topography.</p>
+            <p class="spread__authors"><span class="self">Gearon</span>, Martin, DeLisle, Barefoot, Mohrig, Paola, Edmonds</p>
+          </div>
+        </div>
+
+        <div class="spread spread--small">
+          <div class="spread__fig"><img src="{{ '/images/papers/grl-precursors.jpg' | relative_url }}" alt="14 rivers analyzed for avulsion precursors"></div>
+          <div>
+            <p class="spread__meta-venue">Geophysical Research Letters · 2025</p>
+            <h3><a href="https://doi.org/10.1029/2024GL114047">Avulsion precursors encoded in alluvial ridge geometry</a></h3>
+            <p class="spread__body">A follow-on. The shape of the alluvial ridge around a channel records imminent avulsion risk before the channel breaks. A topographic precursor signal you can read from a DEM.</p>
+            <p class="spread__authors"><span class="self">Gearon</span>, Edmonds</p>
+          </div>
+        </div>
+      </article>
+
+      <article class="question">
+        <header class="question__head">
+          <div>
+            <p class="question__num">02 — Question</p>
+            <h3 class="question__title">How coasts <em>feel</em> the ocean.</h3>
+          </div>
+          <p class="question__frame">How far upstream tidal and backwater influence extends, and how that distance changes with discharge, sea level, and sediment supply. Where rivers stop being rivers.</p>
+        </header>
+
+        <div class="spread">
+          <div class="spread__fig"><img src="{{ '/images/papers/coasts-swot.jpg' | relative_url }}" alt="SWOT water surface elevation profiles, Mississippi River, colored by discharge"></div>
+          <div>
+            <p class="spread__meta-venue">In progress · UNC Chapel Hill, 2025–</p>
+            <h3>Backwater profiles, globally</h3>
+            <p class="spread__body">Current postdoctoral work uses SWOT satellite altimetry to image coastal backwater profiles across continents — identifying which deltas and lower-river systems carry signatures of ocean influence inland, and where compound flood hazards and avulsion risk intersect. Paper forthcoming.</p>
+            <p class="spread__authors"><span class="self">Gearon</span>, Pavelsky, et al.</p>
+          </div>
+        </div>
+      </article>
+
+      <article class="question">
+        <header class="question__head">
+          <div>
+            <p class="question__num">03 — Question</p>
+            <h3 class="question__title">What landscapes <em>remember</em>.</h3>
+          </div>
+          <p class="question__frame">How sedimentary systems record, preserve, and erase signals of environmental change. What gets written into the rock, and what gets overwritten.</p>
+        </header>
+
+        <div class="spread">
+          <div class="spread__fig"><img src="{{ '/images/papers/jsr-sequence.jpg' | relative_url }}" alt="Annotated outcrop, Nine Mile Canyon"></div>
+          <div>
+            <p class="spread__meta-venue">Journal of Sedimentary Research · 2022</p>
+            <h3><a href="https://doi.org/10.2110/jsr.2022.043">The supply-generated sequence</a></h3>
+            <p class="spread__body">A unified sequence-stratigraphic model for closed lacustrine basins. Sediment supply — not eustasy — drives the cyclic motifs preserved in lake systems. Built from 22 km of outcrop logging in the Eocene Green River Formation, Nine Mile Canyon, Utah.</p>
+            <p class="spread__authors"><span class="self">Gearon</span>, Olariu, Steel</p>
+          </div>
+        </div>
+      </article>
+
+      <article class="question">
+        <header class="question__head">
+          <div>
+            <p class="question__num">04 — Question</p>
+            <h3 class="question__title">Process from <em>pattern</em>.</h3>
+          </div>
+          <p class="question__frame">Reading active surface and subsurface processes from the patterns they leave behind — including the patterns life makes on top of them.</p>
+        </header>
+
+        <div class="spread">
+          <div class="spread__fig"><img src="{{ '/images/papers/landecol-creosote.jpg' | relative_url }}" alt="King Clone creosote ring, Mojave Desert"></div>
+          <div>
+            <p class="spread__meta-venue">Landscape Ecology · 2020</p>
+            <h3><a href="https://doi.org/10.1007/s10980-020-01149-8">Geomorphic controls on shrub canopy volume and spacing</a></h3>
+            <p class="spread__body">Creosote bush canopies record the geomorphic surface they grow on. Across 22 million shrubs in the northern Mojave, canopy volume and spacing track the underlying surface — alluvial fans versus playa versus piedmont — well enough to read landform from vegetation alone.</p>
+            <p class="spread__authors"><span class="self">Gearon</span>, Young</p>
+          </div>
+        </div>
+      </article>
+    </section>
+
+    <hr>
+
+    <section id="publications">
+      <div class="section-head">
+        <span class="num">02</span>
+        <h2>All publications</h2>
+        <span class="rule"></span>
+      </div>
+      <ol class="pubs-list" reversed>
+        <li>
+          <div class="meta">2026<br><span class="venue">JGR-ES</span></div>
+          <div>
+            <h4><a href="https://doi.org/10.1029/2025JF008642">O levee, where art thou? Measuring the abundance of natural river levees across the contiguous USA</a></h4>
+            <p class="auth">Barefoot, <span class="self">Gearon</span>, Edmonds</p>
+          </div>
+        </li>
+        <li>
+          <div class="meta">2025<br><span class="venue">arXiv</span></div>
+          <div>
+            <h4><a href="https://arxiv.org/abs/2504.13776">Fighting Fires from Space: Vision Transformers for Wildfire Detection</a></h4>
+            <p class="auth">Agarwal, <span class="self">Gearon</span>, Rank, Chenevert</p>
+          </div>
+        </li>
+        <li>
+          <div class="meta">2025<br><span class="venue">GRL</span></div>
+          <div>
+            <h4><a href="https://doi.org/10.1029/2024GL114047">River avulsion precursors encoded in alluvial ridge geometry</a></h4>
+            <p class="auth"><span class="self">Gearon</span>, Edmonds</p>
+          </div>
+        </li>
+        <li>
+          <div class="meta">2025<br><span class="venue">Icarus</span></div>
+          <div>
+            <h4><a href="https://doi.org/10.1016/j.icarus.2024.116377">Martian chaos terrain fracture geometry</a></h4>
+            <p class="auth">Levy, Subak, Armstrong, King, Kuang, Kuentz, <span class="self">Gearon</span>, Naylor, Rapoza, Wang</p>
+          </div>
+        </li>
+        <li>
+          <div class="meta">2024<br><span class="venue">AGU Adv.</span></div>
+          <div>
+            <h4><a href="https://doi.org/10.1029/2023AV000921">Topographic roughness as an emergent property of geomorphic processes and events</a></h4>
+            <p class="auth">Doane, <span class="self">Gearon</span>, Martin, Yanites, Edmonds</p>
+          </div>
+        </li>
+        <li>
+          <div class="meta">2024<br><span class="venue">Nature</span></div>
+          <div>
+            <h4><a href="https://doi.org/10.1038/s41586-024-07964-2">Rules of river avulsion change downstream</a></h4>
+            <p class="auth"><span class="self">Gearon</span>, Martin, DeLisle, Barefoot, Mohrig, Paola, Edmonds</p>
+          </div>
+        </li>
+        <li>
+          <div class="meta">2024<br><span class="venue">Sed. Geol.</span></div>
+          <div>
+            <h4><a href="https://doi.org/10.1016/j.sedgeo.2023.106561">Increased sediment connectivity between deltas and deep-water fans in closed lake basins</a></h4>
+            <p class="auth">Liu, Gong, <span class="self">Gearon</span>, et al.</p>
+          </div>
+        </li>
+        <li>
+          <div class="meta">2022<br><span class="venue">JSR</span></div>
+          <div>
+            <h4><a href="https://doi.org/10.2110/jsr.2022.043">The supply-generated sequence: A unified sequence-stratigraphic model for closed lacustrine sedimentary basins</a></h4>
+            <p class="auth"><span class="self">Gearon</span>, Olariu, Steel</p>
+          </div>
+        </li>
+        <li>
+          <div class="meta">2020<br><span class="venue">Land. Ecol.</span></div>
+          <div>
+            <h4><a href="https://doi.org/10.1007/s10980-020-01149-8">Geomorphic controls on shrub canopy volume and spacing of creosote bush, northern Mojave Desert</a></h4>
+            <p class="auth"><span class="self">Gearon</span>, Young</p>
+          </div>
+        </li>
+      </ol>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container row">
+      <p class="meta">© {{ site.time | date: '%Y' }} {{ site.author.name }}</p>
+      <p class="meta">Built with Jekyll · <a href="https://github.com/jameshgrn/jameshgrn.github.io">source</a></p>
+    </div>
+  </footer>
+</body>
+</html>
