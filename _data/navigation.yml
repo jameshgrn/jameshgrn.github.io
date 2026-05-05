@@ -9,5 +9,6 @@ main:
   - title: "CV"
     url: /pdf/Gearon_James_CV.pdf
 
-  - title: "LLM Collaborations"
-    url: /llm-collaborations/
+  # Temporarily disabled — re-enable when content is ready
+  # - title: "LLM Collaborations"
+  #   url: /llm-collaborations/
