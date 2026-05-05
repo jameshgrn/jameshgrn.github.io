@@ -41,6 +41,12 @@ What I'm trying to understand:
 <ol class="publications-list" reversed>
 
 <li class="publication-item">
+<h3 class="publication__title"><a href="https://doi.org/10.1029/2025JF008642">O levee, where art thou? Measuring the abundance of natural river levees across the contiguous USA</a></h3>
+<p class="publication__authors">Eric A. Barefoot, <span class="author-self">James H. Gearon</span>, Douglas A. Edmonds</p>
+<p class="publication__venue">Journal of Geophysical Research: Earth Surface, 2026</p>
+</li>
+
+<li class="publication-item">
 <h3 class="publication__title"><a href="https://arxiv.org/abs/2504.13776">Fighting Fires from Space: Leveraging Vision Transformers for Enhanced Wildfire Detection and Characterization</a></h3>
 <p class="publication__authors">Aman Agarwal, <span class="author-self">James Gearon</span>, Raksha Rank, Etienne Chenevert</p>
 <p class="publication__venue">arXiv preprint, 2025</p>
@@ -73,7 +79,7 @@ What I'm trying to understand:
 <li class="publication-item">
 <h3 class="publication__title"><a href="https://doi.org/10.1016/j.sedgeo.2023.106561">Increased sediment connectivity between deltas and deep-water fans in closed lake basins</a></h3>
 <p class="publication__authors">Puyu Liu, Chenglin Gong, <span class="author-self">James H. Gearon</span>, et al.</p>
-<p class="publication__venue">Sedimentary Geology, 2023</p>
+<p class="publication__venue">Sedimentary Geology, 2024</p>
 </li>
 
 <li class="publication-item">
