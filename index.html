@@ -144,8 +144,11 @@
     .spread--small .spread__meta-venue { font-size: .68rem; }
     .spread--small h3 { font-size: 1.15rem; }
     .spread__fig { aspect-ratio: 16/10; overflow: hidden; border: 1px solid var(--rule); background: var(--bg-alt); }
-    .spread__fig img { width: 100%; height: 100%; object-fit: cover; display: block; transition: transform .4s; }
+    .spread__fig img { width: 100%; height: 100%; object-fit: cover; display: block; transition: transform .4s; filter: saturate(.9) contrast(1.02); }
     .spread:hover .spread__fig img { transform: scale(1.015); }
+    /* Chart-type thumbnails: blend white plot background into the warm card tint */
+    .spread__fig--chart { background: var(--bg-alt); }
+    .spread__fig--chart img { object-fit: contain; mix-blend-mode: multiply; filter: saturate(.85); }
     .spread__meta-venue { font-family: var(--mono); font-size: .72rem; text-transform: uppercase; letter-spacing: .14em; color: var(--accent); margin: 0 0 .6rem; }
     .spread h3 { font-family: var(--serif); font-weight: 500; font-size: 1.45rem; line-height: 1.2; margin: 0 0 1rem; letter-spacing: -.01em; }
     .spread h3 a { border: 0; }
@@ -261,7 +264,7 @@
         </header>
 
         <div class="spread">
-          <div class="spread__fig"><img src="/images/papers/coasts-swot.jpg" alt="SWOT water surface elevation profiles, Mississippi River, colored by discharge"></div>
+          <div class="spread__fig spread__fig--chart"><img src="/images/papers/coasts-swot.jpg" alt="SWOT water surface elevation profiles, Mississippi River, colored by discharge"></div>
           <div>
             <p class="spread__meta-venue">In progress · UNC Chapel Hill, 2025–</p>
             <h3>Backwater profiles, globally</h3>
