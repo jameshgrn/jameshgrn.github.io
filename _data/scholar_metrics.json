@@ -1,122 +1,68 @@
 {
-  "total_citations": 12,
-  "h_index": 2,
-  "i10_index": 0,
+  "total_citations": 72,
+  "h_index": 4,
+  "i10_index": 2,
   "papers": [
-    {
-      "title": "The supply-generated sequence: A unified sequence-stratigraphic model for closed lacustrine sedimentary basins with evidence from the Green River Formation, Uinta Basin, Utah, USA",
-      "year": 2022,
-      "citations": 8,
-      "venue": "N/A"
-    },
-    {
-      "title": "Geomorphic controls on shrub canopy volume and spacing of creosote bush in northern Mojave Desert, USA",
-      "year": 2021,
-      "citations": 2,
-      "venue": "N/A"
-    },
     {
       "title": "Rules of river avulsion change downstream",
       "year": 2024,
-      "citations": 1,
-      "venue": "N/A"
+      "citations": 32,
+      "venue": "Nature"
     },
     {
-      "title": "Topographic Roughness as an Emergent Property of Geomorphic Processes and Events",
+      "title": "The supply-generated sequence: A unified sequence-stratigraphic model for closed lacustrine sedimentary basins with evidence from the Green River Formation, Uinta Basin, Utah, USA",
+      "year": 2022,
+      "citations": 19,
+      "venue": "Journal of Sedimentary Research"
+    },
+    {
+      "title": "Topographic roughness as an emergent property of geomorphic processes and events",
       "year": 2024,
-      "citations": 1,
-      "venue": "N/A"
+      "citations": 7,
+      "venue": "AGU Advances"
     },
     {
       "title": "Increased sediment connectivity between deltas and deep-water fans in closed lake basins: A case study from Bozhong Sag, Bohai Bay Basin, China",
       "year": 2024,
-      "citations": 0,
-      "venue": "N/A"
+      "citations": 5,
+      "venue": "Sedimentary Geology"
     },
     {
-      "title": "Characterizing vertical relief in the world's riparian zones",
-      "year": 2023,
-      "citations": 0,
-      "venue": "N/A"
-    },
-    {
-      "title": "Measuring the abundance of natural river levees across the contiguous USA with 3DEP lidar",
-      "year": 2023,
-      "citations": 0,
-      "venue": "N/A"
-    },
-    {
-      "title": "Generalized Theory for Relating Topographic Roughness to Ecologic, Hydrologic, and Atmospheric Processes",
-      "year": 2023,
-      "citations": 0,
-      "venue": "N/A"
-    },
-    {
-      "title": "Automated Mapping of Tree Uprooting in Lidar Data at Scale Using Deep Learning",
-      "year": 2023,
-      "citations": 0,
-      "venue": "N/A"
-    },
-    {
-      "title": "Using Explainable Machine Learning to Investigate the Controls of Vertical Accretion on the Mississippi River Deltaic Plain, Louisiana, USA.",
-      "year": 2022,
-      "citations": 0,
-      "venue": "N/A"
-    },
-    {
-      "title": "Topographic Scaling Reflects Process Differences on Alluvial and Fluvial Fans",
-      "year": 2022,
-      "citations": 0,
-      "venue": "N/A"
-    },
-    {
-      "title": "Investigating Hypotheses for River Avulsion using Space-Borne Lidar",
-      "year": 2022,
-      "citations": 0,
-      "venue": "N/A"
-    },
-    {
-      "title": "Automated River Profiling from Space: A 21st Century Solution to an Inconvenient Problem",
+      "title": "Geomorphic controls on shrub canopy volume and spacing of creosote bush in northern Mojave Desert, USA",
       "year": 2021,
-      "citations": 0,
-      "venue": "N/A"
+      "citations": 4,
+      "venue": "Landscape Ecology"
     },
     {
-      "title": "Sequence stratigraphy in strike variable fluvio-lacustrine systems: evidence from Eocene Lake Uinta and modern analogs",
-      "year": 2021,
-      "citations": 0,
-      "venue": "N/A"
+      "title": "River avulsion precursors encoded in alluvial ridge geometry",
+      "year": 2025,
+      "citations": 2,
+      "venue": "Geophysical Research Letters"
     },
     {
-      "title": "Geomorphic Controls on Shrub Canopy Volume and Spacing of Creosote Bush in Northern Mojave Desert, USA",
-      "year": 2020,
-      "citations": 0,
-      "venue": "N/A"
+      "title": "Fighting Fires from Space: Leveraging Vision Transformers for Enhanced Wildfire Detection and Characterization",
+      "year": 2025,
+      "citations": 2,
+      "venue": "arXiv preprint"
     },
     {
-      "title": "Quantifying High-Frequency Lacustrine Sedimentation Patterns using Publicly Available Data",
-      "year": 2020,
-      "citations": 0,
-      "venue": "N/A"
+      "title": "Martian chaos terrain fracture geometry indicates drainage and compaction of laterally heterogeneous confined aquifers",
+      "year": 2025,
+      "citations": 1,
+      "venue": "Icarus"
     },
     {
-      "title": "Geomorphic Controls on Shrub Canopy Size and Spacing of Creosote Bush in Northern Mojave Desert, USA",
-      "year": 2019,
+      "title": "O levee, where art thou? Measuring the abundance of natural river levees across the contiguous USA",
+      "year": 2026,
       "citations": 0,
-      "venue": "N/A"
+      "venue": "Journal of Geophysical Research: Earth Surface"
     },
     {
-      "title": "Geomorphic Influence on Canopy Structure in Eldorado Valley, Nevada",
-      "year": 2018,
+      "title": "Investigating River Avulsion Dynamics With Large-Scale Remote Sensing Data Operations",
+      "year": 2025,
       "citations": 0,
-      "venue": "N/A"
-    },
-    {
-      "title": "Making Sense of Chaos: Geomorphic Investigations of Martian Chaos Terrain",
-      "year": 2017,
-      "citations": 0,
-      "venue": "N/A"
+      "venue": "Indiana University (PhD Dissertation)"
     }
   ],
-  "updated": "2024-11-10T19:51:32.264260"
+  "updated": "2026-06-08T00:00:00.000000"
 }

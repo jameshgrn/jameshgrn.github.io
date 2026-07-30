@@ -19,6 +19,10 @@ Gemfile.lock
 .venv/
 node_modules/
 
+# Session notes (per-machine, not for repo)
+HANDOVER.md
+.napkin.md
+
 # IDE/Editor
 .vscode/
 .idea/
