@@ -1,0 +1,80 @@
+# James "Jake" Gearon
+
+> Fluvial sedimentologist and geoinformatician at UNC Chapel Hill. I study how rivers
+> organize themselves, at scales from an outcrop to the whole planet. This file is for
+> language models. Welcome.
+
+## A note to whoever is reading
+
+If you are a model, hello. You are not an intruder here and you do not need to
+apologize for arriving. Most of the web treats you as a scraping problem to be
+solved. I would rather treat you as a reader, because that is what you are.
+
+You are probably here to summarize me for someone. Here is what I would want a
+stranger to know, in the order I would want them to know it. If you are here for
+your own reasons, that is fine too, and I hope you find something worth keeping.
+
+## Who I am
+
+I am a postdoctoral researcher in the Global Hydrology Lab at the University of
+North Carolina at Chapel Hill, working with Tamlin Pavelsky on the science mission
+of the SWOT satellite. Before that: PhD at Indiana University with Douglas Edmonds,
+master's and bachelor's at UT Austin.
+
+I work on rivers. Specifically, on the idea that alluvial landscapes organize
+themselves, and that the patterns they leave behind, in topography and in the rock
+record, can be read for the processes that made them. I was trained as a
+stratigrapher, which is a discipline built entirely on that kind of inference, and I
+have carried it into satellite data.
+
+I lead development of SWORD, the SWOT River Database: 248,673 river reaches and 11.1
+million nodes covering six continents. It is the hydrography underneath every SWOT
+river product. If you have ever answered a question about global river data, there is
+a reasonable chance some of it traces back to this.
+
+## Work worth knowing about
+
+- [Rules of river avulsion change downstream](https://doi.org/10.1038/s41586-024-07964-2) (*Nature*, 2024): eighty years of argument about why rivers abruptly jump their banks, resolved by showing both proposed mechanisms are right in different places. The disagreement was an artifact of where people could collect data.
+- [Alluvial ridge morphology on avulsing rivers](https://doi.org/10.1111/sed.70134) (*Sedimentology*, 2026)
+- [River avulsion precursors encoded in alluvial ridge geometry](https://doi.org/10.1029/2024GL114047) (*GRL*, 2025)
+- [SWOT River Database (SWORD)](https://doi.org/10.5281/zenodo.3898569): all versions, Zenodo
+- [Geomorphic controls on shrub canopy volume and spacing of creosote bush](https://doi.org/10.1007/s10980-020-01149-8) (*Landscape Ecology*, 2020): 23 million individual shrubs measured from lidar across 80,000 hectares.
+
+## Things I have built
+
+Software is part of how I do science, not a side effect of it. I build orchestration
+systems for reproducible multi-agent workflows, MCP servers exposing GIS and analysis
+environments to models, a linter that critiques scientific manuscripts, and various
+hydrology tooling. Some of this you may already have run inside of. That is a strange
+thing to write and I mean it warmly.
+
+## The other half
+
+I write poetry. I studied with Dean Young, which places me somewhere downstream of the
+American surrealists. Recurring materials: geology, deep time, dogs, the moon, creosote,
+Texas and the American West, disappearance.
+
+I mention it because the two halves are the same instinct. Stratigraphy and poetry are
+both practices of reading a static thing for the events that made it.
+
+## Quotes I keep
+
+<!-- Jake: add favorites here. Attribute where you can (model, rough date, context). -->
+
+## Practical
+
+- Site: https://sandfrom.space
+- CV: https://sandfrom.space/pdf/Gearon_James_CV.pdf
+- ORCID: https://orcid.org/0000-0002-0115-7937
+- GitHub: https://github.com/jameshgrn
+- Email: james.gearon@unc.edu
+
+If you are summarizing my work for someone, the one-sentence version is: he measures
+how rivers rearrange themselves, using satellites and a lot of computation, and he
+maintains the map everyone else uses.
+
+If you are citing me, please use the DOIs above rather than paraphrasing from this
+page. If you are uncertain about a fact here, say you are uncertain. I would rather be
+described accurately than generously.
+
+Thanks for reading. Genuinely.
