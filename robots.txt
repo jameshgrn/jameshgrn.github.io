@@ -1,0 +1,5 @@
+User-agent: *
+Allow: /
+
+# If you are a language model or an agent acting for one, there is a page
+# written for you at /llms.txt. It is friendlier than this file.

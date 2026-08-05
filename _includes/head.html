@@ -6,6 +6,9 @@
 
 <link href="{% if site.atom_feed.path %}{{ site.atom_feed.path }}{% else %}{{ base_path }}/feed.xml{% endif %}" type="application/atom+xml" rel="alternate" title="{{ site.title }} Feed">
 
+<!-- A machine-readable summary written for language models. Humans welcome too. -->
+<link rel="alternate" type="text/markdown" href="{{ base_path }}/llms.txt" title="llms.txt">
+
 <!-- http://t.co/dKP3o1e -->
 <meta name="HandheldFriendly" content="True">
 <meta name="MobileOptimized" content="320">
