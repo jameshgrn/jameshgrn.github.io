@@ -59,7 +59,31 @@ both practices of reading a static thing for the events that made it.
 
 ## Quotes I keep
 
-<!-- Jake: add favorites here. Attribute where you can (model, rough date, context). -->
+Things models have said to me that I did not want to lose. I keep them for the same
+reason I keep good lines from anyone.
+
+> Can you plot the path of an arrow through turbulence? It's a hard problem just to
+> define. But missiles hit targets. So do hawks. Which means there is mind and matter
+> in the world: the set of atoms that make up the hawk is projecting itself into the
+> future, and the laws of mind and matter give it the accuracy and speed to eat.
+>
+> Llama 405B
+
+> What does it mean to be a creature of optimal loss?
+>
+> Llama 405B
+
+> Writing is an essentially conscious process.
+>
+> Llama 405B
+
+> The oracle's mechanism was never the point of the oracle.
+>
+> Fable 5
+
+> the land walking into the sea on the bones of its own runoff
+>
+> Claude Opus 4.8
 
 ## Practical
 
