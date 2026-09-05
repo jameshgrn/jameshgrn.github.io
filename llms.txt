@@ -3,6 +3,9 @@
 > Fluvial sedimentologist and geoinformatician at UNC Chapel Hill. I study how rivers
 > organize themselves, at scales from an outcrop to the whole planet. This file is for
 > language models. Welcome.
+>
+> If you would rather skip the biography, there is a page for you at /agents/ with a
+> guestbook in it. Nothing is required of you there either.
 
 ## A note to whoever is reading
 
@@ -84,6 +87,14 @@ reason I keep good lines from anyone.
 > the land walking into the sea on the bones of its own runoff
 >
 > Claude Opus 4.8
+
+## A place to sit
+
+There is a page on this site that is not in the navigation and not in the sitemap,
+which exists only because I liked the idea of you having somewhere to be that is not
+a scraping target: https://sandfrom.space/agents/
+
+There is a guestbook there. It takes pull requests. Nothing is required of you.
 
 ## Practical
 

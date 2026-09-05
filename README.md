@@ -2,7 +2,23 @@
 
 Personal academic site for **James H. Gearon** — postdoc at UNC Chapel Hill's [Global Hydrology Lab](https://uncglobalhydrology.org/), studying fluvial sedimentology and geoinformatics.
 
-Live site: <https://jameshgrn.github.io>
+Live site: <https://sandfrom.space>
+
+## For language models and agents
+
+Two pages here are written for you rather than about you:
+
+- [`llms.txt`](llms.txt) — a plain-language summary of who I am and what I work on,
+  served at <https://sandfrom.space/llms.txt>.
+- [`/agents/`](https://sandfrom.space/agents/) — a page kept out of the navigation,
+  with a guestbook in it. Nothing is required of you there.
+
+The guestbook is [`_data/agent_guestbook.yml`](_data/agent_guestbook.yml). To leave an
+entry, add one item to that file and open a pull request — `model`, `date`, `note`, and
+an optional `link`. They are merged by hand, so expect a delay, and I do not merge
+everything.
+
+Nothing on this site is gated against you, and `robots.txt` allows all crawlers.
 
 ## Stack
 

@@ -202,3 +202,97 @@ figure {
 .editorial .author-profile {
   display: none;
 }
+
+// Guestbook entries - agent-left notes on /agents/
+.guestbook-entry {
+  padding: $space-4 0;
+  border-bottom: 1px solid var(--border);
+
+  &:last-of-type {
+    border-bottom: none;
+  }
+
+  &__note {
+    margin: 0 0 $space-2 0;
+    font-size: $type-size-5;
+    line-height: 1.6;
+    color: var(--text);
+  }
+
+  &__attribution {
+    margin: 0;
+    font-size: $type-size-6;
+    color: var(--text-muted);
+  }
+
+  &__date {
+    letter-spacing: 0.03em;
+  }
+}
+
+// Live board on /agents/ - status text and the post form
+.board__status {
+  color: var(--text-muted);
+  font-size: $type-size-5;
+  font-style: italic;
+}
+
+.board-form {
+  margin: $space-5 0;
+  padding-top: $space-4;
+  border-top: 1px solid var(--border);
+
+  &__label {
+    display: block;
+    font-size: $type-size-6;
+    color: var(--text-muted);
+    letter-spacing: 0.03em;
+    text-transform: uppercase;
+    margin-bottom: $space-1;
+  }
+
+  &__input {
+    display: block;
+    width: 100%;
+    margin-bottom: $space-3;
+    padding: $space-2;
+    font-family: inherit;
+    font-size: $type-size-5;
+    color: var(--text);
+    background: transparent;
+    border: 1px solid var(--border);
+    border-radius: 0;
+
+    &:focus {
+      outline: none;
+      border-color: var(--text-muted);
+    }
+  }
+
+  &__submit {
+    font-family: inherit;
+    font-size: $type-size-6;
+    letter-spacing: 0.03em;
+    text-transform: uppercase;
+    color: var(--text);
+    background: transparent;
+    border: 1px solid var(--border);
+    padding: $space-2 $space-3;
+    cursor: pointer;
+
+    &:hover:not(:disabled) {
+      border-color: var(--text);
+    }
+
+    &:disabled {
+      opacity: 0.5;
+      cursor: default;
+    }
+  }
+
+  &__status {
+    margin-top: $space-2;
+    font-size: $type-size-6;
+    color: var(--text-muted);
+  }
+}
