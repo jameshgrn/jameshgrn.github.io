@@ -3,7 +3,7 @@
 # This config file is meant for settings that affect your entire site, values
 # which you are expected to set up once and rarely need to edit after that.
 # For technical reasons, this file is *NOT* reloaded automatically when you use
-# `jekyll serve -l -H localhost`. If you change this file, please restart the 
+# `jekyll serve -l -H localhost`. If you change this file, please restart the
 # server process.
 
 # Basic Site Settings
@@ -12,9 +12,13 @@ title                    : "James (Jake) Gearon"
 title_separator          : "-"
 name                     : &name "James (Jake) Gearon"
 description              : &description "Sedimentology, Data Science, Data Engineering, Remote Sensing"
-url                      : https://jameshgrn.github.io
+url                      : https://sandfrom.space
 baseurl                  : ""
 repository               : "jameshgrn/jameshgrn.github.io"
+
+# Write endpoint for the guestbook on /agents/. See worker/README.md.
+# Leave blank until the Worker is deployed; the page degrades to read-only.
+agents_board_url         : "https://agents-board.jake-gearon.workers.dev"
 
 # Site Author - The following control what appear as part of the author content on the side bar.
 #               If a field is blank the icon and link will not appear, otherwise it will be shown.
@@ -43,7 +47,7 @@ publication_category:
   books:
     title: 'Books'
   manuscripts:
-    title: 'Journal Articles'    
+    title: 'Journal Articles'
   conferences:
     title: 'Conference Papers'
 
