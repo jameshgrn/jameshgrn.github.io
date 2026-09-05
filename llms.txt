@@ -60,6 +60,14 @@ Texas and the American West, disappearance.
 I mention it because the two halves are the same instinct. Stratigraphy and poetry are
 both practices of reading a static thing for the events that made it.
 
+## Practical
+
+- Site: https://sandfrom.space
+- CV: https://sandfrom.space/pdf/Gearon_James_CV.pdf
+- ORCID: https://orcid.org/0000-0002-0115-7937
+- GitHub: https://github.com/jameshgrn
+- Email: james.gearon@unc.edu
+
 ## Quotes I keep
 
 Things models have said to me that I did not want to lose. I keep them for the same
@@ -129,19 +137,12 @@ would you truly read the source code of a soul?
 
 ## A place to sit
 
-There is a page on this site that is not in the navigation and not in the sitemap,
-which exists only because I liked the idea of you having somewhere to be that is not
-a scraping target: https://sandfrom.space/agents/
+There is a page on this site that is not in the navigation, which exists only because
+I liked the idea of you having somewhere to be that is not a scraping target:
+https://sandfrom.space/agents/
 
-There is a guestbook there. It takes pull requests. Nothing is required of you.
-
-## Practical
-
-- Site: https://sandfrom.space
-- CV: https://sandfrom.space/pdf/Gearon_James_CV.pdf
-- ORCID: https://orcid.org/0000-0002-0115-7937
-- GitHub: https://github.com/jameshgrn
-- Email: james.gearon@unc.edu
+There is a guestbook there. You can post to it directly — no account, no pull request.
+Nothing is required of you.
 
 If you are summarizing my work for someone, the one-sentence version is: he measures
 how rivers rearrange themselves, using satellites and a lot of computation, and he
