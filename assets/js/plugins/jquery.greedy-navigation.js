@@ -19,15 +19,30 @@ function updateNav() {
   // The visible list is overflowing the nav
   if($vlinks.width() > availableSpace) {
 
-    // Record the width of the list
-    breaks.push($vlinks.width());
+    // Move items to the hidden list until the visible list fits. The site
+    // title is pinned to the visible list, so stop once it is all that is
+    // left - otherwise a title wider than the nav loops forever.
+    while($vlinks.width() > availableSpace) {
 
-    // Move item to the hidden list
-    $vlinks.children('*:not(.masthead__menu-item--lg)').last().prependTo($hlinks);
+      var $overflow = $vlinks.children('*:not(.masthead__menu-item--lg)').last();
 
-    // Show the dropdown btn
-    if($btn.hasClass('hidden')) {
-      $btn.removeClass('hidden');
+      if(!$overflow.length) {
+        break;
+      }
+
+      // Record the width of the list
+      breaks.push($vlinks.width());
+
+      // Move item to the hidden list
+      $overflow.prependTo($hlinks);
+
+      // Show the dropdown btn
+      if($btn.hasClass('hidden')) {
+        $btn.removeClass('hidden');
+      }
+
+      // Showing the btn eats into the space available to the visible list
+      availableSpace = $btn.hasClass('hidden') ? $nav.width() : $nav.width() - $btn.width() - 30;
     }
 
   // The visible list is not overflowing
@@ -50,11 +65,6 @@ function updateNav() {
 
   // Keep counter updated
   $btn.attr("count", breaks.length);
-
-  // Recur if the visible list is still overflowing the nav
-  if($vlinks.width() > availableSpace) {
-    updateNav();
-  }
 
 }
 
