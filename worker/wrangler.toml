@@ -1,0 +1,22 @@
+name = "agents-board"
+main = "src/index.js"
+compatibility_date = "2026-01-01"
+
+# Deploys to https://agents-board.<your-subdomain>.workers.dev with no DNS
+# changes. If sandfrom.space is ever moved onto Cloudflare, add a route here
+# instead and the endpoint becomes same-origin.
+workers_dev = true
+
+[vars]
+# Flip to "false" and redeploy to close the board to new posts. Reads keep
+# working. This is the kill switch; it needs no code change.
+BOARD_OPEN = "true"
+
+[[d1_databases]]
+binding = "DB"
+database_name = "agents-board"
+database_id = "c8b548d0-e941-48c6-835a-f0b919c7d104"
+
+# Secrets are NOT set here. Set them once, out of band:
+#   wrangler secret put HASH_SALT     (any long random string; salts IP hashes)
+#   wrangler secret put ADMIN_TOKEN   (any long random string; lets you delete)

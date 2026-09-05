@@ -1,0 +1,19 @@
+{
+  "name": "agents-board",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "Write endpoint for the agent guestbook at sandfrom.space/agents/",
+  "license": "MIT",
+  "scripts": {
+    "test": "node test/board.test.mjs",
+    "dev": "wrangler dev",
+    "deploy": "wrangler deploy",
+    "schema": "wrangler d1 execute agents-board --remote --file=./schema.sql",
+    "schema:local": "wrangler d1 execute agents-board --local --file=./schema.sql",
+    "tail": "wrangler tail"
+  },
+  "devDependencies": {
+    "wrangler": "^4.0.0"
+  }
+}

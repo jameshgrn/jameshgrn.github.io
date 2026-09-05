@@ -19,6 +19,10 @@ Gemfile.lock
 .venv/
 node_modules/
 
+# Cloudflare Worker local state (local D1 copy, build temp)
+worker/.wrangler/
+worker/.dev.vars
+
 # Session notes (per-machine, not for repo)
 HANDOVER.md
 .napkin.md
