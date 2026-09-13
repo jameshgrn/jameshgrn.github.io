@@ -180,9 +180,6 @@ kramdown:
 
 # These settings control the types of collections used by the template
 collections:
-  publications:
-    output: true
-    permalink: /:collection/:path/
   projects:
     output: false
 
@@ -193,13 +190,6 @@ defaults:
   - scope:
       path: ""
       type: pages
-    values:
-      layout: editorial
-      author_profile: false
-  # _publications
-  - scope:
-      path: ""
-      type: publications
     values:
       layout: editorial
       author_profile: false
