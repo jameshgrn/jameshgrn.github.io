@@ -153,6 +153,7 @@
     .spread--small .spread__meta-venue { font-size: .68rem; }
     .spread--small h3 { font-size: 1.15rem; }
     .spread__fig { aspect-ratio: 16/10; overflow: hidden; border: 1px solid var(--rule); background: var(--bg-alt); }
+    .spread__fig a { display: block; width: 100%; height: 100%; border: 0; }
     .spread__fig img { width: 100%; height: 100%; object-fit: cover; display: block; transition: transform .4s; filter: saturate(.9) contrast(1.02); }
     .spread:hover .spread__fig img { transform: scale(1.015); }
     /* Chart-type thumbnails: contain (don't crop axis labels). Chart bg
@@ -176,6 +177,7 @@
     .pubs-list h4 a:hover { color: var(--accent); }
     .pubs-list .auth { font-family: var(--mono); font-size: .75rem; color: var(--ink-muted); }
     .pubs-list .self { color: var(--ink); font-weight: 500; }
+    .pubs-list .sep { color: var(--rule); margin: 0 .35rem; }
 
     footer.site-footer { padding: 4rem 0 3rem; border-top: 1px solid var(--rule); margin-top: 6rem; }
     footer.site-footer .row { display: flex; justify-content: space-between; align-items: baseline; gap: 2rem; flex-wrap: wrap; }
@@ -243,7 +245,7 @@
         </header>
 
         <div class="spread">
-          <div class="spread__fig"><img src="/images/papers/nature-avulsions.jpg" alt="Global distribution of river avulsions"></div>
+          <div class="spread__fig"><a href="/files/publications/2024_Nature_Gearon_avulsions.pdf" aria-label="Download PDF: Rules of river avulsion change downstream"><img src="/images/papers/nature-avulsions.jpg" alt="Global distribution of river avulsions"></a></div>
           <div>
             <p class="spread__meta-venue">Nature · 2024</p>
             <h3><a href="https://doi.org/10.1038/s41586-024-07964-2">Rules of river avulsion change downstream</a></h3>
@@ -253,11 +255,21 @@
         </div>
 
         <div class="spread spread--small">
-          <div class="spread__fig"><img src="/images/papers/grl-precursors.jpg" alt="14 rivers analyzed for avulsion precursors"></div>
+          <div class="spread__fig"><a href="/files/publications/2025_GRL_GearonEdmondsRiverAvulsionPrecursors.pdf" aria-label="Download PDF: Avulsion precursors encoded in alluvial ridge geometry"><img src="/images/papers/grl-precursors.jpg" alt="14 rivers analyzed for avulsion precursors"></a></div>
           <div>
             <p class="spread__meta-venue">Geophysical Research Letters · 2025</p>
             <h3><a href="https://doi.org/10.1029/2024GL114047">Avulsion precursors encoded in alluvial ridge geometry</a></h3>
             <p class="spread__body">A follow-on. The shape of the alluvial ridge around a channel records imminent avulsion risk before the channel breaks. A topographic precursor signal you can read from a DEM.</p>
+            <p class="spread__authors"><span class="self">Gearon</span>, Edmonds</p>
+          </div>
+        </div>
+
+        <div class="spread spread--small">
+          <div class="spread__fig"><a href="/files/publications/2026_Sed_GearonEdmondsAlluvialRidgeMorphology.pdf" aria-label="Download PDF: Alluvial ridge morphology on avulsing rivers"><img src="/images/papers/sed-ridge-schematic.jpg" alt="Cross-section of an alluvial ridge showing ridge height, half-width, and channel depth"></a></div>
+          <div>
+            <p class="spread__meta-venue">Sedimentology · 2026</p>
+            <h3><a href="https://doi.org/10.1111/sed.70134">Alluvial ridge morphology on avulsing rivers</a></h3>
+            <p class="spread__body">The ridge geometry itself, measured at scale — 8,970 flanks on 14 rivers, from a bare-earth global DEM. Ridges widen faster than they grow tall, and ridge height falls as channel depth rises, so deep channels resist superelevation. A geometric reason the rules change downstream. Flank shape runs concave to convex; no single idealized profile fits.</p>
             <p class="spread__authors"><span class="self">Gearon</span>, Edmonds</p>
           </div>
         </div>
@@ -293,7 +305,7 @@
         </header>
 
         <div class="spread">
-          <div class="spread__fig"><img src="/images/papers/jsr-sequence.jpg" alt="Annotated outcrop, Nine Mile Canyon"></div>
+          <div class="spread__fig"><a href="/files/publications/2022_JSR_Gearon_sequence.pdf" aria-label="Download PDF: The supply-generated sequence"><img src="/images/papers/jsr-sequence.jpg" alt="Annotated outcrop, Nine Mile Canyon"></a></div>
           <div>
             <p class="spread__meta-venue">Journal of Sedimentary Research · 2022</p>
             <h3><a href="https://doi.org/10.2110/jsr.2022.043">The supply-generated sequence</a></h3>
@@ -313,7 +325,7 @@
         </header>
 
         <div class="spread">
-          <div class="spread__fig"><img src="/images/papers/landecol-creosote.jpg" alt="King Clone creosote ring, Mojave Desert"></div>
+          <div class="spread__fig"><a href="/files/publications/2020_LandEcol_Gearon_creosote.pdf" aria-label="Download PDF: Geomorphic controls on shrub canopy volume and spacing"><img src="/images/papers/landecol-creosote.jpg" alt="King Clone creosote ring, Mojave Desert"></a></div>
           <div>
             <p class="spread__meta-venue">Landscape Ecology · 2020</p>
             <h3><a href="https://doi.org/10.1007/s10980-020-01149-8">Geomorphic controls on shrub canopy volume and spacing</a></h3>
@@ -337,7 +349,7 @@
           <div class="meta">2026<br><span class="venue">Sedimentology</span></div>
           <div>
             <h4><a href="https://doi.org/10.1111/sed.70134">Alluvial ridge morphology on avulsing rivers</a></h4>
-            <p class="auth"><span class="self">Gearon</span>, Edmonds</p>
+            <p class="auth"><span class="self">Gearon</span>, Edmonds <span class="sep">·</span> <a class="pdf-link" href="/files/publications/2026_Sed_GearonEdmondsAlluvialRidgeMorphology.pdf">pdf</a></p>
           </div>
         </li>
         <li>
@@ -358,7 +370,7 @@
           <div class="meta">2025<br><span class="venue">GRL</span></div>
           <div>
             <h4><a href="https://doi.org/10.1029/2024GL114047">River avulsion precursors encoded in alluvial ridge geometry</a></h4>
-            <p class="auth"><span class="self">Gearon</span>, Edmonds</p>
+            <p class="auth"><span class="self">Gearon</span>, Edmonds <span class="sep">·</span> <a class="pdf-link" href="/files/publications/2025_GRL_GearonEdmondsRiverAvulsionPrecursors.pdf">pdf</a></p>
           </div>
         </li>
         <li>
@@ -372,35 +384,35 @@
           <div class="meta">2024<br><span class="venue">AGU Adv.</span></div>
           <div>
             <h4><a href="https://doi.org/10.1029/2024AV001264">Topographic roughness as an emergent property of geomorphic processes and events</a></h4>
-            <p class="auth">Doane, <span class="self">Gearon</span>, Martin, Yanites, Edmonds</p>
+            <p class="auth">Doane, <span class="self">Gearon</span>, Martin, Yanites, Edmonds <span class="sep">·</span> <a class="pdf-link" href="/files/publications/2024_AGUAdv_Doane_roughness.pdf">pdf</a></p>
           </div>
         </li>
         <li>
           <div class="meta">2024<br><span class="venue">Nature</span></div>
           <div>
             <h4><a href="https://doi.org/10.1038/s41586-024-07964-2">Rules of river avulsion change downstream</a></h4>
-            <p class="auth"><span class="self">Gearon</span>, Martin, DeLisle, Barefoot, Mohrig, Paola, Edmonds</p>
+            <p class="auth"><span class="self">Gearon</span>, Martin, DeLisle, Barefoot, Mohrig, Paola, Edmonds <span class="sep">·</span> <a class="pdf-link" href="/files/publications/2024_Nature_Gearon_avulsions.pdf">pdf</a></p>
           </div>
         </li>
         <li>
           <div class="meta">2024<br><span class="venue">Sed. Geol.</span></div>
           <div>
             <h4><a href="https://doi.org/10.1016/j.sedgeo.2023.106561">Increased sediment connectivity between deltas and deep-water fans in closed lake basins</a></h4>
-            <p class="auth">Liu, Gong, <span class="self">Gearon</span>, et al.</p>
+            <p class="auth">Liu, Gong, <span class="self">Gearon</span>, et al. <span class="sep">·</span> <a class="pdf-link" href="/files/publications/2023_SedGeol_Liu_deltas.pdf">pdf</a></p>
           </div>
         </li>
         <li>
           <div class="meta">2022<br><span class="venue">JSR</span></div>
           <div>
             <h4><a href="https://doi.org/10.2110/jsr.2022.043">The supply-generated sequence: A unified sequence-stratigraphic model for closed lacustrine sedimentary basins</a></h4>
-            <p class="auth"><span class="self">Gearon</span>, Olariu, Steel</p>
+            <p class="auth"><span class="self">Gearon</span>, Olariu, Steel <span class="sep">·</span> <a class="pdf-link" href="/files/publications/2022_JSR_Gearon_sequence.pdf">pdf</a></p>
           </div>
         </li>
         <li>
           <div class="meta">2020<br><span class="venue">Land. Ecol.</span></div>
           <div>
             <h4><a href="https://doi.org/10.1007/s10980-020-01149-8">Geomorphic controls on shrub canopy volume and spacing of creosote bush, northern Mojave Desert</a></h4>
-            <p class="auth"><span class="self">Gearon</span>, Young</p>
+            <p class="auth"><span class="self">Gearon</span>, Young <span class="sep">·</span> <a class="pdf-link" href="/files/publications/2020_LandEcol_Gearon_creosote.pdf">pdf</a></p>
           </div>
         </li>
       </ol>
