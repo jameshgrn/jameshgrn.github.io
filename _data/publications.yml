@@ -1,0 +1,87 @@
+# Publications, newest first. Rendered by the "All publications" section of
+# _layouts/home.html. To add a paper, add an entry here — nothing else.
+#
+#   year      shown in the left meta column
+#   venue     short label under the year
+#   title     linked to `doi`
+#   authors   plain string; "Gearon" is emphasised automatically
+#   doi       canonical link for the title (a DOI, or arXiv for preprints)
+#   pdf       filename in files/publications/; omit if there is no local copy
+#   citation  formatted citation offered by the "cite" toggle; may contain <i>
+
+- year: 2026
+  venue: Sedimentology
+  title: Alluvial ridge morphology on avulsing rivers
+  authors: Gearon, Edmonds
+  doi: https://doi.org/10.1111/sed.70134
+  pdf: 2026_Sed_GearonEdmondsAlluvialRidgeMorphology.pdf
+  citation: 'Gearon, J.H., &amp; Edmonds, D.A. (2026). "Alluvial ridge morphology on avulsing rivers." <i>Sedimentology</i>. doi:10.1111/sed.70134.'
+
+- year: 2026
+  venue: JGR-ES
+  title: O levee, where art thou? Measuring the abundance of natural river levees across the contiguous USA
+  authors: Barefoot, Gearon, Edmonds
+  doi: https://doi.org/10.1029/2025JF008642
+  citation: 'Barefoot, E.A., Gearon, J.H., and Edmonds, D.A. (2026). "O levee, where art thou? Measuring the abundance of natural river levees across the contiguous USA." <i>Journal of Geophysical Research: Earth Surface</i>, 131(4), e2025JF008642.'
+
+- year: 2025
+  venue: arXiv
+  title: 'Fighting Fires from Space: Vision Transformers for Wildfire Detection'
+  authors: Agarwal, Gearon, Rank, Chenevert
+  doi: https://arxiv.org/abs/2504.13776
+  citation: 'Agarwal, A., Gearon, J.H., Rank, P., &amp; Chenevert, M. (2025). "Fighting Fires from Space: Vision Transformers for Wildfire Detection." <i>arXiv</i>:2504.13776.'
+
+- year: 2025
+  venue: GRL
+  title: River avulsion precursors encoded in alluvial ridge geometry
+  authors: Gearon, Edmonds
+  doi: https://doi.org/10.1029/2024GL114047
+  pdf: 2025_GRL_GearonEdmondsRiverAvulsionPrecursors.pdf
+  citation: 'Gearon, J.H., &amp; Edmonds, D.A. (2025). "River avulsion precursors encoded in alluvial ridge geometry." <i>Geophysical Research Letters</i>, 52(8), e2024GL114047.'
+
+- year: 2025
+  venue: Icarus
+  title: Martian chaos terrain fracture geometry
+  authors: Levy, Subak, Armstrong, King, Kuang, Kuentz, Gearon, Naylor, Rapoza, Wang
+  doi: https://doi.org/10.1016/j.icarus.2024.116377
+  citation: 'Levy, J.S., Subak, T.F., Armstrong, I., King, I., Kuang, L., Kuentz, L., Gearon, J.H., Naylor, S., Rapoza, M.C., &amp; Wang, H. (2025). "Martian chaos terrain fracture geometry indicates drainage and compaction of laterally heterogeneous confined aquifers." <i>Icarus</i>, 426, 116377.'
+
+- year: 2024
+  venue: AGU Adv.
+  title: Topographic roughness as an emergent property of geomorphic processes and events
+  authors: Doane, Gearon, Martin, Yanites, Edmonds
+  doi: https://doi.org/10.1029/2024AV001264
+  pdf: 2024_AGUAdv_Doane_roughness.pdf
+  citation: 'Doane, T.H., Gearon, J.H., Martin, H.K., Yanites, B.J., &amp; Edmonds, D.A. (2024). "Topographic roughness as an emergent property of geomorphic processes and events." <i>AGU Advances</i>, 5(5).'
+
+- year: 2024
+  venue: Nature
+  title: Rules of river avulsion change downstream
+  authors: Gearon, Martin, DeLisle, Barefoot, Mohrig, Paola, Edmonds
+  doi: https://doi.org/10.1038/s41586-024-07964-2
+  pdf: 2024_Nature_Gearon_avulsions.pdf
+  citation: 'Gearon, J.H., Martin, H., DeLisle, C., Barefoot, E., Mohrig, D., Paola, C., and Edmonds, D. (2024). "Rules of river avulsion change downstream." <i>Nature</i>.'
+
+- year: 2024
+  venue: Sed. Geol.
+  title: Increased sediment connectivity between deltas and deep-water fans in closed lake basins
+  authors: Liu, Gong, Gearon, et al.
+  doi: https://doi.org/10.1016/j.sedgeo.2023.106561
+  pdf: 2023_SedGeol_Liu_deltas.pdf
+  citation: 'Liu, P., Gong, C., Gearon, J.H., Guan, D., Wang, Q., Qi, K., &amp; Li, D. (2024). "Increased sediment connectivity between deltas and deep-water fans in closed lake basins: A case study from Bozhong Sag, Bohai Bay Basin, China." <i>Sedimentary Geology</i>, 460, 106561.'
+
+- year: 2022
+  venue: JSR
+  title: 'The supply-generated sequence: A unified sequence-stratigraphic model for closed lacustrine sedimentary basins'
+  authors: Gearon, Olariu, Steel
+  doi: https://doi.org/10.2110/jsr.2022.043
+  pdf: 2022_JSR_Gearon_sequence.pdf
+  citation: 'Gearon, J.H., Olariu, C., &amp; Steel, R.J. (2022). "The supply-generated sequence: A unified sequence-stratigraphic model for closed lacustrine sedimentary basins with evidence from the Green River Formation, Uinta Basin, Utah, U.S.A." <i>Journal of Sedimentary Research</i>, 92(9), 813-835.'
+
+- year: 2020
+  venue: Land. Ecol.
+  title: Geomorphic controls on shrub canopy volume and spacing of creosote bush, northern Mojave Desert
+  authors: Gearon, Young
+  doi: https://doi.org/10.1007/s10980-020-01149-8
+  pdf: 2020_LandEcol_Gearon_creosote.pdf
+  citation: 'Gearon, J.H., &amp; Young, M.H. (2020). "Geomorphic controls on shrub canopy volume and spacing of creosote bush in northern Mojave Desert, USA." <i>Landscape Ecology</i>.'

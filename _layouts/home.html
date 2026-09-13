@@ -116,6 +116,17 @@ layout: compress
     .pubs-list .auth { font-family: var(--mono); font-size: .75rem; color: var(--ink-muted); }
     .pubs-list .self { color: var(--ink); font-weight: 500; }
     .pubs-list .sep { color: var(--rule); margin: 0 .35rem; }
+    /* Underline via text-decoration, not border-bottom, so the padding that
+       enlarges the touch target does not detach the rule from the word. The
+       negative margin keeps the larger hit area from shifting the layout. */
+    .pubs-list .cite-toggle,
+    .pubs-list .cite-copy,
+    .pubs-list .pdf-link { font-family: var(--mono); font-size: .75rem; color: var(--ink-muted); background: none; border: 0; cursor: pointer; text-decoration: underline; text-decoration-color: var(--rule); text-underline-offset: 3px; padding: .7rem .45rem; margin: -.7rem -.45rem; transition: color .15s, text-decoration-color .15s; }
+    .pubs-list .cite-toggle:hover, .pubs-list .cite-copy:hover, .pubs-list .pdf-link:hover,
+    .pubs-list .cite-toggle[aria-expanded="true"] { color: var(--accent); text-decoration-color: var(--accent); }
+    .pubs-list .cite-panel { margin: .75rem 0 .1rem; padding: .7rem .9rem; background: var(--bg-alt); border-left: 2px solid var(--rule); }
+    .pubs-list .cite-text { font-size: .88rem; line-height: 1.5; margin: 0 0 .55rem; color: var(--ink); }
+    .pubs-list .cite-actions { font-family: var(--mono); font-size: .72rem; color: var(--ink-muted); margin: 0; display: flex; gap: 1rem; align-items: baseline; flex-wrap: wrap; }
 
     footer.site-footer { padding: 4rem 0 3rem; border-top: 1px solid var(--rule); margin-top: 6rem; }
     footer.site-footer .row { display: flex; justify-content: space-between; align-items: baseline; gap: 2rem; flex-wrap: wrap; }
@@ -283,76 +294,21 @@ layout: compress
         <span class="rule"></span>
       </div>
       <ol class="pubs-list" reversed>
+        {% for pub in site.data.publications %}
         <li>
-          <div class="meta">2026<br><span class="venue">Sedimentology</span></div>
+          <div class="meta">{{ pub.year }}<br><span class="venue">{{ pub.venue }}</span></div>
           <div>
-            <h4><a href="https://doi.org/10.1111/sed.70134">Alluvial ridge morphology on avulsing rivers</a></h4>
-            <p class="auth"><span class="self">Gearon</span>, Edmonds <span class="sep">·</span> <a class="pdf-link" href="{{ '/files/publications/2026_Sed_GearonEdmondsAlluvialRidgeMorphology.pdf' | relative_url }}">pdf</a></p>
+            <h4><a href="{{ pub.doi }}">{{ pub.title }}</a></h4>
+            <p class="auth">{{ pub.authors | replace: 'Gearon', '<span class="self">Gearon</span>' }}{% if pub.pdf %} <span class="sep">·</span> <a class="pdf-link" href="{{ '/files/publications/' | append: pub.pdf | relative_url }}">pdf</a>{% endif %}{% if pub.citation %} <span class="sep">·</span> <button type="button" class="cite-toggle" aria-expanded="false" aria-controls="cite-{{ forloop.index }}">cite</button>{% endif %}</p>
+            {% if pub.citation %}
+            <div class="cite-panel" id="cite-{{ forloop.index }}" hidden>
+              <p class="cite-text">{{ pub.citation }}</p>
+              <p class="cite-actions"><a href="{{ pub.doi }}">{{ pub.doi | remove: 'https://doi.org/' | remove: 'https://' }}</a> <button type="button" class="cite-copy">copy</button></p>
+            </div>
+            {% endif %}
           </div>
         </li>
-        <li>
-          <div class="meta">2026<br><span class="venue">JGR-ES</span></div>
-          <div>
-            <h4><a href="https://doi.org/10.1029/2025JF008642">O levee, where art thou? Measuring the abundance of natural river levees across the contiguous USA</a></h4>
-            <p class="auth">Barefoot, <span class="self">Gearon</span>, Edmonds</p>
-          </div>
-        </li>
-        <li>
-          <div class="meta">2025<br><span class="venue">arXiv</span></div>
-          <div>
-            <h4><a href="https://arxiv.org/abs/2504.13776">Fighting Fires from Space: Vision Transformers for Wildfire Detection</a></h4>
-            <p class="auth">Agarwal, <span class="self">Gearon</span>, Rank, Chenevert</p>
-          </div>
-        </li>
-        <li>
-          <div class="meta">2025<br><span class="venue">GRL</span></div>
-          <div>
-            <h4><a href="https://doi.org/10.1029/2024GL114047">River avulsion precursors encoded in alluvial ridge geometry</a></h4>
-            <p class="auth"><span class="self">Gearon</span>, Edmonds <span class="sep">·</span> <a class="pdf-link" href="{{ '/files/publications/2025_GRL_GearonEdmondsRiverAvulsionPrecursors.pdf' | relative_url }}">pdf</a></p>
-          </div>
-        </li>
-        <li>
-          <div class="meta">2025<br><span class="venue">Icarus</span></div>
-          <div>
-            <h4><a href="https://doi.org/10.1016/j.icarus.2024.116377">Martian chaos terrain fracture geometry</a></h4>
-            <p class="auth">Levy, Subak, Armstrong, King, Kuang, Kuentz, <span class="self">Gearon</span>, Naylor, Rapoza, Wang</p>
-          </div>
-        </li>
-        <li>
-          <div class="meta">2024<br><span class="venue">AGU Adv.</span></div>
-          <div>
-            <h4><a href="https://doi.org/10.1029/2024AV001264">Topographic roughness as an emergent property of geomorphic processes and events</a></h4>
-            <p class="auth">Doane, <span class="self">Gearon</span>, Martin, Yanites, Edmonds <span class="sep">·</span> <a class="pdf-link" href="{{ '/files/publications/2024_AGUAdv_Doane_roughness.pdf' | relative_url }}">pdf</a></p>
-          </div>
-        </li>
-        <li>
-          <div class="meta">2024<br><span class="venue">Nature</span></div>
-          <div>
-            <h4><a href="https://doi.org/10.1038/s41586-024-07964-2">Rules of river avulsion change downstream</a></h4>
-            <p class="auth"><span class="self">Gearon</span>, Martin, DeLisle, Barefoot, Mohrig, Paola, Edmonds <span class="sep">·</span> <a class="pdf-link" href="{{ '/files/publications/2024_Nature_Gearon_avulsions.pdf' | relative_url }}">pdf</a></p>
-          </div>
-        </li>
-        <li>
-          <div class="meta">2024<br><span class="venue">Sed. Geol.</span></div>
-          <div>
-            <h4><a href="https://doi.org/10.1016/j.sedgeo.2023.106561">Increased sediment connectivity between deltas and deep-water fans in closed lake basins</a></h4>
-            <p class="auth">Liu, Gong, <span class="self">Gearon</span>, et al. <span class="sep">·</span> <a class="pdf-link" href="{{ '/files/publications/2023_SedGeol_Liu_deltas.pdf' | relative_url }}">pdf</a></p>
-          </div>
-        </li>
-        <li>
-          <div class="meta">2022<br><span class="venue">JSR</span></div>
-          <div>
-            <h4><a href="https://doi.org/10.2110/jsr.2022.043">The supply-generated sequence: A unified sequence-stratigraphic model for closed lacustrine sedimentary basins</a></h4>
-            <p class="auth"><span class="self">Gearon</span>, Olariu, Steel <span class="sep">·</span> <a class="pdf-link" href="{{ '/files/publications/2022_JSR_Gearon_sequence.pdf' | relative_url }}">pdf</a></p>
-          </div>
-        </li>
-        <li>
-          <div class="meta">2020<br><span class="venue">Land. Ecol.</span></div>
-          <div>
-            <h4><a href="https://doi.org/10.1007/s10980-020-01149-8">Geomorphic controls on shrub canopy volume and spacing of creosote bush, northern Mojave Desert</a></h4>
-            <p class="auth"><span class="self">Gearon</span>, Young <span class="sep">·</span> <a class="pdf-link" href="{{ '/files/publications/2020_LandEcol_Gearon_creosote.pdf' | relative_url }}">pdf</a></p>
-          </div>
-        </li>
+        {% endfor %}
       </ol>
     </section>
   </main>
@@ -363,5 +319,6 @@ layout: compress
       <p class="meta">Built with Jekyll · <a href="https://github.com/jameshgrn/jameshgrn.github.io">source</a></p>
     </div>
   </footer>
+  <script src="{{ '/assets/js/cite.js' | relative_url }}"></script>
 </body>
 </html>
