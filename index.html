@@ -112,6 +112,8 @@
     a:hover { color: var(--accent); border-bottom-color: var(--accent); }
     .container { max-width: 1180px; margin: 0 auto; padding: 0 2rem; }
     hr { border: 0; border-top: 1px solid var(--rule); margin: 4rem 0; }
+    /* Keep nav-anchor targets clear of the sticky masthead. */
+    section[id] { scroll-margin-top: 6rem; }
 
     header.site-masthead {
       padding: 1.4rem 0 1.2rem;
@@ -167,27 +169,30 @@
     .spread__authors { font-family: var(--mono); font-size: .75rem; color: var(--ink-muted); letter-spacing: -.005em; }
     .spread__authors .self { color: var(--ink); font-weight: 500; }
 
-    .pubs-list { list-style: none; padding: 0; margin: 0; }
-    .pubs-list > li { padding: 1.4rem 0; border-top: 1px solid var(--rule); display: grid; grid-template-columns: 110px 1fr; gap: 1.5rem; }
-    .pubs-list > li:last-child { border-bottom: 1px solid var(--rule); }
-    .pubs-list .meta { font-family: var(--mono); font-size: .75rem; color: var(--ink-muted); }
-    .pubs-list .venue { color: var(--accent); }
-    .pubs-list h4 { font-family: var(--serif); font-weight: 500; font-size: 1.05rem; margin: 0 0 .3rem; line-height: 1.3; }
-    .pubs-list h4 a { border: 0; }
-    .pubs-list h4 a:hover { color: var(--accent); }
+    .pubs-list, .software-list { list-style: none; padding: 0; margin: 0; }
+    .pubs-list > li, .software-list > li { padding: 1.4rem 0; border-top: 1px solid var(--rule); display: grid; grid-template-columns: 110px 1fr; gap: 1.5rem; }
+    .pubs-list > li:last-child, .software-list > li:last-child { border-bottom: 1px solid var(--rule); }
+    .pubs-list .meta, .software-list .meta { font-family: var(--mono); font-size: .75rem; color: var(--ink-muted); }
+    .pubs-list .venue, .software-list .venue { color: var(--accent); }
+    .pubs-list h4, .software-list h4 { font-family: var(--serif); font-weight: 500; font-size: 1.05rem; margin: 0 0 .3rem; line-height: 1.3; }
+    .pubs-list h4 a, .software-list h4 a { border: 0; }
+    .pubs-list h4 a:hover, .software-list h4 a:hover { color: var(--accent); }
     .pubs-list .auth { font-family: var(--mono); font-size: .75rem; color: var(--ink-muted); }
     .pubs-list .self { color: var(--ink); font-weight: 500; }
-    .pubs-list .sep { color: var(--rule); margin: 0 .35rem; }
+    .pubs-list .sep, .software-list .sep { color: var(--rule); margin: 0 .35rem; }
     /* Underline via text-decoration, not border-bottom, so the padding that
        enlarges the touch target does not detach the rule from the word. The
        negative margin keeps the larger hit area from shifting the layout. */
     .pubs-list .cite-toggle,
     .pubs-list .cite-copy,
-    .pubs-list .pdf-link { font-family: var(--mono); font-size: .75rem; color: var(--ink-muted); background: none; border: 0; cursor: pointer; text-decoration: underline; text-decoration-color: var(--rule); text-underline-offset: 3px; padding: .7rem .45rem; margin: -.7rem -.45rem; transition: color .15s, text-decoration-color .15s; }
-    .pubs-list .cite-toggle:hover, .pubs-list .cite-copy:hover, .pubs-list .pdf-link:hover,
+    .pubs-list .pdf-link,
+    .software-list .links a { font-family: var(--mono); font-size: .75rem; color: var(--ink-muted); background: none; border: 0; cursor: pointer; text-decoration: underline; text-decoration-color: var(--rule); text-underline-offset: 3px; padding: .7rem .45rem; margin: -.7rem -.45rem; transition: color .15s, text-decoration-color .15s; }
+    .pubs-list .cite-toggle:hover, .pubs-list .cite-copy:hover, .pubs-list .pdf-link:hover, .software-list .links a:hover,
     .pubs-list .cite-toggle[aria-expanded="true"] { color: var(--accent); text-decoration-color: var(--accent); }
     .pubs-list .cite-panel { margin: .75rem 0 .1rem; padding: .7rem .9rem; background: var(--bg-alt); border-left: 2px solid var(--rule); }
     .pubs-list .cite-text { font-size: .88rem; line-height: 1.5; margin: 0 0 .55rem; color: var(--ink); }
+    .software-list .summary { font-size: .95rem; line-height: 1.55; margin: 0 0 .4rem; max-width: 62ch; }
+    .software-list .links { font-family: var(--mono); font-size: .75rem; color: var(--ink-muted); margin: 0; }
     .pubs-list .cite-actions { font-family: var(--mono); font-size: .72rem; color: var(--ink-muted); margin: 0; display: flex; gap: 1rem; align-items: baseline; flex-wrap: wrap; }
 
     footer.site-footer { padding: 4rem 0 3rem; border-top: 1px solid var(--rule); margin-top: 6rem; }
@@ -201,7 +206,7 @@
       .container { padding: 0 1.4rem; }
       .hero { grid-template-columns: 1fr; gap: 2rem; padding: 3rem 0 2.5rem; }
       nav.primary a { margin-left: 1rem; font-size: .72rem; }
-      .pubs-list > li { grid-template-columns: 1fr; gap: .4rem; }
+      .pubs-list > li, .software-list > li { grid-template-columns: 1fr; gap: .4rem; }
       .question { margin-bottom: 4rem; }
       .question__head { grid-template-columns: 1fr; gap: 1rem; margin-bottom: 2rem; }
       .question__title { font-size: 1.8rem; }
@@ -217,6 +222,7 @@
       <nav class="primary">
         <a href="#research">Research</a>
         <a href="#publications">Publications</a>
+        <a href="#software">Software</a>
         <a href="/pdf/Gearon_James_CV.pdf">CV</a>
       </nav>
     </div>
@@ -372,12 +378,26 @@
         </li>
         
         <li>
+          <div class="meta">2026<br><span class="venue">Zenodo</span></div>
+          <div>
+            <h4><a href="https://doi.org/10.5281/zenodo.21415370">SWOT River Database (SWORD), version v17c</a></h4>
+            <p class="auth"><span class="self">Gearon</span>, Altenau, Pavelsky, Durand, Collot d'Escury, Yang, Malaterre, Frasson, Bendezu <span class="sep">·</span> <button type="button" class="cite-toggle" aria-expanded="false" aria-controls="cite-2">cite</button></p>
+            
+            <div class="cite-panel" id="cite-2" hidden>
+              <p class="cite-text">Gearon, J.H., Altenau, E.H., Pavelsky, T.M., Durand, M.T., Collot d'Escury, N., Yang, X., Malaterre, P.-O., Frasson, R.P.d.M., &amp; Bendezu, L. (2026). "SWOT River Database (SWORD), version v17c." <i>Zenodo</i> [data set]. doi:10.5281/zenodo.21415370.</p>
+              <p class="cite-actions"><a href="https://doi.org/10.5281/zenodo.21415370">10.5281/zenodo.21415370</a> <button type="button" class="cite-copy">copy</button></p>
+            </div>
+            
+          </div>
+        </li>
+        
+        <li>
           <div class="meta">2026<br><span class="venue">JGR-ES</span></div>
           <div>
             <h4><a href="https://doi.org/10.1029/2025JF008642">O levee, where art thou? Measuring the abundance of natural river levees across the contiguous USA</a></h4>
-            <p class="auth">Barefoot, <span class="self">Gearon</span>, Edmonds <span class="sep">·</span> <button type="button" class="cite-toggle" aria-expanded="false" aria-controls="cite-2">cite</button></p>
+            <p class="auth">Barefoot, <span class="self">Gearon</span>, Edmonds <span class="sep">·</span> <button type="button" class="cite-toggle" aria-expanded="false" aria-controls="cite-3">cite</button></p>
             
-            <div class="cite-panel" id="cite-2" hidden>
+            <div class="cite-panel" id="cite-3" hidden>
               <p class="cite-text">Barefoot, E.A., Gearon, J.H., and Edmonds, D.A. (2026). "O levee, where art thou? Measuring the abundance of natural river levees across the contiguous USA." <i>Journal of Geophysical Research: Earth Surface</i>, 131(4), e2025JF008642.</p>
               <p class="cite-actions"><a href="https://doi.org/10.1029/2025JF008642">10.1029/2025JF008642</a> <button type="button" class="cite-copy">copy</button></p>
             </div>
@@ -389,9 +409,9 @@
           <div class="meta">2025<br><span class="venue">arXiv</span></div>
           <div>
             <h4><a href="https://arxiv.org/abs/2504.13776">Fighting Fires from Space: Vision Transformers for Wildfire Detection</a></h4>
-            <p class="auth">Agarwal, <span class="self">Gearon</span>, Rank, Chenevert <span class="sep">·</span> <button type="button" class="cite-toggle" aria-expanded="false" aria-controls="cite-3">cite</button></p>
+            <p class="auth">Agarwal, <span class="self">Gearon</span>, Rank, Chenevert <span class="sep">·</span> <button type="button" class="cite-toggle" aria-expanded="false" aria-controls="cite-4">cite</button></p>
             
-            <div class="cite-panel" id="cite-3" hidden>
+            <div class="cite-panel" id="cite-4" hidden>
               <p class="cite-text">Agarwal, A., Gearon, J.H., Rank, P., &amp; Chenevert, M. (2025). "Fighting Fires from Space: Vision Transformers for Wildfire Detection." <i>arXiv</i>:2504.13776.</p>
               <p class="cite-actions"><a href="https://arxiv.org/abs/2504.13776">arxiv.org/abs/2504.13776</a> <button type="button" class="cite-copy">copy</button></p>
             </div>
@@ -403,9 +423,9 @@
           <div class="meta">2025<br><span class="venue">GRL</span></div>
           <div>
             <h4><a href="https://doi.org/10.1029/2024GL114047">River avulsion precursors encoded in alluvial ridge geometry</a></h4>
-            <p class="auth"><span class="self">Gearon</span>, Edmonds <span class="sep">·</span> <a class="pdf-link" href="/files/publications/2025_GRL_GearonEdmondsRiverAvulsionPrecursors.pdf">pdf</a> <span class="sep">·</span> <button type="button" class="cite-toggle" aria-expanded="false" aria-controls="cite-4">cite</button></p>
+            <p class="auth"><span class="self">Gearon</span>, Edmonds <span class="sep">·</span> <a class="pdf-link" href="/files/publications/2025_GRL_GearonEdmondsRiverAvulsionPrecursors.pdf">pdf</a> <span class="sep">·</span> <button type="button" class="cite-toggle" aria-expanded="false" aria-controls="cite-5">cite</button></p>
             
-            <div class="cite-panel" id="cite-4" hidden>
+            <div class="cite-panel" id="cite-5" hidden>
               <p class="cite-text">Gearon, J.H., &amp; Edmonds, D.A. (2025). "River avulsion precursors encoded in alluvial ridge geometry." <i>Geophysical Research Letters</i>, 52(8), e2024GL114047.</p>
               <p class="cite-actions"><a href="https://doi.org/10.1029/2024GL114047">10.1029/2024GL114047</a> <button type="button" class="cite-copy">copy</button></p>
             </div>
@@ -417,9 +437,9 @@
           <div class="meta">2025<br><span class="venue">Icarus</span></div>
           <div>
             <h4><a href="https://doi.org/10.1016/j.icarus.2024.116377">Martian chaos terrain fracture geometry</a></h4>
-            <p class="auth">Levy, Subak, Armstrong, King, Kuang, Kuentz, <span class="self">Gearon</span>, Naylor, Rapoza, Wang <span class="sep">·</span> <button type="button" class="cite-toggle" aria-expanded="false" aria-controls="cite-5">cite</button></p>
+            <p class="auth">Levy, Subak, Armstrong, King, Kuang, Kuentz, <span class="self">Gearon</span>, Naylor, Rapoza, Wang <span class="sep">·</span> <button type="button" class="cite-toggle" aria-expanded="false" aria-controls="cite-6">cite</button></p>
             
-            <div class="cite-panel" id="cite-5" hidden>
+            <div class="cite-panel" id="cite-6" hidden>
               <p class="cite-text">Levy, J.S., Subak, T.F., Armstrong, I., King, I., Kuang, L., Kuentz, L., Gearon, J.H., Naylor, S., Rapoza, M.C., &amp; Wang, H. (2025). "Martian chaos terrain fracture geometry indicates drainage and compaction of laterally heterogeneous confined aquifers." <i>Icarus</i>, 426, 116377.</p>
               <p class="cite-actions"><a href="https://doi.org/10.1016/j.icarus.2024.116377">10.1016/j.icarus.2024.116377</a> <button type="button" class="cite-copy">copy</button></p>
             </div>
@@ -431,9 +451,9 @@
           <div class="meta">2024<br><span class="venue">AGU Adv.</span></div>
           <div>
             <h4><a href="https://doi.org/10.1029/2024AV001264">Topographic roughness as an emergent property of geomorphic processes and events</a></h4>
-            <p class="auth">Doane, <span class="self">Gearon</span>, Martin, Yanites, Edmonds <span class="sep">·</span> <a class="pdf-link" href="/files/publications/2024_AGUAdv_Doane_roughness.pdf">pdf</a> <span class="sep">·</span> <button type="button" class="cite-toggle" aria-expanded="false" aria-controls="cite-6">cite</button></p>
+            <p class="auth">Doane, <span class="self">Gearon</span>, Martin, Yanites, Edmonds <span class="sep">·</span> <a class="pdf-link" href="/files/publications/2024_AGUAdv_Doane_roughness.pdf">pdf</a> <span class="sep">·</span> <button type="button" class="cite-toggle" aria-expanded="false" aria-controls="cite-7">cite</button></p>
             
-            <div class="cite-panel" id="cite-6" hidden>
+            <div class="cite-panel" id="cite-7" hidden>
               <p class="cite-text">Doane, T.H., Gearon, J.H., Martin, H.K., Yanites, B.J., &amp; Edmonds, D.A. (2024). "Topographic roughness as an emergent property of geomorphic processes and events." <i>AGU Advances</i>, 5(5).</p>
               <p class="cite-actions"><a href="https://doi.org/10.1029/2024AV001264">10.1029/2024AV001264</a> <button type="button" class="cite-copy">copy</button></p>
             </div>
@@ -445,9 +465,9 @@
           <div class="meta">2024<br><span class="venue">Nature</span></div>
           <div>
             <h4><a href="https://doi.org/10.1038/s41586-024-07964-2">Rules of river avulsion change downstream</a></h4>
-            <p class="auth"><span class="self">Gearon</span>, Martin, DeLisle, Barefoot, Mohrig, Paola, Edmonds <span class="sep">·</span> <a class="pdf-link" href="/files/publications/2024_Nature_Gearon_avulsions.pdf">pdf</a> <span class="sep">·</span> <button type="button" class="cite-toggle" aria-expanded="false" aria-controls="cite-7">cite</button></p>
+            <p class="auth"><span class="self">Gearon</span>, Martin, DeLisle, Barefoot, Mohrig, Paola, Edmonds <span class="sep">·</span> <a class="pdf-link" href="/files/publications/2024_Nature_Gearon_avulsions.pdf">pdf</a> <span class="sep">·</span> <button type="button" class="cite-toggle" aria-expanded="false" aria-controls="cite-8">cite</button></p>
             
-            <div class="cite-panel" id="cite-7" hidden>
+            <div class="cite-panel" id="cite-8" hidden>
               <p class="cite-text">Gearon, J.H., Martin, H., DeLisle, C., Barefoot, E., Mohrig, D., Paola, C., and Edmonds, D. (2024). "Rules of river avulsion change downstream." <i>Nature</i>.</p>
               <p class="cite-actions"><a href="https://doi.org/10.1038/s41586-024-07964-2">10.1038/s41586-024-07964-2</a> <button type="button" class="cite-copy">copy</button></p>
             </div>
@@ -459,9 +479,9 @@
           <div class="meta">2024<br><span class="venue">Sed. Geol.</span></div>
           <div>
             <h4><a href="https://doi.org/10.1016/j.sedgeo.2023.106561">Increased sediment connectivity between deltas and deep-water fans in closed lake basins</a></h4>
-            <p class="auth">Liu, Gong, <span class="self">Gearon</span>, et al. <span class="sep">·</span> <a class="pdf-link" href="/files/publications/2023_SedGeol_Liu_deltas.pdf">pdf</a> <span class="sep">·</span> <button type="button" class="cite-toggle" aria-expanded="false" aria-controls="cite-8">cite</button></p>
+            <p class="auth">Liu, Gong, <span class="self">Gearon</span>, et al. <span class="sep">·</span> <a class="pdf-link" href="/files/publications/2023_SedGeol_Liu_deltas.pdf">pdf</a> <span class="sep">·</span> <button type="button" class="cite-toggle" aria-expanded="false" aria-controls="cite-9">cite</button></p>
             
-            <div class="cite-panel" id="cite-8" hidden>
+            <div class="cite-panel" id="cite-9" hidden>
               <p class="cite-text">Liu, P., Gong, C., Gearon, J.H., Guan, D., Wang, Q., Qi, K., &amp; Li, D. (2024). "Increased sediment connectivity between deltas and deep-water fans in closed lake basins: A case study from Bozhong Sag, Bohai Bay Basin, China." <i>Sedimentary Geology</i>, 460, 106561.</p>
               <p class="cite-actions"><a href="https://doi.org/10.1016/j.sedgeo.2023.106561">10.1016/j.sedgeo.2023.106561</a> <button type="button" class="cite-copy">copy</button></p>
             </div>
@@ -473,9 +493,9 @@
           <div class="meta">2022<br><span class="venue">JSR</span></div>
           <div>
             <h4><a href="https://doi.org/10.2110/jsr.2022.043">The supply-generated sequence: A unified sequence-stratigraphic model for closed lacustrine sedimentary basins</a></h4>
-            <p class="auth"><span class="self">Gearon</span>, Olariu, Steel <span class="sep">·</span> <a class="pdf-link" href="/files/publications/2022_JSR_Gearon_sequence.pdf">pdf</a> <span class="sep">·</span> <button type="button" class="cite-toggle" aria-expanded="false" aria-controls="cite-9">cite</button></p>
+            <p class="auth"><span class="self">Gearon</span>, Olariu, Steel <span class="sep">·</span> <a class="pdf-link" href="/files/publications/2022_JSR_Gearon_sequence.pdf">pdf</a> <span class="sep">·</span> <button type="button" class="cite-toggle" aria-expanded="false" aria-controls="cite-10">cite</button></p>
             
-            <div class="cite-panel" id="cite-9" hidden>
+            <div class="cite-panel" id="cite-10" hidden>
               <p class="cite-text">Gearon, J.H., Olariu, C., &amp; Steel, R.J. (2022). "The supply-generated sequence: A unified sequence-stratigraphic model for closed lacustrine sedimentary basins with evidence from the Green River Formation, Uinta Basin, Utah, U.S.A." <i>Journal of Sedimentary Research</i>, 92(9), 813-835.</p>
               <p class="cite-actions"><a href="https://doi.org/10.2110/jsr.2022.043">10.2110/jsr.2022.043</a> <button type="button" class="cite-copy">copy</button></p>
             </div>
@@ -487,9 +507,9 @@
           <div class="meta">2020<br><span class="venue">Land. Ecol.</span></div>
           <div>
             <h4><a href="https://doi.org/10.1007/s10980-020-01149-8">Geomorphic controls on shrub canopy volume and spacing of creosote bush, northern Mojave Desert</a></h4>
-            <p class="auth"><span class="self">Gearon</span>, Young <span class="sep">·</span> <a class="pdf-link" href="/files/publications/2020_LandEcol_Gearon_creosote.pdf">pdf</a> <span class="sep">·</span> <button type="button" class="cite-toggle" aria-expanded="false" aria-controls="cite-10">cite</button></p>
+            <p class="auth"><span class="self">Gearon</span>, Young <span class="sep">·</span> <a class="pdf-link" href="/files/publications/2020_LandEcol_Gearon_creosote.pdf">pdf</a> <span class="sep">·</span> <button type="button" class="cite-toggle" aria-expanded="false" aria-controls="cite-11">cite</button></p>
             
-            <div class="cite-panel" id="cite-10" hidden>
+            <div class="cite-panel" id="cite-11" hidden>
               <p class="cite-text">Gearon, J.H., &amp; Young, M.H. (2020). "Geomorphic controls on shrub canopy volume and spacing of creosote bush in northern Mojave Desert, USA." <i>Landscape Ecology</i>.</p>
               <p class="cite-actions"><a href="https://doi.org/10.1007/s10980-020-01149-8">10.1007/s10980-020-01149-8</a> <button type="button" class="cite-copy">copy</button></p>
             </div>
@@ -498,6 +518,72 @@
         </li>
         
       </ol>
+    </section>
+
+    <hr>
+
+    <section id="software">
+      <div class="section-head">
+        <span class="num">03</span>
+        <h2>Software</h2>
+        <span class="rule"></span>
+      </div>
+      <ul class="software-list">
+        
+        <li>
+          <div class="meta">2026<br><span class="venue">PyPI · npm</span></div>
+          <div>
+            <h4><a href="https://chronozarr.org">chronozarr</a></h4>
+            <p class="summary">Turns a raster time series into static files you can host in any storage bucket. Anyone with the link can scrub through years of imagery in a browser and click a pixel for its values over time. No tile server, and the browser receives stored values rather than images; the same store opens in xarray and GDAL.</p>
+            
+            <p class="links"><a href="https://chronozarr.org/demo/">demo</a> <span class="sep">·</span> <a href="https://github.com/chronozarr/chronozarr">github</a> <span class="sep">·</span> <a href="https://pypi.org/project/chronozarr/">pypi</a></p>
+            
+          </div>
+        </li>
+        
+        <li>
+          <div class="meta">2026<br><span class="venue">Dataset · v17c</span></div>
+          <div>
+            <h4><a href="https://github.com/SWORD-Global/SWORD">SWORD</a></h4>
+            <p class="summary">The SWOT River Database, the global river network (248,673 reaches, 11.1M nodes) that defines the reaches and nodes in SWOT's river products. Lead developer of v17c, an enhancement release from UNC's Global Hydrology Lab that adds SWOT observation statistics, mainstem routing, hydrological distances, and corrected flow accumulation.</p>
+            
+            <p class="links"><a href="https://doi.org/10.5281/zenodo.21415370">zenodo</a> <span class="sep">·</span> <a href="https://github.com/SWORD-Global/SWORD/blob/main/docs/v17c_release_notes.md">release notes</a></p>
+            
+          </div>
+        </li>
+        
+        <li>
+          <div class="meta">2023<br><span class="venue">Streamlit app</span></div>
+          <div>
+            <h4><a href="https://based-estimator.streamlit.app/">BASED</a></h4>
+            <p class="summary">Boost-Assisted Stream Estimator for Depth. Predicts river channel depth from width, slope, and discharge with gradient-boosted trees (R² 0.84, MAE 28 cm).</p>
+            
+            <p class="links"><a href="https://github.com/jameshgrn/based_api">github</a></p>
+            
+          </div>
+        </li>
+        
+        <li>
+          <div class="meta">2026<br><span class="venue">Python CLI</span></div>
+          <div>
+            <h4><a href="https://sandfrom.space/dgov/">dgov</a></h4>
+            <p class="summary">Deterministic kernel for multi-agent coding. Dispatches AI agents into isolated git worktrees and compiles plans to DAGs that run through dispatch, review, merge, and evaluation.</p>
+            
+            <p class="links"><a href="https://github.com/jameshgrn/dgov">github</a></p>
+            
+          </div>
+        </li>
+        
+        <li>
+          <div class="meta">2026<br><span class="venue">MCP server</span></div>
+          <div>
+            <h4><a href="https://github.com/jameshgrn/firepass-mcp">firepass-mcp</a></h4>
+            <p class="summary">Gives Kimi K2.6 Turbo (via Fireworks AI) a tool loop over MCP. The model reads and edits files, runs shell commands, and searches code until a task is done, as a worker, researcher, or reviewer, or all three chained.</p>
+            
+          </div>
+        </li>
+        
+      </ul>
     </section>
   </main>
 
