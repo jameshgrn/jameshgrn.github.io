@@ -1,0 +1,57 @@
+# Software, in display order. Rendered by the "Software" section of
+# _layouts/home.html. To add a project, add an entry here — nothing else.
+#
+#   name     linked to `url`
+#   year     year the project started; shown in the left meta column
+#   kind     short label under the year
+#   url      primary destination for the name (site, app, docs, or repo)
+#   summary  one or two sentences
+#   links    optional secondary links, each {label, url}; don't repeat `url`
+
+- name: chronozarr
+  year: 2026
+  kind: PyPI · npm
+  url: https://chronozarr.org
+  summary: Turns a raster time series into static files you can host in any storage bucket. Anyone with the link can scrub through years of imagery in a browser and click a pixel for its values over time. No tile server, and the browser receives stored values rather than images; the same store opens in xarray and GDAL.
+  links:
+    - label: demo
+      url: https://chronozarr.org/demo/
+    - label: github
+      url: https://github.com/chronozarr/chronozarr
+    - label: pypi
+      url: https://pypi.org/project/chronozarr/
+
+- name: SWORD
+  year: 2026
+  kind: Dataset · v17c
+  url: https://github.com/SWORD-Global/SWORD
+  summary: The SWOT River Database, the global river network (248,673 reaches, 11.1M nodes) that defines the reaches and nodes in SWOT's river products. Lead developer of v17c, an enhancement release from UNC's Global Hydrology Lab that adds SWOT observation statistics, mainstem routing, hydrological distances, and corrected flow accumulation.
+  links:
+    - label: zenodo
+      url: https://doi.org/10.5281/zenodo.21415370
+    - label: release notes
+      url: https://github.com/SWORD-Global/SWORD/blob/main/docs/v17c_release_notes.md
+
+- name: BASED
+  year: 2023
+  kind: Streamlit app
+  url: https://based-estimator.streamlit.app/
+  summary: Boost-Assisted Stream Estimator for Depth. Predicts river channel depth from width, slope, and discharge with gradient-boosted trees (R² 0.84, MAE 28 cm).
+  links:
+    - label: github
+      url: https://github.com/jameshgrn/based_api
+
+- name: dgov
+  year: 2026
+  kind: Python CLI
+  url: https://sandfrom.space/dgov/
+  summary: Deterministic kernel for multi-agent coding. Dispatches AI agents into isolated git worktrees and compiles plans to DAGs that run through dispatch, review, merge, and evaluation.
+  links:
+    - label: github
+      url: https://github.com/jameshgrn/dgov
+
+- name: firepass-mcp
+  year: 2026
+  kind: MCP server
+  url: https://github.com/jameshgrn/firepass-mcp
+  summary: Gives Kimi K2.6 Turbo (via Fireworks AI) a tool loop over MCP. The model reads and edits files, runs shell commands, and searches code until a task is done, as a worker, researcher, or reviewer, or all three chained.

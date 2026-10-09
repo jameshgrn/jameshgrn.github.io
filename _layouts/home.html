@@ -50,6 +50,8 @@ layout: compress
     a:hover { color: var(--accent); border-bottom-color: var(--accent); }
     .container { max-width: 1180px; margin: 0 auto; padding: 0 2rem; }
     hr { border: 0; border-top: 1px solid var(--rule); margin: 4rem 0; }
+    /* Keep nav-anchor targets clear of the sticky masthead. */
+    section[id] { scroll-margin-top: 6rem; }
 
     header.site-masthead {
       padding: 1.4rem 0 1.2rem;
@@ -105,27 +107,30 @@ layout: compress
     .spread__authors { font-family: var(--mono); font-size: .75rem; color: var(--ink-muted); letter-spacing: -.005em; }
     .spread__authors .self { color: var(--ink); font-weight: 500; }
 
-    .pubs-list { list-style: none; padding: 0; margin: 0; }
-    .pubs-list > li { padding: 1.4rem 0; border-top: 1px solid var(--rule); display: grid; grid-template-columns: 110px 1fr; gap: 1.5rem; }
-    .pubs-list > li:last-child { border-bottom: 1px solid var(--rule); }
-    .pubs-list .meta { font-family: var(--mono); font-size: .75rem; color: var(--ink-muted); }
-    .pubs-list .venue { color: var(--accent); }
-    .pubs-list h4 { font-family: var(--serif); font-weight: 500; font-size: 1.05rem; margin: 0 0 .3rem; line-height: 1.3; }
-    .pubs-list h4 a { border: 0; }
-    .pubs-list h4 a:hover { color: var(--accent); }
+    .pubs-list, .software-list { list-style: none; padding: 0; margin: 0; }
+    .pubs-list > li, .software-list > li { padding: 1.4rem 0; border-top: 1px solid var(--rule); display: grid; grid-template-columns: 110px 1fr; gap: 1.5rem; }
+    .pubs-list > li:last-child, .software-list > li:last-child { border-bottom: 1px solid var(--rule); }
+    .pubs-list .meta, .software-list .meta { font-family: var(--mono); font-size: .75rem; color: var(--ink-muted); }
+    .pubs-list .venue, .software-list .venue { color: var(--accent); }
+    .pubs-list h4, .software-list h4 { font-family: var(--serif); font-weight: 500; font-size: 1.05rem; margin: 0 0 .3rem; line-height: 1.3; }
+    .pubs-list h4 a, .software-list h4 a { border: 0; }
+    .pubs-list h4 a:hover, .software-list h4 a:hover { color: var(--accent); }
     .pubs-list .auth { font-family: var(--mono); font-size: .75rem; color: var(--ink-muted); }
     .pubs-list .self { color: var(--ink); font-weight: 500; }
-    .pubs-list .sep { color: var(--rule); margin: 0 .35rem; }
+    .pubs-list .sep, .software-list .sep { color: var(--rule); margin: 0 .35rem; }
     /* Underline via text-decoration, not border-bottom, so the padding that
        enlarges the touch target does not detach the rule from the word. The
        negative margin keeps the larger hit area from shifting the layout. */
     .pubs-list .cite-toggle,
     .pubs-list .cite-copy,
-    .pubs-list .pdf-link { font-family: var(--mono); font-size: .75rem; color: var(--ink-muted); background: none; border: 0; cursor: pointer; text-decoration: underline; text-decoration-color: var(--rule); text-underline-offset: 3px; padding: .7rem .45rem; margin: -.7rem -.45rem; transition: color .15s, text-decoration-color .15s; }
-    .pubs-list .cite-toggle:hover, .pubs-list .cite-copy:hover, .pubs-list .pdf-link:hover,
+    .pubs-list .pdf-link,
+    .software-list .links a { font-family: var(--mono); font-size: .75rem; color: var(--ink-muted); background: none; border: 0; cursor: pointer; text-decoration: underline; text-decoration-color: var(--rule); text-underline-offset: 3px; padding: .7rem .45rem; margin: -.7rem -.45rem; transition: color .15s, text-decoration-color .15s; }
+    .pubs-list .cite-toggle:hover, .pubs-list .cite-copy:hover, .pubs-list .pdf-link:hover, .software-list .links a:hover,
     .pubs-list .cite-toggle[aria-expanded="true"] { color: var(--accent); text-decoration-color: var(--accent); }
     .pubs-list .cite-panel { margin: .75rem 0 .1rem; padding: .7rem .9rem; background: var(--bg-alt); border-left: 2px solid var(--rule); }
     .pubs-list .cite-text { font-size: .88rem; line-height: 1.5; margin: 0 0 .55rem; color: var(--ink); }
+    .software-list .summary { font-size: .95rem; line-height: 1.55; margin: 0 0 .4rem; max-width: 62ch; }
+    .software-list .links { font-family: var(--mono); font-size: .75rem; color: var(--ink-muted); margin: 0; }
     .pubs-list .cite-actions { font-family: var(--mono); font-size: .72rem; color: var(--ink-muted); margin: 0; display: flex; gap: 1rem; align-items: baseline; flex-wrap: wrap; }
 
     footer.site-footer { padding: 4rem 0 3rem; border-top: 1px solid var(--rule); margin-top: 6rem; }
@@ -139,7 +144,7 @@ layout: compress
       .container { padding: 0 1.4rem; }
       .hero { grid-template-columns: 1fr; gap: 2rem; padding: 3rem 0 2.5rem; }
       nav.primary a { margin-left: 1rem; font-size: .72rem; }
-      .pubs-list > li { grid-template-columns: 1fr; gap: .4rem; }
+      .pubs-list > li, .software-list > li { grid-template-columns: 1fr; gap: .4rem; }
       .question { margin-bottom: 4rem; }
       .question__head { grid-template-columns: 1fr; gap: 1rem; margin-bottom: 2rem; }
       .question__title { font-size: 1.8rem; }
@@ -155,6 +160,7 @@ layout: compress
       <nav class="primary">
         <a href="#research">Research</a>
         <a href="#publications">Publications</a>
+        <a href="#software">Software</a>
         <a href="{{ '/pdf/Gearon_James_CV.pdf' | relative_url }}">CV</a>
       </nav>
     </div>
@@ -310,6 +316,30 @@ layout: compress
         </li>
         {% endfor %}
       </ol>
+    </section>
+
+    <hr>
+
+    <section id="software">
+      <div class="section-head">
+        <span class="num">03</span>
+        <h2>Software</h2>
+        <span class="rule"></span>
+      </div>
+      <ul class="software-list">
+        {% for sw in site.data.software %}
+        <li>
+          <div class="meta">{{ sw.year }}<br><span class="venue">{{ sw.kind }}</span></div>
+          <div>
+            <h4><a href="{{ sw.url }}">{{ sw.name }}</a></h4>
+            <p class="summary">{{ sw.summary }}</p>
+            {% if sw.links %}
+            <p class="links">{% for link in sw.links %}{% unless forloop.first %} <span class="sep">·</span> {% endunless %}<a href="{{ link.url }}">{{ link.label }}</a>{% endfor %}</p>
+            {% endif %}
+          </div>
+        </li>
+        {% endfor %}
+      </ul>
     </section>
   </main>
 
