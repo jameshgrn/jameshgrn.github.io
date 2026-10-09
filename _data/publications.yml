@@ -18,6 +18,13 @@
   citation: 'Gearon, J.H., &amp; Edmonds, D.A. (2026). "Alluvial ridge morphology on avulsing rivers." <i>Sedimentology</i>. doi:10.1111/sed.70134.'
 
 - year: 2026
+  venue: Zenodo
+  title: SWOT River Database (SWORD), version v17c
+  authors: Gearon, Altenau, Pavelsky, Durand, Collot d'Escury, Yang, Malaterre, Frasson, Bendezu
+  doi: https://doi.org/10.5281/zenodo.21415370
+  citation: 'Gearon, J.H., Altenau, E.H., Pavelsky, T.M., Durand, M.T., Collot d''Escury, N., Yang, X., Malaterre, P.-O., Frasson, R.P.d.M., &amp; Bendezu, L. (2026). "SWOT River Database (SWORD), version v17c." <i>Zenodo</i> [data set]. doi:10.5281/zenodo.21415370.'
+
+- year: 2026
   venue: JGR-ES
   title: O levee, where art thou? Measuring the abundance of natural river levees across the contiguous USA
   authors: Barefoot, Gearon, Edmonds
